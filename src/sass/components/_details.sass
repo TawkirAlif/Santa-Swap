@@ -1,0 +1,271 @@
+.details
+	&__container
+		position: relative
+		padding: 32px 32px 18px
+		background: $white
+		border-radius: 32px
+		+m
+			padding: 24px 
+		&:before
+			content: ""
+			position: absolute
+			top: 14px
+			left: 20px
+			right: 20px
+			bottom: -14px
+			z-index: -1
+			border-radius: 32px
+			background: $gray-light
+			filter: blur(86.985px)
+	&__top
+		display: flex
+		align-items: center
+		margin-bottom: 32px
+		+m
+			display: block
+	&__company
+		position: relative
+		z-index: 5
+		flex-shrink: 0
+		width: 245px
+		margin-right: auto
+		+x
+			width: 230px
+		+d
+			width: 250px
+		+m
+			width: 100% 
+			margin: 0 0 32px 
+	&__head
+		position: relative
+		display: flex
+		align-items: center
+		padding-right: 30px
+	&__logo
+		margin-right: 16px
+		img
+			width: 100%
+			min-height: 100% 
+	&__head &__logo
+		width: 56px
+		height: 56px
+	&__head &__info
+		+h5
+		+x
+			font-size: 21px
+	&__currency
+		color: $gray 
+	&__head &__currency
+		+h6
+	&__desc
+		flex-grow: 1
+	&__body
+		position: absolute
+		top: calc(100% + 20px)
+		left: -16px
+		right: -16px
+		padding: 16px  
+		background: $white
+		border-radius: 20px
+		box-shadow: 0 5px 20px rgba(#000, .07) 
+		visibility: hidden
+		opacity: 0
+		transition: all .2s 
+	&__company.active &__body
+		visibility: visible
+		opacity: 1
+	&__item
+		display: flex
+		align-items: center
+		padding: 10px 16px
+		border-radius: 12px
+		transition: all .2s
+		&:hover
+			background: rgba($gray-light, .3) 
+		+nl
+			margin-bottom: 4px
+	&__item &__logo
+		width: 36px
+		height: 36px
+	&__item &__info
+		+title
+		color: $black 
+	&__item &__currency
+		+caption-sm
+	&__btns
+		display: flex
+		+m
+			margin: 0 -8px 
+	&__btns &__btn
+		+m
+			flex: 0 0 calc(50% - 16px)
+			min-width: calc(50% - 16px)
+			margin: 0 8px 
+			padding: 0 10px 
+		+nl
+			margin-right: 16px
+			+m
+				margin-right: 8px
+	&__burger
+		position: absolute
+		top: 6px
+		right: 0
+		z-index: 2
+		width: 20px
+		height: 20px
+		&:before,
+		&:after
+			content: ""
+			display: block
+			width: 100%
+			height: 2px
+			margin: 6px 0 
+			border-radius: 1px
+			background: $black
+			transition: all .2s
+	&__company.active &__burger
+		&:before
+			transform: translateY(4px) rotate(45deg)
+		&:after
+			transform: translateY(-4px) rotate(-45deg)
+	&__flex
+		display: flex
+		align-items: center
+		margin-bottom: 32px
+		+m
+			display: block
+	&__money
+		+h2
+		+x
+			font-size: 40px
+	&__status
+		margin-left: 30px
+		+h6
+		+m
+			margin: 12px 0 0 
+	&__chart
+		height: 330px
+		margin: -32px -32px 24px -24px
+		+m
+			margin: -32px -44px 5px -28px 
+			.apexcharts-text
+				font-size: 10px
+	&__list
+		display: flex
+		flex-wrap: wrap
+		margin: 0 -32px 32px
+		border-top: 1px solid $gray-light
+		+m
+			display: block
+	&__box
+		display: flex
+		align-items: center
+		flex: 0 0 50%
+		width: 50%
+		padding: 36px 28px 
+		border-bottom: 1px solid $gray-light
+		+x
+			padding: 32px
+		+m
+			width: 100% 
+			height: 112px
+			padding: 16px 32px 
+		&:nth-child(2n+1)
+			border-right: 1px solid $gray-light
+			+m
+				border-right: none 
+	&__icon
+		display: flex
+		justify-content: center
+		align-items: center
+		flex-shrink: 0
+		width: 40px
+		height: 40px
+		margin-right: 16px
+		border-radius: 50%
+		border: 1px solid $gray-light
+	&__category
+		margin-bottom: 3px
+		+caption-sm
+		color: $gray
+		.icon
+			position: relative
+			bottom: -2px
+			margin-left: 8px
+			font-size: 12px
+			fill: $gray
+	&__price
+		+h6 
+		+x
+			font-size: 16px
+		+m
+			font-size: 18px
+	&__title
+		margin-bottom: 24px
+	&__row
+		display: flex
+		margin-bottom: 48px
+		+m
+			display: block
+	&__col
+		&:first-child
+			max-width: 285px
+			margin-right: 40px
+			+m
+				max-width: 100%
+				margin: 0 0 32px  
+	&__text
+		font-size: 13px
+		line-height: (20/13) 
+		color: $gray 
+	&__links
+		display: flex
+		flex-direction: column
+		align-items: flex-start
+	&__link
+		display: flex
+		align-items: center
+		+button-sm
+		color: $blue 
+		.icon
+			margin-right: 12px
+			transition: fill .2s
+		&:hover .icon
+			fill: $blue
+		+nl
+			margin-bottom: 16px
+		
++dark
+	.details
+		&__container
+			background: $dark-color 
+			&:before
+				display: none
+		&__burger
+			&:before,
+			&:after
+				background: $white
+		&__chart
+			.apexcharts-xaxis line,
+			.apexcharts-grid line
+				stroke: $dark-border
+		&__body
+			background: $dark-active
+			border: 1px solid $dark-border
+		&__item:hover
+			background: $dark-color 
+		&__list,
+		&__box,
+		&__icon
+			border-color: $dark-border
+		&__item .details__info
+			color: $white 
+		&__link
+			.icon
+				fill: $white
+			&:hover .icon
+				fill: $blue
+
+
+
+

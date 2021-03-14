@@ -1,0 +1,340 @@
+.header
+	position: relative
+	z-index: 10
+	display: flex
+	align-items: center
+	padding: 48px 64px 36px
+	+x
+		padding: 48px 48px 36px
+	+d
+		padding: 36px 64px
+	+t
+		padding: 32px 64px 
+	+m
+		padding: 24px 16px
+	&__search
+		position: relative
+		flex-shrink: 0
+		width: 210px 
+		margin-right: auto
+		+t
+			display: none
+	&__input
+		width: 100% 
+		height: 48px
+		padding-right: 32px
+		background: none 
+		border: none 
+		+fi
+		font-size: 14px
+		font-weight: 600 
+		color: $black 
+		+placeholder
+			color: $gray 
+	&__start
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		width: 24px
+		font-size: 0
+		.icon
+			font-size: 20px
+			fill: $black
+			transition: fill .2s
+		&:hover .icon
+			fill: $blue
+	&__logo
+		display: none
+		margin-right: auto
+		+t
+			display: inline-block
+		img
+			width: 60px
+			+m
+				width: 46px
+		&.hidden
+			visibility: hidden
+			opacity: 0
+	&__group
+		display: flex
+		align-items: center
+		margin-left: auto
+	&__indicator
+		display: flex
+		align-items: center
+		margin-right: 40px
+		padding: 0 12px 0 6px
+		background: $blue 
+		border-radius: 16px
+		font-weight: 600
+		line-height: 32px
+		color: $white 
+		+t
+			display: none  
+	&__img
+		display: flex
+		justify-content: center
+		align-items: center
+		flex-shrink: 0
+		width: 20px
+		height: 20px
+		margin-right: 8px
+		border-radius: 50%
+		box-shadow: 0px 4px 7px rgba(17, 20, 45, 0.402414)
+		background: $white  
+	&__item
+		position: relative
+		&_notifications
+			margin-right: 40px
+			font-size: 0
+			+m
+				position: static
+				margin-right: 24px
+		&_download
+			margin-right: 22px
+			font-size: 0
+			+m
+				display: none
+		&_lang
+			+m
+				display: none
+	&__item_notifications &__head,
+	&__item_download &__head
+		width: 24px
+		height: 24px
+		font-size: 0
+		.icon
+			font-size: 20px
+			fill: $gray
+			transition: fill .2s
+		&:hover .icon
+			fill: $blue
+	&__item_lang &__head
+		position: relative
+		padding-right: 42px
+		font-weight: 600 
+		&:before
+			content: ""
+			position: absolute
+			top: 50%
+			right: 0
+			width: 12px
+			height: 7px
+			transform: translateY(-50%)
+			background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' viewBox='0 0 12 8'%3E%3Cpath d='M10.281.305L5.988 4.598 1.695.305A1 1 0 0 0 .293.317a1 1 0 0 0-.012 1.402l5 5a1 1 0 0 0 1.414 0l5-5a1 1 0 0 0-.441-1.687 1 1 0 0 0-.973.273z' fill='%2311142d'/%3E%3C/svg%3E") no-repeat 50% 50% / auto 100%
+			transition: transform .2s
+	&__item_lang.active &__head:before
+		transform: translateY(-50%) rotate(180deg)
+	&__item_notifications &__head
+		position: relative
+		&:before
+			content: ""
+			position: absolute
+			top: -4px
+			right: -4px
+			width: 8px
+			height: 8px
+			background: $red
+			border-radius: 50%
+			opacity: 0
+	&__item_notifications &__head.active:before
+		opacity: 1
+	&__body
+		position: absolute
+		background: $white 
+		border-radius: 20px 
+		visibility: hidden
+		opacity: 0
+		transition: all .2s
+	&__item.active &__body
+		visibility: visible
+		opacity: 1
+	&__item_notifications &__body
+		top: calc(100% + 15px) 
+		left: 50%
+		transform: translateX(-50%)
+		width: 375px
+		padding: 0 24px 32px 
+		box-shadow: 0 15px 30px rgba($black, .1)
+		+m
+			top: 100%
+			left: 0
+			right: 0
+			width: auto
+			transform: translateX(0)
+			padding: 0 16px 24px  
+			box-shadow: 0 10px 30px rgba($black, .2)
+	&__item_download &__body
+		top: calc(100% + 22px)
+		left: 50%
+		width: 338px
+		padding: 32px 
+		transform: translateX(-50%)
+		border: 1px solid $gray-light
+		box-shadow: 0 5px 20px rgba($black, .07) 
+	&__item_lang &__body
+		top: calc(100% + 22px)
+		right: -15px
+		width: 300px
+		border: 1px solid $gray-light
+		border-radius: 20px
+		box-shadow: 0 5px 20px rgba($black, .07) 
+	&__notifications
+		margin-bottom: 24px
+		+m
+			margin-bottom: 12px
+	&__notification
+		display: flex
+		padding: 20px 0 
+		+m
+			padding: 12px 0 
+		+nl
+			border-bottom: 1px solid $gray-light
+	&__icon
+		display: flex
+		justify-content: center
+		align-items: center
+		flex-shrink: 0
+		width: 48px
+		height: 48px
+		margin-right: 24px 
+		border-radius: 50% 
+		background: $gradient-green
+		+m
+			margin-right: 16px 
+	&__details
+		flex-grow: 1
+	&__info
+		margin-bottom: 8px
+		+title
+		+m
+			font-size: 14px
+	&__line
+		display: flex
+		justify-content: space-between
+		align-items: center
+	&__time
+		font-size: 14px
+		font-weight: 600 
+		color: $gray
+	&__status
+		flex-shrink: 0
+		width: 12px
+		height: 12px
+		background: $blue-light
+		border-radius: 50% 
+	&__btn
+		font-weight: 700
+	&__row
+		display: flex
+	&__col
+		&:first-child
+			flex-grow: 1
+			padding-right: 40px
+		&:nth-child(2)
+			flex-shrink: 0
+			width: 94px
+	&__category
+		margin-bottom: 12px
+		font-size: 14px
+		font-weight: 600
+		color: $gray
+	&__download
+		display: block
+		+nl
+			margin-bottom: 12px 
+	&__lang
+		display: flex
+	&__cell
+		flex: 0 0 50%
+		width: 50% 
+		padding: 24px 22px
+		&:first-child
+			border-right: 1px solid $gray-light 
+	&__link
+		display: flex
+		align-items: center
+		height: 24px
+		font-weight: 600
+		color: $gray
+		transition: color .2s
+		&:hover,
+		&.active
+			color: $blue     
+		+nl
+			margin-bottom: 12px
+	&__flag
+		margin-right: 16px
+	&__user
+		flex-shrink: 0
+		width: 48px 
+		margin-left: 36px
+		+m
+			display: none
+		img
+			min-width: 100%
+			height: 48px
+			border-radius: 50%
+			overflow: hidden
+	&__toggle
+		display: none
+		flex-shrink: 0 
+		width: 40px
+		height: 40px
+		margin-left: 32px
+		+t
+			display: inline-block
+		+m
+			margin: 0
+	&_border:before
+		content: ""
+		position: absolute 
+		top: 0
+		right: 425px
+		bottom: 0
+		width: 1px
+		background: $gray-light
+		+w
+			display: none  
+
++dark
+	.header
+		&__input
+			color: $white 
+		&__start
+			.icon
+				fill: $white
+			&:hover .icon
+				fill: $blue
+		&__body
+			background: $dark-color 
+		&__item_notifications .header__body
+			border-color: $dark-border
+		&__notification
+			border-color: $dark-border
+		&__item_lang .header__head
+			color: $white 
+			&:before
+				background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' viewBox='0 0 12 8'%3E%3Cpath d='M10.281.305L5.988 4.598 1.695.305A1 1 0 0 0 .293.317a1 1 0 0 0-.012 1.402l5 5a1 1 0 0 0 1.414 0l5-5a1 1 0 0 0-.441-1.687 1 1 0 0 0-.973.273z' fill='%23ffffff'/%3E%3C/svg%3E")
+		&__item_lang .header__body
+			border-color: $dark-border
+		&__cell:first-child 
+			border-color: $dark-border
+		&__link:hover
+			color: $white 
+		&__link.active
+			color: $blue 
+		&__item_download .header__body
+			border-color: $dark-border
+		&__toggle
+			svg
+				& > path
+					stroke: $white
+				g
+					stroke: rgba($gray, .7)
+					path:nth-child(2)
+						opacity: .6 
+		&_border:before
+			background: $dark-border
+			

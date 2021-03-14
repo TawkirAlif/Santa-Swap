@@ -1,0 +1,337 @@
+.activity
+	display: flex
+	&__container
+		flex-grow: 1
+		padding: 0 64px 64px
+		+x
+			padding: 0 48px 64px
+		+d
+			padding: 0 64px 64px
+		+m
+			padding: 0 16px 32px 
+	&__sorting
+		display: flex
+		margin-bottom: 48px 
+		+t
+			margin-bottom: 32px
+			justify-content: space-between
+		+m
+			margin: 0 -8px 24px 
+	&__tags
+		display: flex
+		flex-wrap: wrap
+		align-self: flex-start
+		margin-right: auto
+		padding-top: 12px
+	&__tags &__link
+		padding: 0 16px
+		border-radius: 20px
+		line-height: 40px
+		font-weight: 600
+		color: $gray
+		transition: all .2s
+		&:hover
+			color: $black 
+		&.active
+			background: rgba($gray-light, .3)
+			color: $blue 
+	&__select
+		position: relative
+		align-self: flex-start
+		flex-shrink: 0
+		width: 230px
+		margin-left: 50px
+		+t
+			margin: 0
+		+m
+			flex: 0 0 calc(50% - 16px)
+			width: calc(50% - 16px)
+			margin: 0 8px 
+		.select
+			padding-left: 43px
+			+t
+				padding-left: 20px
+	&__select &__icon
+		position: absolute
+		top: 50%
+		left: 20px
+		z-index: 2
+		pointer-events: none
+		transform: translateY(-50%)
+		font-size: 0
+		+t
+			display: none
+		.icon
+			font-size: 16px 
+	&__stage
+		margin-bottom: 32px
+		+m
+			margin-bottom: 24px
+	&__table
+		display: table
+		width: 100% 
+	&__row
+		display: table-row
+		border-radius: 12px
+		cursor: pointer
+		transition: all .2s
+		-webkit-tap-highlight-color: rgba(0,0,0,0)  
+		&_head
+			background: rgba($gray-light, .2)
+			font-size: 10px
+			letter-spacing: 1px
+			font-weight: 600
+			color: $gray
+			text-transform: uppercase
+		&:nth-child(2n+1)
+				background: rgba($gray-light, .2)
+		&:not(.activity__row_head):hover
+			box-shadow: 0 0 0 2px $blue 
+			background: none
+			+t
+				box-shadow: none 
+	&__row_head &__cell
+		height: 40px
+	&__hidden
+		display: none 
+	&__table.small &__hidden
+		display: block
+		+w
+			display: none
+		+t
+			display: block
+	&__table &__hidden
+		+t
+			display: block 
+	&__table.small &__row_head &__hidden
+		display: inline
+		+w
+			display: none
+		+t
+			display: inline
+	&__table &__row_head &__hidden
+		+t
+			display: inline
+	&__cell
+		display: table-cell
+		vertical-align: middle
+		height: 80px
+		padding-right: 30px
+		+w
+			padding-right: 25px
+		+t
+			padding-right: 16px
+		&:first-child
+			padding-left: 25px
+			border-radius: 12px 0 0 12px
+			+t
+				padding-left: 16px
+			+m
+				display: none
+		&:nth-child(2)
+			+m
+				border-radius: 12px 0 0 12px 
+				padding-left: 16px
+		&:nth-child(3)
+			+t
+				display: none
+		&:nth-child(4)
+			+m
+				border-radius: 0 12px 12px 0 
+		&:nth-child(n+5)
+			+m
+				display: none
+		&:last-child
+			border-radius: 0 12px 12px 0 
+	&__table.small &__cell:nth-child(3)
+		display: none
+		+w
+			display: table-cell
+		+t
+			display: none
+	&__size
+		img
+			min-width: 15px
+	&__company
+		display: inline-flex
+		align-items: center
+		font-weight: 600 
+	&__logo
+		flex-shrink: 0 
+		width: 32px
+		height: 32px
+		margin-right: 16px
+		+m
+			margin-right: 10px
+		img
+			width: 100%
+			min-height: 100% 
+	&__table &__date,
+	&__transaction
+		+caption-sm
+		color: $gray
+	&__price,
+	&__address
+		font-weight: 600
+		+m
+			font-size: 13px
+	&__sidebar
+		flex-shrink: 0
+		width: 364px
+		margin-right: -364px
+		padding: 0 64px 64px 0 
+		transition: margin .2s
+		+w
+			position: fixed
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			z-index: 999
+			display: flex
+			align-items: center
+			width: 100%
+			margin: 0
+			overflow: auto
+			padding: 20px
+			background: rgba($dark, .9) 
+			opacity: 0
+			visibility: hidden
+			transition: all .2s
+		+m
+			padding: 0 
+		&.visible
+			margin-right: 0
+			+w
+				visibility: visible
+				opacity: 1
+	&__wrap
+		position: relative
+		+w
+			width: 100% 
+			max-width: 630px
+			margin: auto 
+			padding: 32px 
+			border-radius: 24px 
+			background: $white
+		+m
+			min-height: 100vh 
+			padding: 24px 16px 
+			border-radius: 0 
+	&__head
+		display: flex
+		align-items: center
+		margin-bottom: 32px
+		padding-right: 30px
+		+w
+			padding-right: 60px
+	&__head &__logo
+		width: 42px
+		height: 42px
+		margin-right: 24px
+	&__info
+		margin-bottom: 4px
+		+h6
+	&__head &__date
+		+caption-lg
+		color: $gray
+	&__close 
+		position: absolute
+		top: 12px
+		right: 0
+		width: 20px
+		height: 20px
+		font-size: 0
+		+w
+			top: 26px
+			right: 24px
+			width: 48px
+			height: 48px
+			border-radius: 50%
+			box-shadow: 0 3px 10px rgba(#000, .1) 
+		+m
+			top: 22px
+			right: 16px
+			box-shadow: none 
+		.icon
+			font-size: 14px
+			transition: transform .2s
+		&:hover .icon
+			transform: rotate(90deg)
+	&__line
+		display: flex
+		align-items: center
+	&__money
+		+h3
+	&__currency
+		margin-left: 20px
+		padding: 0 13px
+		border-radius: 16px
+		background: $green-dark  
+		font-size: 16px
+		font-weight: 600 
+		line-height: 32px 
+		color: $white 
+	&__code
+		+h6
+		color: $gray
+	&__parameters
+		margin-top: 32px
+	&__parameter
+		display: flex
+		align-items: center
+		padding: 32px 0
+		border-top: 1px solid $gray-light
+	&__preview
+		display: flex
+		justify-content: center
+		align-items: center
+		flex-shrink: 0
+		width: 40px
+		height: 40px
+		margin-right: 24px
+		border-radius: 50%
+		background: rgba($gray-light, .5) 
+	&__box
+		flex-grow: 1
+	&__category
+		margin-bottom: 8px
+		+caption-sm
+		color: $gray 
+	&__status
+		display: inline-block
+		padding: 0 8px
+		border-radius: 12px
+		background: rgba($green, .2) 
+		font-size: 12px 
+		line-height: 24px
+		font-weight: 500 
+		color: $green  
+	&__value
+		+title
+
++dark
+	.activity
+		&__tags .activity__link
+			&:hover
+				color: $white 
+			&.active
+				background: $dark-active
+				color: $blue 
+		&__select .activity__icon
+			.icon
+				fill: $white
+		&__row
+			&:nth-child(2n+1)
+				background: rgba($gray-light, .03)
+		&__close
+			.icon
+				fill: $white
+		&__preview
+			background: $gray-light
+		&__parameter
+			border-color: $dark-border
+		&__wrap
+			+x
+				background: $dark-color
+

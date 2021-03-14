@@ -1,0 +1,44 @@
+---
+title: Sign in
+---
+extends layouts/_layout
+block content
+	.login
+		.login__row
+			.login__col
+				a.login__logo(href="index.html")
+					img(src="img/logo-white.svg" alt="")
+				h1.login__title.h1 The Crypto <br>Asset Exchange
+				.login__info.h6 UI Design Kit
+				.login__preview
+					img(src="img/figures-2.png" alt="")
+			.login__col
+				a.login__logo(href="index.html")
+					img(src="img/logo-sm.svg" alt="")
+				.login__form
+					.login__stage.h4 Sign in to  <br>Unity Exchange
+					.login__field.field.js-field
+						.field__label Email
+						.field__wrap
+							input.field__input.js-field-input(type="email")
+					.login__field.field.js-field
+						.field__label Password
+						.field__wrap
+							input.field__input.js-field-input(type="password")
+					.login__links.text-right
+						a.login__link(href="#")
+							+i('link')
+							| Forgot Password?
+					a.login__verify(href="#") Click to verify 
+						+i('verify')
+						.login__status 
+					a.login__btn.btn.btn_blue.btn_wide(href="index.html") Sign in
+					.login__flex
+						.login__text Not a member?
+						a.login__link(href="sign-up.html")
+							+i('link')
+							| Sign up now
+
+
+
+

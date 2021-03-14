@@ -1,0 +1,265 @@
+.exchange
+	+m
+		display: flex
+		flex-direction: column
+		min-height: calc(100vh - 94px) 
+	&__top
+		position: relative
+		display: flex
+		align-items: center
+		margin-bottom: 48px
+		border-radius: 16px
+		border: 1px solid $gray-light  
+		background: $white 
+		+d
+			margin-bottom: 32px
+		+rmin(768)
+			display: flex !important
+		+m
+			margin-bottom: 24px
+		&:after
+			content: ""
+			position: absolute
+			bottom: -17px
+			left: 0
+			right: 0
+			z-index: -1
+			height: 38px 
+			border-radius: 16px
+			background: $gray-light
+			filter: blur(86.985px)  
+	&__cell
+		flex: 1
+		padding: 35px 24px 
+		border-right: 1px solid $gray-light 
+		+w
+			padding: 24px 16px
+		+x
+			padding: 24px
+		&:nth-child(n+3)
+			+m
+				display: none
+		&:nth-child(4)
+			+t
+				border: none  
+		&:nth-child(4)
+			+x
+				border: none 
+		&:nth-child(n+4)
+			+t
+				display: none
+		&:nth-child(n+5)
+			+x
+				display: none
+		&:last-child
+			border: none 
+	&__company
+		position: relative
+		z-index: 5
+	&__head
+		position: relative
+		display: flex
+		align-items: center
+		padding-right: 20px
+		cursor: pointer
+		-webkit-tap-highlight-color: rgba(0,0,0,0)
+	&__logo
+		margin-right: 16px
+		img
+			width: 100%
+			min-height: 100% 
+	&__head &__logo
+		width: 40px
+		height: 40px
+	&__currency
+		font-weight: 600 
+	&__info
+		+caption-sm
+		color: $gray
+	&__arrow
+		position: absolute
+		top: 8px
+		right: 0
+		font-size: 0
+		transition: transform .2s 
+		.icon
+			font-size: 7px
+	&__company.active &__arrow
+		transform: rotate(180deg) 
+	&__details
+		flex-grow: 1
+	&__body
+		position: absolute
+		top: calc(100% + 16px)
+		left: -24px
+		right: -24px
+		padding: 12px 8px
+		background: $white
+		border-radius: 20px
+		box-shadow: 0 5px 20px rgba(#000, .07) 
+		visibility: hidden
+		opacity: 0
+		transition: all .2s 
+	&__company.active &__body
+		visibility: visible
+		opacity: 1
+	&__item
+		display: flex
+		align-items: center
+		padding: 10px 18px
+		border-radius: 12px
+		transition: all .2s
+		&:hover
+			background: rgba($gray-light, .3) 
+		+nl
+			margin-bottom: 4px
+	&__item &__logo
+		width: 36px
+		height: 36px
+	&__item &__currency
+		color: $black 
+	.status
+		margin-top: 5px
+	&__price
+		font-weight: 600
+	&__row
+		display: flex
+		+d
+			display: block
+	&__container
+		flex-grow: 1
+		padding-right: 64px
+		+w
+			padding-right: 48px
+		+d
+			margin-bottom: 48px
+			padding: 0
+		+m
+			margin: 0
+	&__sidebar
+		flex-shrink: 0
+		width: 340px
+		+d
+			display: flex
+			flex-direction: row-reverse
+			width: auto
+			margin: 0 -16px
+		+t
+			display: block
+			margin: 0 
+	.orders
+		+nl
+			margin-bottom: 48px
+			+d
+				margin-bottom: 0
+			+t
+				margin-bottom: 56px
+			+rmin(768)
+				display: block !important
+			+m
+				margin: 0
+	.actions
+		+nl
+			margin-bottom: 56px
+			+d
+				margin-bottom: 0
+			+rmin(768)
+				display: flex !important
+	.orders,
+	.actions
+		+d
+			flex: 0 0 calc(50% - 32px)
+			width: calc(50% - 32px)
+			margin: 0 16px
+		+t
+			width: 100%
+			margin: 0
+		+m
+			display: none 
+	&__banner
+		position: relative
+		min-height: 335px
+		padding: 32px
+		border-radius: 24px
+		+cover
+		color: $white
+		+d
+			display: none
+		&:before
+			content: ""
+			position: absolute
+			top: 8px
+			left: 8px
+			right: 8px
+			bottom: -8px
+			z-index: -1
+			border-radius: 24px
+			background: rgba($purple, .5)    
+	&__date
+		+chip
+	&__title
+		margin-bottom: 16px
+	&__banner &__btn
+		box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.200219)
+	&__foot
+		display: none
+		margin-top: auto
+		padding-top: 32px
+		+m
+			display: block
+	&__menu
+		display: flex
+		margin: 0 -16px
+		padding: 20px 16px 42px  
+		justify-content: space-around
+		border: 1px solid $gray-light
+		border-radius: 20px 20px 0 0
+	&__menu &__link
+		position: relative
+		font-size: 0
+		.icon
+			font-size: 24px
+			fill: $gray
+			transition: fill .2s 
+		&:before
+			content: ""
+			position: absolute
+			top: calc(100% + 10px)
+			left: 50%
+			transform: translateX(-50%)
+			width: 8px
+			height: 8px
+			border-radius: 50%
+			background: $red
+			visibility: hidden
+			opacity: 0
+			transition: all .2s 
+		&.note:before
+			visibility: visible
+			opacity: 1
+		&.active .icon
+			fill: $blue 
+
++dark
+	.exchange
+		&__top
+			background: $dark-color
+			border-color: $dark-border
+			&:after
+				background: rgba($gray-light, .1)
+		&__cell
+			border-color: $dark-border
+		&__arrow .icon 
+			fill: $white
+		&__body
+			background: $dark-active
+			border: 1px solid $dark-border
+		&__item:hover
+			background: $dark-color 
+		&__item .exchange__currency
+			color: $white 
+		&__menu
+			border-color: $dark-border 
+	
+	  
+	

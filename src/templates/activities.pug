@@ -1,0 +1,125 @@
+---
+title: Activities
+---
+extends layouts/_layout
+block content
+	.page
+		+sidebar('', '', '', '', '', 'active')
+		.page__content
+			+header
+			.activity
+				.activity__container
+					.activity__stage.h6.mobile-show History
+					.activity__sorting
+						.activity__select.tablet-show
+							select.select
+								option All
+								option Withdrawals
+								option Deposit
+								option Bank Withdraws
+						.activity__tags.tablet-hide
+							a.activity__link.active(href="#") All
+							a.activity__link(href="#") Withdrawals
+							a.activity__link(href="#") Deposit
+							a.activity__link(href="#") Bank Withdraws
+						.activity__select
+							.activity__icon
+								+i('calendar')
+							select.select
+								option All Time
+								option This past week
+								option This Past Month
+								option This Past Year
+					.activity__stage.h6.mobile-hide History
+					.activity__table
+						.activity__row.activity__row_head
+							.activity__cell
+							.activity__cell TYPE
+							.activity__cell DATE
+							.activity__cell AMOUNT <span class="activity__hidden">/ DATE</span>
+							.activity__cell ADDRESS / TRANSACTION ID
+						mixin activityRow(status, src, name, price)
+							.activity__row
+								.activity__cell
+									if status
+										.activity__size
+											img(src="img/size-max.svg" alt="")
+									else
+										.activity__size
+											img(src="img/size-min.svg" alt="")
+								.activity__cell
+									.activity__company
+										.activity__logo
+											img(src=src alt="")
+										.activity__name=name
+								.activity__cell
+									.activity__date Jan 17th, 2020 10:56:41
+								.activity__cell
+									.activity__price=price
+									.activity__date.activity__hidden Jan 17th, 2020 10:56:41
+								.activity__cell
+									.activity__address Zja7BQo782QanKv4so
+									.activity__transaction JHAEIF6374NXY3484748949
+						+activityRow(true, 'img/logo/bitcoin.png', 'Withdraw BTC', '0.12340000 USDT')
+						+activityRow(false, 'img/logo/logo-t.png', 'Deposited USDT', '5342.000000 USDT')
+						+activityRow(true, 'img/logo/tokenbox.png', 'Withdraw BTC', '0.12340000 USDT')
+						+activityRow(false, 'img/logo/ubex.png', 'Deposited USDT', '5342.000000 USDT')
+						+activityRow(true, 'img/logo/ripple.png', 'Withdraw BTC', '0.12340000 USDT')
+						+activityRow(true, 'img/logo/bitcoin.png', 'Withdraw BTC', '0.12340000 USDT')
+						+activityRow(false, 'img/logo/logo-t.png', 'Deposited USDT', '5342.000000 USDT')
+						+activityRow(true, 'img/logo/tokenbox.png', 'Withdraw BTC', '0.12340000 USDT')
+						+activityRow(false, 'img/logo/ubex.png', 'Deposited USDT', '5342.000000 USDT')
+						+activityRow(true, 'img/logo/ripple.png', 'Withdraw BTC', '0.12340000 USDT')
+					+more
+				.activity__sidebar
+					.activity__wrap
+						button.activity__close
+							+i('close')
+						.activity__head
+							.activity__logo
+								img(src="img/logo/bitcoin.png" alt="")
+							.activity__details
+								.activity__info Deposit USDT
+								.activity__date Jan 17th. 2020 10:56:41
+						.activity__line
+							.activity__money 5342.000
+							.activity__currency USDT
+						.activity__code Zja7BQo782QanKv4so
+						.activity__parameters
+							.activity__parameter
+								.activity__preview
+									img(src="img/check.svg" alt="")
+								.activity__box
+									.activity__category Status
+									.activity__status Complete
+							.activity__parameter
+								.activity__preview
+									img(src="img/coins-1.svg" alt="")
+								.activity__box
+									.activity__category Amount
+									.activity__value 1437.000000 USDT
+							.activity__parameter
+								.activity__preview
+									img(src="img/wallet.svg" alt="")
+								.activity__box
+									.activity__category Address 
+									.activity__value Zja7BQo782QanKv4so
+							.activity__parameter
+								.activity__preview
+									img(src="img/cheque.svg" alt="")
+								.activity__box
+									.activity__category Transaction ID
+									.activity__value JHAEIF6374NXY3484748949
+
+
+
+
+
+
+						
+
+
+
+
+
+				

@@ -1,0 +1,101 @@
+.page
+	overflow: hidden
+	&__content
+		display: flex
+		flex-direction: column
+		min-height: 100vh
+		padding-left: 255px
+		transition: padding .2s
+		+r(1179)
+			padding-left: 96px
+		+t
+			padding-left: 0
+			transition: transform .2s  
+	&__container
+		padding: 0 64px 64px 
+		+x
+			padding: 0 48px 64px
+		+d
+			padding: 0 64px 64px
+		+m
+			padding: 0 16px 32px
+		&_exchange
+			+m
+				padding-bottom: 0 
+	&__row
+		display: flex
+		flex-grow: 1
+		+w
+			padding: 0 64px 64px 
+		+x
+			padding: 0 48px 64px
+		+d
+			display: block
+			padding: 0 64px 64px 
+		+m
+			padding: 0 16px 32px 
+	&__col
+		padding: 0 64px 64px 
+		+w
+			padding: 0 
+		&:first-child
+			flex: 0 0 calc(100% - 426px)
+			max-width: calc(100% - 426px)
+			+w
+				flex: 0 0 calc(100% - 290px)
+				max-width: calc(100% - 290px)
+				padding-right: 64px
+			+x
+				padding-right: 48px
+			+d
+				max-width: 100%
+				margin-bottom: 64px
+				padding: 0
+			+m
+				margin-bottom: 42px
+		&:nth-child(2)
+			flex: 0 0 426px
+			width: 426px
+			border-left: 1px solid $gray-light 
+			+w
+				flex: 0 0 290px
+				width: 290px
+				border: none 
+			+d
+				width: 100% 
+		&_pt100
+			padding-top: 100px
+		&_pt198
+			padding-top: 198px
+	&__head
+		margin-top: -80px
+		margin-bottom: 32px
+		+t
+			margin-top: 0
+		+m
+			margin-bottom: 24px
+	&__category
+		+m
+			font-size: 18px
+	&__title
+		+m
+			font-size: 32px
+	&__col > &__title
+		margin-bottom: 32px 
+	&.wide &__content,
+	&.full &__content
+		padding-left: 96px
+		+t
+			padding: 0
+	&.full.wide &__content
+		padding-left: 96px
+		+t
+			padding: 0
+	&.toggle &__content
+		+t
+			transform: translateX(255px)
+
++dark
+	.page
+		&__col:nth-child(2)
+			border-color: $dark-border 

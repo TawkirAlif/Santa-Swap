@@ -1,0 +1,195 @@
+.card
+	position: relative
+	&__next
+		position: absolute
+		top: 16px
+		right: 16px
+		z-index: 3
+		width: 24px
+		height: 24px
+		border-radius: 50%
+		background: $white
+		box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.146143)
+		.icon
+			font-size: 10px
+			fill: $black
+			transition: fill .2s
+		&:hover .icon
+			fill: $blue
+	&__chart
+		&_total-balance
+			height: 220px
+			margin-top: -15px
+			+d
+				margin-top: 0
+			+m
+				margin-top: -15px
+	&__inner
+		+d
+			text-align: left
+		+m
+			text-align: center
+	&__inner &__title
+		margin-bottom: 16px
+	&__currency
+		display: inline-block
+		margin-bottom: 3px
+		padding: 0 11px
+		border-radius: 13px 
+		background: $orange
+		font-size: 16px
+		font-weight: 600 
+		line-height: 26px  
+		color: $white
+	&__inner &__price
+		margin-bottom: 32px
+		+d
+			margin-bottom: 24px
+	&__head
+		display: flex
+		justify-content: space-between
+		align-items: center
+		margin-bottom: 24px
+		&_mb32
+			margin-bottom: 32px
+	&__item
+		display: flex
+		padding-top: 20px
+	&__icon,
+	&__arrow
+		display: flex
+		justify-content: center
+		align-items: center
+		flex-shrink: 0 
+		width: 40px
+		height: 40px
+		margin-right: 15px
+	&__icon
+		border-radius: 50%
+	&__arrow .icon
+		transition: fill .2s 
+	&__details
+		flex-grow: 1
+		padding-bottom: 20px
+		border-bottom: 1px solid $gray-light 
+	&__line
+		display: flex
+		justify-content: space-between
+		align-items: center
+		margin-bottom: 4px
+	&__category
+		+title
+	&__date
+		+caption-sm
+		color: $gray
+	&__status
+		margin-bottom: 8px
+		+caption-sm
+	&__item &__price
+		font-weight: 600
+	&__view
+		display: inline-flex
+		align-items: center
+		margin-top: 26px
+		font-weight: 600
+		color: $blue
+		.icon
+			fill: $black
+		&:hover .icon
+			fill: $blue
+	&__filters
+		display: flex
+		flex-direction: column
+		align-items: flex-start
+		margin-bottom: 32px
+		.checkbox
+			+nl
+				margin-bottom: 20px
+	&__btns
+		display: flex
+		margin: 0 -4px
+		&_mt40
+			margin-top: 40px
+	&__btns &__btn
+		flex-grow: 1
+		min-width: auto
+		margin: 0 4px
+		padding: 0
+	&__reset
+		display: block
+		margin-top: 24px
+		border-top: 1px solid $gray-light 
+		padding-top: 24px
+		line-height: (20/14)
+		font-weight: 700 
+		color: $gray
+		transition: color .2s
+		&:hover
+			color: $blue   
+	&_widget
+		padding: 32px
+		border-radius: 24px
+		background: $white 
+		+d
+			display: flex  
+		+m
+			display: block
+		&:before,
+		&:after
+			content: ""
+			position: absolute
+			border-radius: 24px  
+		&:before
+			content: ""
+			position: absolute
+			top: 8px
+			left: 8px
+			right: 8px
+			bottom: -8px
+			z-index: -1
+			border-radius: 24px
+			background: rgba($white, .5)
+		&:after 
+			top: 32px
+			right: 32px
+			left: 32px
+			bottom: -32px
+			z-index: -2
+			background: $gray-light
+			filter: blur(86.985px)
+	&_widget &__chart
+		+d
+			flex-shrink: 0
+			width: 240px
+			margin-right: 24px
+		+m
+			width: 100%
+			margin-right: 0  
+	+nl
+		margin-bottom: 98px 
+		+d
+			margin-bottom: 64px
+
++dark
+	.card
+		&__next
+			background: $dark-color
+			.icon
+				fill: $white 
+			&:hover .icon
+				fill: $blue
+		&__details
+			border-color: $dark-border
+		&__view
+			.icon
+				fill: $white
+			&:hover .icon
+				fill: $blue 
+		&__reset
+			border-color: $dark-border 
+		&_widget
+			background: $dark-color
+			&:before
+				background: rgba($dark-color, .5)
+			&:after
+				display: none 

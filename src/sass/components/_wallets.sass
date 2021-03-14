@@ -1,0 +1,321 @@
+.wallets
+	display: flex
+	&__container
+		flex-grow: 1
+		padding: 0 64px 64px
+		+x
+			padding: 0 48px 64px
+		+d
+			padding: 0 64px 64px
+		+m
+			padding: 0 16px 32px
+	&__sidebar
+		flex-shrink: 0
+		width: 364px
+		margin-right: -364px
+		padding: 0 64px 64px 0 
+		transition: margin .2s 
+		+w
+			width: 353px
+		+x
+			position: fixed
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			z-index: 999
+			display: flex
+			align-items: center
+			width: 100%
+			margin: 0
+			overflow: auto
+			padding: 20px
+			background: rgba($dark, .9) 
+			opacity: 0
+			visibility: hidden
+			transition: all .2s
+		+m
+			padding: 0
+			border-radius: 0   
+		&.visible
+			margin-right: 0
+			+x
+				visibility: visible
+				opacity: 1
+	&__wrapper
+		position: relative
+		margin-bottom: 68px
+		padding: 32px
+		border-radius: 24px
+		background: $white
+		+m
+			margin-bottom: 40px
+			padding: 24px   
+		&:before,
+		&:after
+			content: ""
+			position: absolute
+			border-radius: 24px 
+		&:before
+			top: 20px
+			left: 8px
+			right: 8px
+			bottom: -20px
+			z-index: -2
+			background: $gray-light
+			filter: blur(86.985px)
+		&:after
+			top: 10px
+			left: 10px
+			right: 10px
+			bottom: -10px
+			z-index: -1
+			background: rgba($white, .5) 
+	&__row
+		display: flex
+		align-items: flex-end
+		+m
+			display: block
+	&__total
+		flex-grow: 1
+		padding-right: 20px
+		+m
+			margin-bottom: 48px
+			padding: 0 
+	&__group
+		position: absolute
+		right: 32px
+		left: 640px
+		bottom: 64px
+		+x
+			position: static
+			flex-shrink: 0 
+			width: calc(50% - 12px)
+		+m
+			width: 100% 
+	&__wrapper.small &__group
+		position: static
+		flex-shrink: 0
+		width: 260px
+		+w
+			width: 200px
+		+x
+			width: calc(50% - 12px)
+	&__wrapper &__box
+		+nl
+			margin-bottom: 24px
+			+x
+				margin-bottom: 16px
+	&__wrapper &__info
+		margin-bottom: 4px
+		+caption-sm
+		color: $gray
+	&__group &__info
+		margin-bottom: 8px
+	&__progress
+		height: 12px
+		border-radius: 6px 
+	&__btns
+		position: absolute
+		top: 32px
+		right: 32px
+		display: flex
+		+x
+			display: none
+	&__wrapper.small &__btns
+		display: none
+	&__btns &__btn
+		+nl
+			margin-right: 6px
+	&__title
+		margin-bottom: 12px
+	&__flex
+		display: flex
+		align-items: center
+		margin-bottom: 8px
+	&__flex &__number
+		+w
+			font-size: 32px
+	&__currency
+		display: inline-block
+		padding: 6px 19px
+		border-radius: 16px 
+		+title
+		color: $white 
+		+nf
+			margin-left: 20px
+	&__wrapper &__currency
+		background: $orange 
+	&__inner
+		max-width: 536px
+		margin-top: 50px
+		+x
+			max-width: 100% 
+		+m
+			margin-top: 32px
+	&__wrapper.small &__inner
+		max-width: 100% 
+	&__list
+		display: flex
+		margin: -24px -12px 0
+		+m
+			display: block
+			margin: 0
+	&__item
+		display: flex
+		flex: 0 0 calc(50% - 24px)
+		width: calc(50% - 24px)
+		margin: 24px 12px 0
+		padding: 24px
+		border-radius: 16px
+		border: 1px solid $gray-light
+		+m
+			width: 100%
+			margin: 0
+			+nl
+				margin-bottom: 24px 
+	&__icon
+		margin-right: 12px
+	&__details
+		flex-grow: 1
+	&__price
+		margin-top: 2px
+		font-weight: 600
+		color: $green  
+	&__wrap
+		position: relative
+		+x
+			width: 100% 
+			max-width: 630px
+			margin: auto 
+			padding: 32px 
+			border-radius: 24px 
+			background: $white
+		+m
+			padding: 24px 16px
+			border-radius: 0 
+	&__head
+		display: flex
+		align-items: center
+		margin-bottom: 32px
+		padding-right: 30px
+		+x
+			padding-right: 50px
+	&__head &__logo
+		width: 42px
+		height: 42px
+		margin-right: 16px
+	&__head &__info
+		margin-bottom: 4px
+		+h6
+	&__company
+		+caption-lg
+		color: $gray
+	&__close 
+		position: absolute
+		top: 12px
+		right: 0
+		width: 20px
+		height: 20px
+		font-size: 0
+		+x
+			top: 26px
+			right: 24px
+			width: 48px
+			height: 48px
+			border-radius: 50%
+			box-shadow: 0 3px 10px rgba(#000, .1) 
+		+m
+			top: 22px
+			right: 10px
+			box-shadow: none  
+		.icon
+			font-size: 14px
+			transition: transform .2s
+		&:hover .icon
+			transform: rotate(90deg)
+	&__line
+		display: flex
+		align-items: center
+	&__money
+		+h3
+	&__wrap &__currency
+		background: #627EEA 
+	&__code
+		+h6
+		color: $gray
+	&__parameters
+		margin-top: 32px
+		+x
+			display: flex
+			padding: 32px 0 
+			border-width: 1px 0
+			border-style: solid
+			border-color: $gray-light
+		+m
+			display: block
+			padding: 0
+			border-width: 1px 0 0  
+	&__parameter
+		display: flex
+		padding: 32px 0
+		border-top: 1px solid $gray-light
+		+x
+			padding: 0 
+			border: none 
+		+m
+			padding: 24px 0
+			border-bottom: 1px solid $gray-light
+		&:last-child
+			padding-bottom: 0
+			+x
+				margin-left: auto
+			+m
+				padding-bottom: 24px
+	&__preview
+		display: flex
+		justify-content: center
+		align-items: center
+		flex-shrink: 0
+		width: 48px
+		height: 48px
+		margin-right: 32px
+		border-radius: 50%
+	&__parameter &__box
+		flex-grow: 1
+	&__category
+		margin-bottom: 6px
+		+caption-sm
+		color: $gray 
+	.card
+		margin-top: 48px
+		+x
+			margin-top: 32px
+
++dark
+	.wallets
+		&__wrapper
+			background: $dark-color 
+			&:before
+				display: none
+			&:after
+				top: 10px
+				left: 10px
+				right: 10px
+				bottom: -10px
+				z-index: -1
+				background: rgba($dark-color, .5) 
+		&__item
+			border-color: $dark-border
+		&__close
+			.icon
+				fill: $white
+		&__parameter
+			border-color: $dark-border
+		&__wrap
+			+x
+				background: $dark-color
+		&__parameters
+			+x
+				border-color: $dark-border 
+

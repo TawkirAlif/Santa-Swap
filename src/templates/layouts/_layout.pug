@@ -1,0 +1,224 @@
+include _mixins
+doctype html
+html(lang="en")
+	head
+		include _head
+
+	body(class=bodyClass)
+		//- check dark mode
+		script.
+			console.log(localStorage.getItem('darkMode'));
+			if (localStorage.getItem('darkMode') === "on") {
+					document.body.classList.add("dark");
+					document.addEventListener("DOMContentLoaded", function() {
+					  document.querySelector('.js-switch-theme input').checked = true;
+					});
+			}
+			
+		block content
+		//- popup settings
+		.popup.popup_settings.mfp-hide#popup-settings
+			.popup__title.h6 Account Settings
+			.popup__tabs.js-tabs
+				.popup__select.mobile-show
+					select.select.js-tabs-select
+						option Profile
+						option Referrals
+						option Password
+						option 2FA
+						option Sessions & Login History
+				.popup__nav
+					a.popup__link.js-tabs-link.active(href="#") Profile
+					a.popup__link.js-tabs-link(href="#") Referrals
+					a.popup__link.js-tabs-link(href="#") Password
+					a.popup__link.js-tabs-link(href="#") 2FA
+					a.popup__link.js-tabs-link(href="#") Sessions & Login History
+				.popup__container
+					.popup__item.js-tabs-item(style="display: block;")
+						.popup__user
+							.popup__label.popup__label_mb32 Your Avatar
+							.popup__line
+								.popup__ava
+									img.popup__pic(src="img/ava-header.png" alt="")
+								.popup__details
+									.popup__btns
+										.popup__loading
+											input.popup__file(type="file")
+											button.popup__upload Upload New
+										button.popup__btn.btn.btn_gray Delete Avatar
+									a.popup__default(href="#") Use default avatar
+						.popup__fieldset
+							.popup__row
+								.popup__field
+									.popup__label Your Full Name
+									.popup__wrap
+										input.popup__input(type="text")
+								.popup__field
+									.popup__label Display Name
+									.popup__wrap
+										input.popup__input(type="text")
+							.popup__row
+								.popup__field
+									.popup__label Email
+									.popup__wrap
+										input.popup__input(type="email")
+								.popup__field
+									.popup__label Location
+									.popup__wrap
+										input.popup__input(type="text")
+							.popup__row
+								.popup__field
+									.popup__label Deposit Assets
+									.popup__wrap
+										select.select.select_arrows.select_sm
+											option Enabled
+											option Disabled
+								.popup__field
+									.popup__label Withdraw assets
+									.popup__wrap
+										select.select.select_arrows.select_sm
+											option Enabled $1,000,000 USD/day
+											option Disable $1,000,000 USD/day
+						.popup__label Notifications
+						.popup__variants
+							label.checkbox
+								input.checkbox__input(type="checkbox" checked)
+								span.checkbox__in
+									span.checkbox__tick
+									span.checkbox__text Promotions
+							label.checkbox
+								input.checkbox__input(type="checkbox" checked)
+								span.checkbox__in
+									span.checkbox__tick
+									span.checkbox__text Exchange
+							label.checkbox
+								input.checkbox__input(type="checkbox")
+								span.checkbox__in
+									span.checkbox__tick
+									span.checkbox__text Withdrawals
+						button.popup__btn.btn.btn_blue(type="submit") Update Profile
+					.popup__item.js-tabs-item
+						.popup__invite
+							.popup__info.h6 Invite your friends to Unity Exchange and Earn 15% on Friends trading fees
+							.popup__label Your Referral Link
+							.popup__wrap
+								input.popup__input(type="text" value="https://unityexchange.design/ref?tranmautritam")
+								button.popup__copy
+									+i('copy')
+						.popup__category Total Rewards
+						.popup__flex
+							.popup__money.h3 128.256
+							.popup__currency USTD
+						.popup__parameters
+							.popup__parameter
+								.popup__head
+									.popup__text Inviter Rewards
+									.popup__text 0.00 USDT
+								.popup__body You’re earning 20% of the trading fees your referrals pay.
+							.popup__parameter
+								.popup__head
+									.popup__text Total Invited
+									.popup__text 64
+					.popup__item.js-tabs-item
+						form.popup__form
+							.popup__title.h6 Change Password
+							.popup__field.field.js-field
+								.field__label current Password
+								.field__wrap
+									input.field__input.js-field-input(type="password")
+							.popup__field.field.js-field
+								.field__label new Password
+								.field__wrap
+									input.field__input.js-field-input(type="password")
+							.popup__field.field.js-field
+								.field__label Confirm new Password
+								.field__wrap
+									input.field__input.js-field-input(type="password")
+							button.popup__btn.btn.btn_blue.btn_wide Change Password
+					.popup__item.js-tabs-item
+						.popup__box
+							.popup__title.h6 Scan Code
+							.popup__scan
+								.popup__preview
+									img(src="img/qr-code.png" alt="")
+								.popup__details
+									.popup__text If you want to turn on 2FA, use <a href="#">Google Authenticator app</a> to scan code, then enter six-digit code provided by the app to the form below.
+									button.popup__btn.btn.btn_blue Download 2FA App
+						.popup__box
+							.popup__title.h6 Enter six-digit code
+							.popup__numbers
+								.popup__number.success
+									input(type="tel" value="5")
+								.popup__number.success
+									input(type="tel" value="6")
+								.popup__number.success
+									input(type="tel" value="7")
+								.popup__number.success
+									input(type="tel" value="9")
+								.popup__number
+									input(type="tel")
+								.popup__number
+									input(type="tel")
+					.popup__item.js-tabs-item
+						.popup__box
+							.popup__title.h6 Active Sessions
+							table.popup__table
+								tr
+									th DATE/TIME
+									th DEVICE
+									th LOCATION
+									th IP ADDRESS
+									th 
+								tr
+									td 2020-12-02 07:50:18
+									td iMac Pro
+									td <span class="popup__flag">🇺🇸</span> USA 
+									td 123.45.678.987
+									td
+										button.popup__close
+											+i('close')
+						.popup__box
+							.popup__title.h6 Login History
+							table.popup__table
+								tr
+									th DATE/TIME
+									th DEVICE
+									th LOCATION
+									th IP ADDRESS
+									th 2FA
+								tr
+									td 2020-12-02 07:50:18
+									td iMac Pro
+									td <span class="popup__flag">🇻🇳</span> VN
+									td 123.45.678.987
+									td
+										+i('check')
+								tr
+									td 2020-12-02 07:50:18
+									td iPhone X
+									td <span class="popup__flag">🇺🇸</span> USA 
+									td 123.45.678.987
+									td
+										+i('check')
+								tr
+									td 2020-12-02 07:50:18
+									td iMac Pro
+									td <span class="popup__flag">🇻🇳</span> VN
+									td 123.45.678.987
+									td
+										+i('check')
+								tr
+									td 2020-12-02 07:50:18
+									td iMac Pro
+									td <span class="popup__flag">🇺🇸</span> USA 
+									td 123.45.678.987
+									td
+										+i('check')
+								tr
+									td 2020-12-02 07:50:18
+									td iMac Pro
+									td <span class="popup__flag">🇺🇸</span> USA 
+									td 123.45.678.987
+									td
+										+i('check')
+		include ./_scripts

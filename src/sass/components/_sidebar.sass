@@ -1,0 +1,383 @@
+.sidebar
+	position: fixed
+	top: 0
+	left: 0
+	bottom: 0
+	z-index: 15
+	display: flex
+	flex-direction: column
+	width: 255px
+	background: $white 
+	border-right: 1px solid $gray-light 
+	padding: 132px 20px 72px
+	transition: width .2s 
+	+d
+		padding-top: 120px
+	+r(1179)
+		width: 96px
+	+t
+		width: 255px
+		padding-bottom: 90px
+		transform: translateX(-100%)
+		transition: all .2s 
+	+m
+		padding: 94px 20px 72px 
+	&__head
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		display: flex
+		justify-content: center
+		align-items: center
+		height: 132px
+		padding-top: 12px
+		+d
+			height: 120px
+			padding: 0
+		+m
+			height: 94px
+	&__head &__close
+		display: none
+		margin-left: 8px
+		font-size: 0
+		+t
+			display: inline-block
+		.icon
+			font-size: 18px
+			fill: $black
+	&__logo
+		display: inline-block
+		margin-right: 28px
+		font-size: 0
+		+r(1179)
+			display: none
+		+t
+			display: inline-block
+	&__pic_dark
+		display: none
+	&__toggle
+		font-size: 0
+		+t
+			display: none
+		svg
+			transition: transform .2s 
+			+r(1179)
+				transform: scale(-1,1)
+	&__body
+		display: flex
+		flex-direction: column
+		overflow: auto
+		flex-grow: 1
+		-ms-overflow-style: none  // IE 10+
+		scrollbar-width: none  // Firefox
+		-webkit-overflow-scrolling: touch
+		&::-webkit-scrollbar
+			display: none
+	&__nav
+		margin-bottom: 32px
+		+m
+			margin-bottom: 16px
+	&__item
+		display: flex
+		align-items: center
+		height: 56px
+		padding: 0 20px 
+		border-radius: 12px
+		white-space: nowrap 
+		font-weight: 600
+		color: $gray 
+		transition: all .2s 
+		+r(1179)
+			padding: 0 16px
+		+t
+			padding: 0 20px  
+		+m
+			height: 52px
+		&:hover,
+		&.active
+			color: $blue
+			.icon
+				fill: $blue 
+		&.active
+			background: rgba($gray-light, .3)
+	&__icon
+		position: relative
+		display: flex
+		justify-content: center
+		align-items: center
+		flex-shrink: 0
+		width: 24px
+		height: 24px
+		font-size: 0
+		.icon
+			font-size: 22px
+			fill: $gray
+			transition: fill .2s 
+			&-wallet,
+			&-document,
+			&-discount
+				font-size: 20px
+		&:before
+			content: ""
+			position: absolute
+			top: -4px
+			right: -4px
+			width: 8px
+			height: 8px
+			background: $red
+			border-radius: 50%
+			opacity: 0
+		&.active:before
+			opacity: 1
+	&__item &__text
+		margin-left: 16px
+	&__mail
+		position: relative
+		margin-top: auto
+		padding: 24px
+		border-radius: 24px
+		background: $gradient-green
+		+r(1179)
+			display: none
+		+t
+			display: none
+	&__info
+		max-width: 128px
+		+h5
+		color: $white 
+	&__mail &__close
+		position: absolute
+		top: 16px
+		right: 16px
+		width: 24px
+		height: 24px
+		border-radius: 50%
+		background: $white
+		font-size: 0
+		.icon
+			font-size: 9px
+			fill: $black
+			transition: transform .2s
+		&:hover .icon
+			transform: rotate(90deg)
+	&__btn
+		margin-top: 12px
+	&__search
+		display: none
+		position: relative
+		margin-top: auto
+		flex-shrink: 0
+		+t
+			display: block
+	&__input
+		width: 100% 
+		height: 56px
+		padding: 0 56px 0 24px
+		background: rgba($gray-light, .3)
+		border: none 
+		border-radius: 12px 
+		+fi
+		font-size: 14px
+		font-weight: 600 
+		color: $black 
+		+placeholder
+			color: $gray 
+	&__start
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		width: 24px
+		font-size: 0
+		+t
+			width: 56px
+		.icon
+			font-size: 20px
+			fill: $black
+			transition: fill .2s
+		&:hover .icon
+			fill: $blue
+	&__bottom
+		position: absolute
+		left: 0
+		right: 0
+		bottom: 0
+		display: flex
+		align-items: center
+		height: 72px
+		padding: 0 20px
+		transition: padding .2s 
+		+r(1179)
+			padding: 0 12px
+		+t
+			padding: 0 20px  
+	&__user
+		display: none
+		position: absolute
+		top: 50%
+		right: 20px
+		transform: translateY(-50%)
+		+m
+			display: inline-block
+		img
+			width: 36px
+	.switch__in
+		+r(1179)
+			padding: 0
+		+t
+			padding-left: 46px
+	.switch__icon
+		+r(1179)
+			left: 46px
+		+t
+			left: 0
+		.icon
+			+r(1179)
+				font-size: 16px
+			+t
+				font-size: 24px
+	.switch__input:checked + .switch__in .switch__icon
+		+r(1179)
+			left: 10px
+		+t
+			left: 0
+	&.active,
+	&.small
+		width: 96px
+		transition: all .2s
+	&.active
+		+r(1179)
+			width: 255px  
+			box-shadow: 5px 0 40px rgba(#000, .1)
+		+t
+			transform: translateX(0)
+			box-shadow: none 
+	&.small.active
+		width: 255px
+		box-shadow: 5px 0 40px rgba(#000, .1)
+		+t
+			box-shadow: none 
+	&.active &__logo,
+	&.small &__logo
+		display: none
+	&.active &__logo
+		+r(1179)
+			display: inline-block
+	&.small.active &__logo
+		display: inline-block
+	.active &__toggle svg,
+	&.small &__toggle svg
+		transform: scale(-1, -1)
+	.active &__toggle svg
+		+r(1179)
+			transform: scale(1)
+	&.small.active &__toggle svg
+		transform: scale(1)
+	&.active &__item,
+	&.small &__item
+		padding: 0 16px
+	&.active &__item 
+		+r(1179)
+			padding: 0 20px 
+	&.small.active &__item
+		padding: 0 20px 
+	&.active &__mail,
+	&.small &__mail
+		display: none
+	&.small.active &__mail
+		display: block
+		+d
+			display: none
+	&.active &__bottom,
+	&.small &__bottom
+		padding: 0 12px 
+	&.active &__bottom
+		+r(1179)
+			padding: 0 20px 
+	&.small.active &__bottom
+		padding: 0 20px 
+	&.active .switch__in,
+	&.small .switch__in
+		padding: 0
+	&.active .switch__in
+		+r(1179)
+			padding-left: 46px
+	&.small.active .switch__in
+		padding-left: 46px
+	&.active,
+	&.small
+		.switch__icon
+			left: 46px
+			.icon
+				font-size: 16px
+		.switch__input:checked + .switch__in .switch__icon
+			left: 10px
+	&.active
+		.switch__icon
+			+r(1179)
+				left: 0
+			.icon
+				+r(1179)
+					font-size: 24px
+		.switch__input:checked + .switch__in .switch__icon
+			+r(1179)
+				left: 0
+	&.small.active
+		.switch__icon
+			left: 0
+			.icon
+				font-size: 24px
+		.switch__input:checked + .switch__in .switch__icon
+			left: 0
+		
+
++dark
+	.sidebar
+		background: $dark-bg
+		border-color: $dark-border
+		&__pic_light
+			display: none
+		&__pic_dark
+			display: inline-block 
+		&__toggle
+			svg
+				& > path
+					stroke: $white
+				g
+					stroke: rgba($gray, .7)
+					path:nth-child(2)
+						opacity: .6 
+		&__item
+			&:hover
+				color: $white
+				.icon
+					fill: $white
+			&.active
+				background: $dark-active
+				color: $blue
+				.icon
+					fill: $blue
+		&__mail .sidebar__close
+			background: $dark-color
+			.icon
+				fill: $white 
+		&__mail .sidebar__btn
+			background: $white
+			color: $black
+			&:hover
+				background: $gray-light 
+		&__head .sidebar__close
+			.icon
+				fill: $white
+		&__input
+			background: rgba($dark-active, .3)
+			color: $white 
+		&__start
+			.icon
+				fill: $white
+
+
+	
+				
+

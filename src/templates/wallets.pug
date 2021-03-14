@@ -1,0 +1,211 @@
+---
+title: Wallets
+---
+extends layouts/_layout
+block content
+	.page
+		+sidebar('', '', '', 'active')
+		.page__content
+			+header
+			.wallets
+				.wallets__container
+					.wallets__wrapper
+						.wallets__row
+							.wallets__total
+								.wallets__title.h6 Total Balance
+								.wallets__flex
+									.wallets__number.h3 0.26231428
+									.wallets__currency BTC
+								.wallets__price.h5.color-gray 3,700.96 USD
+							.wallets__group
+								.wallets__box
+									.wallets__info Exchange Balance
+									.wallets__progress.bg-purple(style="width: 65%;")
+								.wallets__box
+									.wallets__info Asset Balances
+									.wallets__progress.bg-blue(style="width: 100%;")
+						.wallets__inner
+							.wallets__list
+								.wallets__item
+									.wallets__icon
+										img(src="img/circle-purple.svg" alt="")
+									.wallets__details
+										.wallets__info Exchange Balance
+										.wallets__number.h6 0.256567545 BTC
+										.wallets__price 3,700.96 USD
+								.wallets__item
+									.wallets__icon
+										img(src="img/circle-blue.svg" alt="")
+									.wallets__details
+										.wallets__info Asset Balances
+										.wallets__number.h6 0.256567545 BTC
+										.wallets__price 3,700.96 USD
+						.wallets__btns
+							button.wallets__btn.btn.btn_blue
+								+i('withdraw')
+								span.btn__text Withdraw
+							button.wallets__btn.btn.btn_border
+								+i('deposit')
+								span.btn__text Deposit
+					.balances
+						.balances__title.h6 Asset Balances
+						.balances__table
+							.balances__row.balances__row_head
+								.balances__cell
+								.balances__cell ASSET
+								.balances__cell symbol
+								.balances__cell 24H MARKET
+								.balances__cell ON ORDERS
+								.balances__cell AVAILABLE BALANCE
+								.balances__cell TOTAL BALANCE
+							mixin balancesRow(src, status)
+								.balances__row
+									.balances__cell
+										button.favorite
+									.balances__cell
+										.balances__company
+											.balances__logo
+												img(src=src)
+											.balances__text Bitcoin
+									.balances__cell BTC
+									.balances__cell
+										if status
+											.status.positive +2.05%
+										else
+											.status.negative -2.73%
+									.balances__cell
+										.balances__number 19,266.6454898
+										.balances__price $2,134.325
+									.balances__cell
+										.balances__number 357,466,449,337
+										.balances__price $2,134.325
+									.balances__cell
+										.balances__number $49,046,886,271
+										.balances__price $2,134.325
+							+balancesRow('img/logo/bitcoin.png', true)
+							+balancesRow('img/logo/ethereum.png', false)
+							+balancesRow('img/logo/steem.png', true)
+							+balancesRow('img/logo/tokenbox.png', false)
+							+balancesRow('img/logo/bitcoin.png', true)
+							+balancesRow('img/logo/ethereum.png', false)
+							+balancesRow('img/logo/steem.png', true)
+							+balancesRow('img/logo/tokenbox.png', false)
+						.balances__btns
+							button.balances__btn.btn.btn_blue Load more
+				.wallets__sidebar
+					.wallets__wrap
+						button.wallets__close
+							+i('close')
+						.wallets__head
+							.wallets__logo
+								img(src="img/logo/ethereum.png" alt="")
+							.wallets__details
+								.wallets__info ETH Balance
+								.wallets__company Ethereum
+						.wallets__body
+							.wallets__line
+								.wallets__money 24.1236
+								.wallets__currency ETH
+							.wallets__code 3,700.96 USD
+							.wallets__parameters
+								.wallets__parameter
+									.wallets__preview.bg-purple
+										img(src="img/bitcoin.svg" alt="")
+									.wallets__box
+										.wallets__category Trading account
+										.wallets__number.h6 0.256567545 BTC
+										.wallets__price 3,700.96 USD
+								.wallets__parameter
+									.wallets__preview.bg-blue
+										img(src="img/hand-coin.svg" alt="")
+									.wallets__box
+										.wallets__category Total holdings
+										.wallets__number.h6 0.256567545 BTC
+										.wallets__price 3,700.96 USD
+							.card
+								.card__head
+									.card__title.h6 24h Markets
+									+dropdown('24h Markets', '16h Markets', '8h Markets', '4h Markets')
+								.widgets
+									mixin widgetsBox(category, info, status, price, idName)
+										.widgets__box
+											.widgets__top
+												.widgets__company
+													.widgets__details
+														.widgets__category=category 
+														.widgets__info=info 
+												.widgets__group
+													if status
+														.status.positive +2.05%
+													else
+														.status.negative -2.73%
+													.widgets__price=price 
+											.widgets__chart
+												div(id=idName)
+									+widgetsBox('Ethereum', 'ETH', true, '18,245.4 USD', 'spark-1')
+								.card__btns.card__btns_mt40
+									button.card__btn.btn.btn_blue
+										+i('withdraw')
+										span.btn__text Withdraw
+									button.card__btn.btn.btn_border
+										+i('deposit')
+										span.btn__text Deposit
+						.operations
+							form.operations__form
+								.operations__field.field.js-field
+									.field__label ADDRESS
+										+i('info-square')
+									.field__wrap
+										input.field__input.js-field-input(type="text")
+								.operations__balance
+									.operations__label AVAILABLE BALANCE
+									.operations__counter 0.12366588 ETH
+									.operations__price $10,224.546 USD
+								.operations__action
+									.operations__field.field.js-field
+										.field__label AMOUNT TO WITHDRAW
+											span.field__max Max Amount
+										.field__wrap
+											input.field__input.js-field-input(type="tel")
+									.operations__note $1,000,000.00 daily withdrawal limit.
+								.operations__field.field.js-field
+									.field__label TRANSACTION FEE
+										+i('info-square')
+									.field__wrap
+										input.field__input.js-field-input(type="text")
+								.operations__field.field.js-field
+									.field__label TOTAL
+									.field__wrap
+										input.field__input.js-field-input(type="text")
+								button.operations__btn.btn.btn_blue.btn_wide Withdraw
+							.operations__wrap
+								.operations__item
+									.operations__flex
+										.operations__title Total Balance
+										.operations__box
+											.operations__counter 24.1236
+											.operations__price 3,700.96 USD
+								.operations__item
+									.operations__title Memo
+									.operations__text Failure to use the Memomay result in the loss of your deposit.
+									.operations__code
+										input.operations__input(type="text" value="987456321789654123")
+										button.operations__copy
+											+i('copy')
+									.operations__preview
+										img(src="img/qr-code.png" alt="")
+								.operations__item
+									.operations__title Address
+									.operations__text <strong>Only send ETH to this address.</strong> Sending any other asset to this address may result in the loss of your deposit!
+									.operations__code
+										input.operations__input(type="text" value="KJ65FJEOW874KUSH11KDA")
+										button.operations__copy
+											+i('copy')
+									.operations__preview
+										img(src="img/qr-code.png" alt="")
+								.operations__info <a href="#">Ethereum</a> deposits are available after 2 network confirmations.
+
+
+
+
+

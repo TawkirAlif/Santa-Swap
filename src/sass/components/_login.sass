@@ -1,0 +1,189 @@
+.login
+	&__row
+		display: flex
+		min-height: 100vh
+		overflow: hidden 
+		+t
+			justify-content: center
+			align-items: center
+			padding: 24px 
+		+m
+			display: block
+	&__col
+		padding: 80px 
+		+d
+			padding: 80px 48px 
+		+t
+			padding: 0
+		&:first-child
+			position: relative
+			flex: 0 0 44%
+			width: 44%
+			background: $purple 
+			color: $white 
+			+d
+				flex: 0 0 40%
+				width: 40%
+			+t
+				display: none
+		&:nth-child(2)
+			flex: 0 0 56%
+			width: 56%
+			align-self: center
+			+d
+				flex: 0 0 60%
+				width: 60%
+			+t
+				flex: 0 0 500px
+				width: 500px
+			+m
+				width: 100% 
+	&__logo
+		display: inline-block
+		margin-bottom: 25px
+		img
+			+t
+				width: 60px
+			+m
+				width: 40px
+	&__col:nth-child(2) &__logo
+		display: none
+		+t
+			display: inline-block
+	&__title
+		margin-bottom: 16px
+	&__preview
+		position: absolute
+		top: 270px
+		left: -370px
+		width: 1380px
+		pointer-events: none
+		+d
+			left: -130%
+		+t
+			display: none
+		img
+			width: 100%
+	&__form
+		position: relative
+		z-index: 3
+		max-width: 412px
+		margin: auto
+		+t
+			max-width: 100% 
+	&__stage
+		margin-bottom: 48px
+	&__field
+		+nl
+			margin-bottom: 16px
+	&__links
+		+nl
+			margin-bottom: 30px
+	&__link
+		display: inline-flex
+		align-items: center
+		font-size: 13px
+		font-weight: 700
+		color: $blue
+		transition: color .2s   
+		.icon
+			margin-right: 12px 
+			transition: fill .2s 
+		&:hover
+			color: $black
+	&__verify
+		position: relative
+		display: flex
+		justify-content: center
+		align-items: center
+		width: 100%
+		height: 48px
+		margin-bottom: 40px
+		border-radius: 12px
+		border: 2px solid $gray-light
+		font-weight: 600
+		color: $black
+		transition: all .2s 
+		+m
+			margin-bottom: 24px
+		.icon
+			margin-left: 9px
+			transition: fill .2s 
+		&:hover
+			background: $gray-light 
+		&.success
+			border-color: $green
+			background: rgba($green, .1)
+			color: $green
+			.icon
+				fill: $green
+	&__status
+		position: absolute
+		top: 50%
+		left: 8px
+		width: 32px
+		height: 32px
+		transform: translateY(-50%)
+		border-radius: 50%
+		border: 1px solid $blue
+		transition: all .2s 
+		&:before
+			content: ""
+			position: absolute
+			top: 50%
+			left: 50%
+			width: 12px
+			height: 12px
+			transform: translate(-50%,-50%)
+			background: $blue
+			border-radius: 50%
+	&__verify.success &__status
+		border-color: $green
+		background: $green url("data:image/svg+xml,%3Csvg width='16' height='14' viewBox='0 0 16 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.6 8.60001L2.4 5.40001L0 7.80001L5.6 13.4L16 3.00001L13.6 0.600006L5.6 8.60001Z' fill='%23ffffff'/%3E%3C/svg%3E%0A") no-repeat 50% 50% / 16px auto
+		&:before
+			display: none
+	&__flex
+		display: flex
+		justify-content: center
+		align-items: center
+		margin-top: 16px
+	&__text
+		font-size: 13px
+		font-weight: 700 
+	&__flex &__text
+		margin-right: 12px
+	&__note
+		margin-bottom: 32px
+		font-size: 12px
+		font-weight: 500
+		line-height: (16/12)
+		color: $gray 
+		+m
+			margin-bottom: 24px
+		a
+			color: $blue
+			&:hover
+				text-decoration: underline   
+
++dark
+	.login
+		&__link 
+			.icon
+				fill: $white 
+			&:hover 
+				color: $blue 
+				.icon
+					fill: $blue
+		&__verify
+			border-color: $dark-border
+			color: $white
+			.icon
+				fill: $white
+			&:hover
+				border-color: transparent
+				background: $dark-border
+		&__verify.success
+			border-color: $green
+			color: $green
+			.icon
+				fill: $green  

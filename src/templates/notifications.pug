@@ -1,0 +1,123 @@
+---
+title: Notifications
+---
+extends layouts/_layout
+block content
+	.page
+		+sidebar('', '', '', '', '', '', 'active')
+		.page__content
+			+header('header_border', true)
+			.page__row
+				.page__col
+					.page__head
+						.page__category.h5 Unity Exchange
+						.page__title.h2 Notifications
+					.notifications
+						.notifications__tags.mobile-hide
+							a.notifications__link.active(href="#") All
+							a.notifications__link(href="#") Exchange
+							a.notifications__link(href="#") Promotions
+						.notifications__sorting
+							.notifications__select.mobile-show
+								select.select
+									option All
+									option Exchange
+									option Promotions
+							.notifications__select
+								select.select
+									option Recent Notification
+									option All Notification
+							form.notifications__search
+								input.notifications__input(type="text" placeholder="Search")
+								button.notifications__start
+									+i('search')
+						.notifications__container
+							.notifications__list
+								mixin item(classItem, classBg, src, title, time, text)
+									.notifications__item(class=classItem)
+										.notifications__icon(class=classBg)
+											img(src=src alt="")
+										.notifications__details
+											.notifications__head
+												.notifications__title=title
+												.notifications__time=time
+											.notifications__body
+												.notifications__text=text
+												.notifications__status.bg-blue-light
+												+dropdown('Mark as read', 'Remove this notification', 'Follow this news', 'Hide this notification')
+								+item('', 'bg-green-gradient', 'img/paper.svg', 'Wrapped Bitcoin is now listed on Unity Exchange', '24m ago', 'With our newest listing, we’re welcoming Wrapped Bitcoin (wBTC) to our DeFi Innovation Zone! You can now deposit…')
+								+item('', 'bg-purple-gradient', 'img/pig.svg', 'Airdrop BCHA - 0.25118470 Your airdrop for Nov 15, 2020.', '35m ago', 'Airdrop BCHA - 0.25118470 Your airdrop for Nov 15, 2020 - Nov 15th, 2020 18:44:27')
+								+item('', 'bg-green-gradient', 'img/paper.svg', 'CyberVeinToken is Now Available on Unity Exchange', '1d ago', 'With our newest listing, we’re welcoming Wrapped Bitcoin (wBTC) to our DeFi Innovation Zone! You can now deposit…')
+								+item('disabled', 'bg-green-gradient', 'img/paper.svg', 'Inflation STR Amount 2.44273762', '1d ago', 'Your Stellar inflation reward for the week of Oct 1, 2019. Inflation STR - Oct 1st, 2019 07:05:16 - HRZJSYA3563')
+								+item('', 'bg-orange-gradient', 'img/coins.svg', 'Unification is Now Available on Unity Exchange', '1 week ago', 'With our newest listing, we’re welcoming Wrapped Bitcoin (wBTC) to our DeFi Innovation Zone! You can now deposit…')
+								+item('', 'bg-pink-gradient', 'img/stock-market.svg', 'Inflation STR Amount 2.44273762', '1 week ago', 'With our newest listing, we’re welcoming Wrapped Bitcoin (wBTC) to our DeFi Innovation Zone! You can now deposit…')
+								+item('', 'bg-purple-gradient', 'img/pig.svg', 'Inflation BTC Amount 0.14427376254676', '1 week ago', 'With our newest listing, we’re welcoming Wrapped Bitcoin (wBTC) to our DeFi Innovation Zone! You can now deposit…')
+							+more
+				.page__col.page__col_pt100
+					.card.card_widget.desktop-hide
+						.card__head.card__head_mb32
+							.card__title.h6 Filter
+						.card__filters
+							label.checkbox
+								input.checkbox__input(type="checkbox")
+								span.checkbox__in
+									span.checkbox__tick
+									span.checkbox__text Prices
+							label.checkbox
+								input.checkbox__input(type="checkbox" checked)
+								span.checkbox__in
+									span.checkbox__tick
+									span.checkbox__text Withdrawals
+							label.checkbox
+								input.checkbox__input(type="checkbox" checked)
+								span.checkbox__in
+									span.checkbox__tick
+									span.checkbox__text Deposit
+							label.checkbox
+								input.checkbox__input(type="checkbox" checked)
+								span.checkbox__in
+									span.checkbox__tick
+									span.checkbox__text Promotion
+							label.checkbox
+								input.checkbox__input(type="checkbox")
+								span.checkbox__in
+									span.checkbox__tick
+									span.checkbox__text Settings
+							label.checkbox
+								input.checkbox__input(type="checkbox")
+								span.checkbox__in
+									span.checkbox__tick
+									span.checkbox__text Support
+						.card__btns
+							button.card__btn.btn.btn_blue Unselect All
+							button.card__btn.btn.btn_transparent Select All
+						a.card__reset(href="#") Reset all filters
+					.card
+						.card__head.card__head_mb32
+							.card__title.h6 Top Gainers
+							+dropdown('Top Gainers', 'New Gainers', 'Old Gainers', 'All Gainers')
+						.widgets
+							.widgets__wrap
+								mixin widgetsBox(img, category, info, status, price, idName)
+									.widgets__box
+										.widgets__top
+											.widgets__company
+												.widgets__logo
+													img(src=img alt="")
+												.widgets__details
+													.widgets__category=category 
+													.widgets__info=info 
+											.widgets__group
+												if status
+													.status.positive +2.05%
+												else
+													.status.negative -2.73%
+												.widgets__price=price 
+										.widgets__chart
+											div(id=idName)
+										button.widgets__favorite
+											+i('star')
+								+widgetsBox('img/logo/ethereum.png', 'Ethereum', 'ETH', true, '18,245.4 USD', 'spark-1')
+								+widgetsBox('img/logo/ripple.png', 'Ripple', 'XRP', false, '0.56687654', 'spark-5')
+								+widgetsBox('img/logo/ubex.png', 'Ubex', 'UBW', true, '6,315.4 USD', 'spark-3')
+						

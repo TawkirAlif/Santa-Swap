@@ -1,0 +1,115 @@
+.prices
+	&__head
+		display: flex
+		justify-content: space-between
+		align-items: center
+		margin-bottom: 48px
+		+m
+			margin-bottom: 24px
+		.select
+			+m
+				min-width: 164px
+				margin-left: 20px
+	&__title
+		+m
+			font-size: 18px
+			font-weight: 500 
+	&__container
+		+t
+			display: flex
+			margin: 0 -64px 
+			overflow: auto
+			-ms-overflow-style: none
+			scrollbar-width: none
+			-webkit-overflow-scrolling: touch
+			&::-webkit-scrollbar
+				display: none
+			&:before,
+			&:after
+				content: ""
+				flex-shrink: 0
+				width: 64px
+				height: 1px 
+		+m
+			margin: 0 -16px
+			&:before,
+			&:after
+				width: 16px 
+	&__table
+		display: table
+		width: 100%
+		+t
+			width: 860px
+	&__row
+		display: table-row
+		border-radius: 12px 
+		cursor: pointer
+		color: $black 
+		transition: all .2s
+		-webkit-tap-highlight-color: rgba(0,0,0,0)
+		&:nth-child(2n+1)
+			background: rgba($gray-light, .2) 
+		&:not(.prices__row_head):hover
+			background: none 
+			box-shadow: 0 3px 10px rgba(#000, .07)
+			+t
+				box-shadow: none 
+	&__cell
+		display: table-cell
+		vertical-align: middle
+		height: 72px
+		padding-left: 16px
+		font-weight: 600 
+		&:first-child
+			border-radius: 12px 0 0 12px
+			font-size: 0
+		&:nth-child(3)
+			font-weight: 600 
+			color: $gray 
+			+x
+				display: none
+		&:last-child
+			padding-right: 16px
+			border-radius: 0 12px 12px 0
+	&__row_head &__cell
+		height: 40px
+		+chip
+		color: $gray 
+		&:first-child
+			border-radius: 8px 0 0 8px
+		&:last-child
+			border-radius: 0 8px 8px 0
+	&__company
+		display: inline-flex
+		align-items: center
+		font-weight: 600 
+	&__logo
+		flex-shrink: 0
+		width: 32px
+		height: 32px
+		margin-right: 16px
+		img
+			width: 100%
+			min-height: 100%
+			border-radius: 50%
+	&__chart
+		position: relative
+		bottom: -4px
+		width: 112px
+		height: 30px
+		.apexcharts-canvas svg
+			overflow: visible
+	&__btns
+		margin-top: 40px
+		text-align: center
+		+m
+			margin-top: 16px
+
++dark
+	.prices
+		&__row
+			color: $white 
+			&:nth-child(2n+1)
+				background: rgba($gray-light, .03) 
+			&:not(.prices__row_head):hover
+				background: $dark-color

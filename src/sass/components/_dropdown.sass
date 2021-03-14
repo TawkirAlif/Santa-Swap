@@ -1,0 +1,84 @@
+.dropdown
+	position: relative
+	font-size: 0
+	&__head
+		width: 24px
+		height: 24px
+		border-radius: 50%
+		background: $white  
+		font-size: 0
+		.icon
+			font-size: 12px
+			fill: $black
+			transition: fill .2s
+		&:hover .icon
+			fill: $blue
+	&__body
+		position: absolute
+		top: calc(100% + 13px)
+		right: -16px
+		z-index: 2
+		min-width: 192px
+		padding: 24px
+		border: 1px solid $gray-light
+		box-shadow: 0 5px 25px rgba(#000, .07)
+		border-radius: 24px
+		background: $white
+		visibility: hidden
+		opacity: 0
+		+m
+			top: calc(100% + 5px)
+			right: 0
+	&__link
+		position: relative
+		display: block
+		padding-left: 28px
+		white-space: nowrap
+		font-size: 14px
+		line-height: (24/14)
+		font-weight: 600 
+		color: $gray 
+		transition: color .2s 
+		&:before
+			content: ""
+			position: absolute
+			top: 5px
+			left: 0
+			width: 16px
+			height: 13px
+			background: url("data:image/svg+xml,%3Csvg width='16' height='14' viewBox='0 0 16 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.6 8.60001L2.4 5.40001L0 7.80001L5.6 13.4L16 3.00001L13.6 0.600006L5.6 8.60001Z' fill='%23355DFF'/%3E%3C/svg%3E%0A") no-repeat 50% 50% / 100% auto 
+			opacity: 0
+			transition: opacity .2s 
+		&:hover
+			color: $black 
+		&.selected
+			color: $blue
+			&:before
+				opacity: 1
+		+nl
+			margin-bottom: 8px
+	&.active
+		z-index: 5 
+	&.active &__head .icon
+		fill: $blue
+	&.active &__body
+		visibility: visible
+		opacity: 1
+
++dark
+	.dropdown
+		&__head
+			background: $dark-color
+			.icon
+				fill: $white
+			&:hover .icon
+				fill: $blue
+		&__body
+			border-color: $dark-border
+			background: $dark-active
+		&__link
+			&:hover
+				color: $white 
+			&.selected
+				color: $blue  
+		

@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Exchange</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#fff">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="img/site.webmanifest">
+    <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="The Premium Production-ready Crypto Asset Exchange Platform">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@ui8">
+    <meta name="twitter:title" content="Santa Swap - Exchange You Money Fast And Secure Way">
+    <meta name="twitter:description" content="The Premium Production-ready Crypto Asset Exchange Platform">
+    <meta name="twitter:creator" content="@ui8">
+    <meta name="twitter:image" content="">
+    <meta property="og:title" content="Santa Swap - Exchange You Money Fast And Secure Way">
+    <meta property="og:type" content="Article">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="The Premium Production-ready Crypto Asset Exchange Platform">
+    <meta property="og:site_name" content="Santa Swap - Exchange You Money Fast And Secure Way">
+    <meta property="fb:admins" content="132951670226590">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@500;600&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="css/app.css">
+    <script>var viewportmeta = document.querySelector('meta[name="viewport"]');
+if (viewportmeta) {
+  if (screen.width < 375) {
+    var newScale = screen.width / 375;
+    viewportmeta.content = 'width=375, minimum-scale=' + newScale + ', maximum-scale=1.0, user-scalable=no, initial-scale=' + newScale + '';
+  } else {
+    viewportmeta.content = 'width=device-width, maximum-scale=1.0, initial-scale=1.0';
+  }
+}</script>
+  </head>
+  <body>
+    <script>console.log(localStorage.getItem('darkMode'));
+if (localStorage.getItem('darkMode') === "on") {
+		document.body.classList.add("dark");
+		document.addEventListener("DOMContentLoaded", function() {
+		  document.querySelector('.js-switch-theme input').checked = true;
+		});
+}
+</script>
+    <div class="page full">
+      <div class="sidebar small">
+        <div class="sidebar__head"><a class="sidebar__logo" href="index.html"><img class="sidebar__pic sidebar__pic_light" src="img/logo.svg" alt="" /><img class="sidebar__pic sidebar__pic_dark" src="img/logo-white.svg" alt="" /></a><button class="sidebar__toggle"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d="M22 12H3" stroke="#11142d"></path>
+              <g stroke="#808191">
+                <path d="M22 4H13"></path>
+                <path opacity=".301" d="M22 20H13"></path>
+              </g>
+              <path d="M7 7l-5 5 5 5" stroke="#11142d"></path>
+            </svg></button><button class="sidebar__close"><svg class="icon icon-close">
+              <use xlink:href="img/sprite.svg#icon-close"></use>
+            </svg></button></div>
+        <div class="sidebar__body">
+          <nav class="sidebar__nav"><a class="sidebar__item" href="index.html">
+              <div class="sidebar__icon"><svg class="icon icon-home">
+                  <use xlink:href="img/sprite.svg#icon-home"></use>
+                </svg></div>
+              <div class="sidebar__text">Home</div>
+            </a><a class="sidebar__item active" href="exchange.html">
+              <div class="sidebar__icon"><svg class="icon icon-chart">
+                  <use xlink:href="img/sprite.svg#icon-chart"></use>
+                </svg></div>
+              <div class="sidebar__text">Exchange</div>
+            </a><a class="sidebar__item" href="prices.html">
+              <div class="sidebar__icon"><svg class="icon icon-document">
+                  <use xlink:href="img/sprite.svg#icon-document"></use>
+                </svg></div>
+              <div class="sidebar__text">Pools</div>
+            </a><a class="sidebar__item" href="wallets.html">
+              <div class="sidebar__icon"><svg class="icon icon-wallet">
+                  <use xlink:href="img/sprite.svg#icon-wallet"></use>
+                </svg></div>
+              <div class="sidebar__text">LP Stake</div>
+            </a><a class="sidebar__item" href="promotions.html">
+              <div class="sidebar__icon"><svg class="icon icon-discount">
+                  <use xlink:href="img/sprite.svg#icon-discount"></use>
+                </svg></div>
+              <div class="sidebar__text">Promotions</div>
+            </a><a class="sidebar__item" href="activities.html">
+              <div class="sidebar__icon"><svg class="icon icon-activity">
+                  <use xlink:href="img/sprite.svg#icon-activity"></use>
+                </svg></div>
+              <div class="sidebar__text">Stake</div>
+            </a><a class="sidebar__item" href="notifications.html">
+              <div class="sidebar__icon"><svg class="icon icon-notification">
+                  <use xlink:href="img/sprite.svg#icon-notification"></use>
+                </svg></div>
+              <div class="sidebar__text">Notifications</div>
+            </a><a class="sidebar__item js-popup-open" href="#popup-settings" data-effect="mfp-zoom-in">
+              <div class="sidebar__icon"><svg class="icon icon-settings">
+                  <use xlink:href="img/sprite.svg#icon-settings"></use>
+                </svg></div>
+              <div class="sidebar__text">Settings</div>
+            </a></nav>
+          <div class="sidebar__mail"><button class="sidebar__close"><svg class="icon icon-close">
+                <use xlink:href="img/sprite.svg#icon-close"></use>
+              </svg></button>
+            <div class="sidebar__info">Send Cryto to An Email Address</div><button class="sidebar__btn btn btn_white btn_sm">Send Now</button>
+          </div>
+          <form class="sidebar__search"><input class="sidebar__input" type="text" placeholder="Search" /><button class="sidebar__start"><svg class="icon icon-search">
+                <use xlink:href="img/sprite.svg#icon-search"></use>
+              </svg></button></form>
+        </div>
+        <div class="sidebar__bottom"><label class="switch switch_theme js-switch-theme"><input class="switch__input" type="checkbox" /><span class="switch__in"><span class="switch__box"></span><span class="switch__icon"><svg class="icon icon-theme-light">
+                  <use xlink:href="img/sprite.svg#icon-theme-light"></use>
+                </svg><svg class="icon icon-theme-dark">
+                  <use xlink:href="img/sprite.svg#icon-theme-dark"></use>
+                </svg></span></span></label><a class="sidebar__user" href="sign-in.html"><img src="img/ava-header.png" alt="" /></a></div>
+      </div>
+      <div class="page__content">
+        <div class="header">
+          <form class="header__search"><input class="header__input" type="text" placeholder="Search" /><button class="header__start"><svg class="icon icon-search">
+                <use xlink:href="img/sprite.svg#icon-search"></use>
+              </svg></button></form><a class="header__logo" href="index.html"><img src="img/logo-sm.svg" alt="" /></a>
+          <div class="header__group">
+            <div class="header__indicator">
+              <div class="header__img"><img src="img/pulse.svg" alt="" /></div>24
+            </div>
+            <div class="header__item header__item_notifications"><button class="header__head active"><svg class="icon icon-notification">
+                  <use xlink:href="img/sprite.svg#icon-notification"></use>
+                </svg></button>
+              <div class="header__body">
+                <div class="header__notifications">
+                  <div class="header__notification">
+                    <div class="header__icon"><img src="img/paper.svg" alt="" /></div>
+                    <div class="header__details">
+                      <div class="header__info">Wrapped Bitcoin is now listed on Unity Exchange</div>
+                      <div class="header__line">
+                        <div class="header__time">24m ago</div>
+                        <div class="header__status"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="header__notification">
+                    <div class="header__icon"><img src="img/paper.svg" alt="" /></div>
+                    <div class="header__details">
+                      <div class="header__info">Wrapped Bitcoin is now listed on Unity Exchange</div>
+                      <div class="header__line">
+                        <div class="header__time">24m ago</div>
+                        <div class="header__status"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="header__notification">
+                    <div class="header__icon"><img src="img/paper.svg" alt="" /></div>
+                    <div class="header__details">
+                      <div class="header__info">Wrapped Bitcoin is now listed on Unity Exchange</div>
+                      <div class="header__line">
+                        <div class="header__time">24m ago</div>
+                        <div class="header__status"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="header__notification">
+                    <div class="header__icon"><img src="img/paper.svg" alt="" /></div>
+                    <div class="header__details">
+                      <div class="header__info">Wrapped Bitcoin is now listed on Unity Exchange</div>
+                      <div class="header__line">
+                        <div class="header__time">24m ago</div>
+                        <div class="header__status"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="header__notification">
+                    <div class="header__icon"><img src="img/paper.svg" alt="" /></div>
+                    <div class="header__details">
+                      <div class="header__info">Wrapped Bitcoin is now listed on Unity Exchange</div>
+                      <div class="header__line">
+                        <div class="header__time">24m ago</div>
+                        <div class="header__status"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div><a class="header__btn btn btn_blue btn_wide" href="notifications.html">See all notifications</a>
+              </div>
+            </div>
+            <div class="header__item header__item_download"><button class="header__head"><svg class="icon icon-arrow-down-square">
+                  <use xlink:href="img/sprite.svg#icon-arrow-down-square"></use>
+                </svg></button>
+              <div class="header__body">
+                <div class="header__row">
+                  <div class="header__col">
+                    <div class="header__category">Downloads</div>
+                    <div class="header__downloads"><a class="header__download" href="#"><img src="img/app-store.svg" alt="" /></a><a class="header__download" href="#"><img src="img/google-play.svg" alt="" /></a></div>
+                  </div>
+                  <div class="header__col">
+                    <div class="header__category">Scan Code</div>
+                    <div class="header__code"><img src="img/qr-code.png" alt="" /></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="header__item header__item_lang"><button class="header__head">Eng/USD</button>
+              <div class="header__body">
+                <div class="header__lang">
+                  <div class="header__cell"><a class="header__link active" href="#"><span class="header__flag">🇺🇸</span> English</a><a class="header__link" href="#"><span class="header__flag">🇨🇳</span> 中文</a><a class="header__link" href="#"><span class="header__flag">🇪🇸</span> Española</a><a class="header__link" href="#"><span class="header__flag">🇫🇷</span> Français</a><a class="header__link" href="#"><span class="header__flag">🇻🇳</span> Tiếng Việt</a></div>
+                  <div class="header__cell"><a class="header__link active" href="#">USD</a><a class="header__link" href="#">EUR</a><a class="header__link" href="#">JPY</a><a class="header__link" href="#">BTC</a></div>
+                </div>
+              </div>
+            </div>
+          </div><a class="header__user" href="sign-in.html"><img src="img/ava-header.png" alt="" /></a><button class="header__toggle"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d="M22 12H3" stroke="#11142d"></path>
+              <g stroke="#808191">
+                <path d="M22 4H13"></path>
+                <path opacity=".301" d="M22 20H13"></path>
+              </g>
+              <path d="M7 7l-5 5 5 5" stroke="#11142d"></path>
+            </svg></button>
+        </div>
+        <div class="page__container page__container_exchange">
+          <div class="exchange">
+            <div class="exchange__top">
+              <div class="exchange__cell">
+                <div class="exchange__company">
+                  <div class="exchange__head">
+                    <div class="exchange__logo"><img src="img/logo/bitcoin.png" alt=""></div>
+                    <div class="exchange__details">
+                      <div class="exchange__currency">BTC/USDT</div>
+                      <div class="exchange__info">Bitcoin</div>
+                    </div>
+                    <div class="exchange__arrow"><svg class="icon icon-arrow-down">
+                        <use xlink:href="img/sprite.svg#icon-arrow-down"></use>
+                      </svg></div>
+                  </div>
+                  <div class="exchange__body"><a class="exchange__item" href="#">
+                      <div class="exchange__logo"><img src="img/logo/bitcoin.png" alt=""></div>
+                      <div class="exchange__details">
+                        <div class="exchange__currency">BTC/USDT</div>
+                        <div class="exchange__info">Bitcoin</div>
+                      </div>
+                    </a><a class="exchange__item" href="#">
+                      <div class="exchange__logo"><img src="img/logo/ethereum.png" alt=""></div>
+                      <div class="exchange__details">
+                        <div class="exchange__currency">BTC/USDT</div>
+                        <div class="exchange__info">Ethereum</div>
+                      </div>
+                    </a><a class="exchange__item" href="#">
+                      <div class="exchange__logo"><img src="img/logo/ripple.png" alt=""></div>
+                      <div class="exchange__details">
+                        <div class="exchange__currency">BTC/USDT</div>
+                        <div class="exchange__info">Ripple</div>
+                      </div>
+                    </a></div>
+                </div>
+              </div>
+              <div class="exchange__cell">
+                <div class="exchange__info">24h Change</div>
+                <div class="status positive">0.44%</div>
+              </div>
+              <div class="exchange__cell">
+                <div class="exchange__info">Last Pricea</div>
+                <div class="exchange__price">18372.595198 USDT</div>
+              </div>
+              <div class="exchange__cell">
+                <div class="exchange__info">24h Low</div>
+                <div class="exchange__price">18042.595198 USDT</div>
+              </div>
+              <div class="exchange__cell">
+                <div class="exchange__info">24h High</div>
+                <div class="exchange__price">18589.595198 USDT</div>
+              </div>
+              <div class="exchange__cell">
+                <div class="exchange__info">Volume</div>
+                <div class="exchange__price">38645464.476 USDT</div>
+              </div>
+            </div>
+            <div class="exchange__row">
+              <div class="exchange__container">
+                <div class="market">
+                  <div class="market__tabs js-tabs">
+                    <div class="market__head">
+                      <div class="market__menu"><a class="market__link js-tabs-link active" href="#">Price Chart</a><a class="market__link js-tabs-link" href="#">Deep Chart</a></div>
+                      <div class="market__group">
+                        <div class="market__actions"><a class="market__action" href="#"><svg class="icon icon-time-clock">
+                              <use xlink:href="img/sprite.svg#icon-time-clock"></use>
+                            </svg><span>30m</span></a><a class="market__action" href="#"><svg class="icon icon-ranking">
+                              <use xlink:href="img/sprite.svg#icon-ranking"></use>
+                            </svg><span>Indicator</span></a><a class="market__action" href="#"><svg class="icon icon-arrow-up-right-square">
+                              <use xlink:href="img/sprite.svg#icon-arrow-up-right-square"></use>
+                            </svg></a></div>
+                      </div>
+                    </div>
+                    <div class="market__body">
+                      <div class="market__container">
+                        <div class="market__item js-tabs-item" style="display: block;">
+                          <div class="market__legend">
+                            <div class="market__variant">BTC/USDT</div>
+                            <div class="market__variant">O <span class="negative">18432.3204898</span></div>
+                            <div class="market__variant">H <span class="negative">18432.3204898</span></div>
+                            <div class="market__variant">L <span class="negative">18432.3204898</span></div>
+                            <div class="market__variant">C <span class="negative">18432.3204898</span></div>
+                          </div>
+                          <div class="market__chart market__chart_price">
+                            <div id="chart-exhcange-price"></div>
+                          </div>
+                        </div>
+                        <div class="market__item js-tabs-item">
+                          <div class="market__legend">
+                            <div class="market__variant">BTC/USDT</div>
+                            <div class="market__variant">O <span class="positive">18432.3204898</span></div>
+                            <div class="market__variant">H <span class="positive">18432.3204898</span></div>
+                            <div class="market__variant">L <span class="positive">18432.3204898</span></div>
+                            <div class="market__variant">C <span class="positive">18432.3204898</span></div>
+                          </div>
+                          <div class="market__chart market__chart_deep">
+                            <div id="chart-exhcange-deep"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="market__transactions">
+                    <div class="market__top js-tabs">
+                      <div class="market__menu mobile-hide"><a class="market__link js-tabs-link active" href="#">Price Chart</a><a class="market__link js-tabs-link" href="#">Deep Chart</a><a class="market__link js-tabs-link" href="#">Open Orders</a><a class="market__link js-tabs-link" href="#">Favorites</a></div>
+                      <div class="market__title h6">Market Trades</div>
+                      <div class="market__select mobile-show"><select class="select">
+                          <option>Price Chart</option>
+                          <option>Deep Chart</option>
+                          <option>Open Orders</option>
+                          <option>Favorites</option>
+                        </select></div>
+                    </div>
+                    <div class="market__table">
+                      <div class="market__row market__row_head">
+                        <div class="market__cell">time</div>
+                        <div class="market__cell">price <span class="mobile-hide">(usdt)</span></div>
+                        <div class="market__cell">amount <span class="mobile-hide">(btc)</span></div>
+                        <div class="market__cell">total <span class="mobile-hide">(usdt)</span></div>
+                      </div>
+                      <div class="market__row">
+                        <div class="market__cell">18:02:12</div>
+                        <div class="market__cell positive">18432.3204898</div>
+                        <div class="market__cell">18446.62230935</div>
+                        <div class="market__cell">18446.62230935</div>
+                      </div>
+                      <div class="market__row">
+                        <div class="market__cell">18:02:12</div>
+                        <div class="market__cell negative">18432.3204898</div>
+                        <div class="market__cell">18446.62230935</div>
+                        <div class="market__cell">18446.62230935</div>
+                      </div>
+                      <div class="market__row">
+                        <div class="market__cell">18:02:12</div>
+                        <div class="market__cell positive">18432.3204898</div>
+                        <div class="market__cell">18446.62230935</div>
+                        <div class="market__cell">18446.62230935</div>
+                      </div>
+                      <div class="market__row">
+                        <div class="market__cell">18:02:12</div>
+                        <div class="market__cell negative">18432.3204898</div>
+                        <div class="market__cell">18446.62230935</div>
+                        <div class="market__cell">18446.62230935</div>
+                      </div>
+                      <div class="market__row">
+                        <div class="market__cell">18:02:12</div>
+                        <div class="market__cell positive">18432.3204898</div>
+                        <div class="market__cell">18446.62230935</div>
+                        <div class="market__cell">18446.62230935</div>
+                      </div>
+                      <div class="market__row">
+                        <div class="market__cell">18:02:12</div>
+                        <div class="market__cell negative">18432.3204898</div>
+                        <div class="market__cell">18446.62230935</div>
+                        <div class="market__cell">18446.62230935</div>
+                      </div>
+                      <div class="market__row">
+                        <div class="market__cell">18:02:12</div>
+                        <div class="market__cell positive">18432.3204898</div>
+                        <div class="market__cell">18446.62230935</div>
+                        <div class="market__cell">18446.62230935</div>
+                      </div>
+                      <div class="market__row">
+                        <div class="market__cell">18:02:12</div>
+                        <div class="market__cell negative">18432.3204898</div>
+                        <div class="market__cell">18446.62230935</div>
+                        <div class="market__cell">18446.62230935</div>
+                      </div>
+                      <div class="market__row">
+                        <div class="market__cell">18:02:12</div>
+                        <div class="market__cell positive">18432.3204898</div>
+                        <div class="market__cell">18446.62230935</div>
+                        <div class="market__cell">18446.62230935</div>
+                      </div>
+                      <div class="market__row">
+                        <div class="market__cell">18:02:12</div>
+                        <div class="market__cell negative">18432.3204898</div>
+                        <div class="market__cell">18446.62230935</div>
+                        <div class="market__cell">18446.62230935</div>
+                      </div>
+                      <div class="market__row">
+                        <div class="market__cell">18:02:12</div>
+                        <div class="market__cell positive">18432.3204898</div>
+                        <div class="market__cell">18446.62230935</div>
+                        <div class="market__cell">18446.62230935</div>
+                      </div>
+                      <div class="market__row">
+                        <div class="market__cell">18:02:12</div>
+                        <div class="market__cell negative">18432.3204898</div>
+                        <div class="market__cell">18446.62230935</div>
+                        <div class="market__cell">18446.62230935</div>
+                      </div>
+                      <div class="market__row">
+                        <div class="market__cell">18:02:12</div>
+                        <div class="market__cell positive">18432.3204898</div>
+                        <div class="market__cell">18446.62230935</div>
+                        <div class="market__cell">18446.62230935</div>
+                      </div>
+                      <div class="market__row">
+                        <div class="market__cell">18:02:12</div>
+                        <div class="market__cell negative">18432.3204898</div>
+                        <div class="market__cell">18446.62230935</div>
+                        <div class="market__cell">18446.62230935</div>
+                      </div>
+                      <div class="market__row">
+                        <div class="market__cell">18:02:12</div>
+                        <div class="market__cell positive">18432.3204898</div>
+                        <div class="market__cell">18446.62230935</div>
+                        <div class="market__cell">18446.62230935</div>
+                      </div>
+                      <div class="market__row">
+                        <div class="market__cell">18:02:12</div>
+                        <div class="market__cell negative">18432.3204898</div>
+                        <div class="market__cell">18446.62230935</div>
+                        <div class="market__cell">18446.62230935</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="exchange__sidebar">
+                <div class="orders">
+                  <div class="orders__head">
+                    <div class="orders__title h6">Order Book</div>
+                    <div class="orders__sorting"><a class="orders__link" href="#"> <span style="background-color: #3DBAA2;"></span><span style="background-color: #3DBAA2;"></span><span style="background-color: #3DBAA2;"></span></a><a class="orders__link" href="#"><span style="background-color: #FF7A68;"></span><span style="background-color: #FF7A68;"></span><span style="background-color: #FF7A68;"></span></a><a class="orders__link active" href="#"><span style="background-color: #FF7A68;"> </span><span style="background-color: #3DBAA2;"></span><span style="background-color: #E4E4E4;"></span></a></div>
+                  </div>
+                  <div class="orders__table">
+                    <div class="orders__row orders__row_head">
+                      <div class="orders__cell">PRICE (USDT)</div>
+                      <div class="orders__cell">AMOUNT (BTC)</div>
+                      <div class="orders__cell">TOTAL (USDT)</div>
+                    </div>
+                    <div class="orders__row">
+                      <div class="orders__cell orders__up">18446.62230935<div class="orders__bg" style="width: 90%;"></div>
+                      </div>
+                      <div class="orders__cell">5.43268623</div>
+                      <div class="orders__cell">5.43268623</div>
+                    </div>
+                    <div class="orders__row">
+                      <div class="orders__cell orders__up">18446.62230935<div class="orders__bg" style="width: 60%;"></div>
+                      </div>
+                      <div class="orders__cell">0.254878</div>
+                      <div class="orders__cell">5.43268623</div>
+                    </div>
+                    <div class="orders__row">
+                      <div class="orders__cell orders__up">18446.62230935<div class="orders__bg" style="width: 55%;"></div>
+                      </div>
+                      <div class="orders__cell">5.43268623</div>
+                      <div class="orders__cell">5.43268623</div>
+                    </div>
+                    <div class="orders__row">
+                      <div class="orders__cell orders__up">18446.62230935<div class="orders__bg" style="width: 70%;"></div>
+                      </div>
+                      <div class="orders__cell">0.4268623</div>
+                      <div class="orders__cell">5.43268623</div>
+                    </div>
+                    <div class="orders__row">
+                      <div class="orders__cell orders__up">18446.62230935<div class="orders__bg" style="width: 85%;"></div>
+                      </div>
+                      <div class="orders__cell">5.43268623</div>
+                      <div class="orders__cell">5.43268623</div>
+                    </div>
+                    <div class="orders__row">
+                      <div class="orders__cell orders__up">18446.62230935<div class="orders__bg" style="width: 73%;"></div>
+                      </div>
+                      <div class="orders__cell">0.3268</div>
+                      <div class="orders__cell">5.43268623</div>
+                    </div>
+                    <div class="orders__row">
+                      <div class="orders__cell orders__up">5.43268623<div class="orders__bg" style="width: 30%;"></div>
+                      </div>
+                      <div class="orders__cell">0.254878</div>
+                      <div class="orders__cell">5.43268623</div>
+                    </div>
+                    <div class="orders__price">18372.54657323 USDT</div>
+                    <div class="orders__row">
+                      <div class="orders__cell orders__down">18446.62230935<div class="orders__bg" style="width: 15%;"></div>
+                      </div>
+                      <div class="orders__cell">5.43268623</div>
+                      <div class="orders__cell">5.43268623</div>
+                    </div>
+                    <div class="orders__row">
+                      <div class="orders__cell orders__down">18446.62230935<div class="orders__bg" style="width: 9%;"></div>
+                      </div>
+                      <div class="orders__cell">5.43268623</div>
+                      <div class="orders__cell">5.43268623</div>
+                    </div>
+                    <div class="orders__row">
+                      <div class="orders__cell orders__down">18446.62230935<div class="orders__bg" style="width: 36%;"></div>
+                      </div>
+                      <div class="orders__cell">5.43268623</div>
+                      <div class="orders__cell">5.43268623</div>
+                    </div>
+                    <div class="orders__row">
+                      <div class="orders__cell orders__down">18446.62230935<div class="orders__bg" style="width: 47%;"></div>
+                      </div>
+                      <div class="orders__cell">5.43268623</div>
+                      <div class="orders__cell">5.43268623</div>
+                    </div>
+                    <div class="orders__row">
+                      <div class="orders__cell orders__down">18446.62230935<div class="orders__bg" style="width: 54%;"></div>
+                      </div>
+                      <div class="orders__cell">5.43268623</div>
+                      <div class="orders__cell">5.43268623</div>
+                    </div>
+                    <div class="orders__row">
+                      <div class="orders__cell orders__down">18446.62230935<div class="orders__bg" style="width: 25%;"></div>
+                      </div>
+                      <div class="orders__cell">5.43268623</div>
+                      <div class="orders__cell">5.43268623</div>
+                    </div>
+                    <div class="orders__row">
+                      <div class="orders__cell orders__down">18446.62230935<div class="orders__bg" style="width: 55%;"></div>
+                      </div>
+                      <div class="orders__cell">5.43268623</div>
+                      <div class="orders__cell">5.43268623</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="actions">
+                  <div class="actions__menu"><a class="actions__link active" href="#">Buy</a><a class="actions__link" href="#">Sell</a></div>
+                  <form class="actions__form">
+                    <div class="actions__fieldset">
+                      <div class="actions__field">
+                        <div class="actions__label">order type</div><select class="select">
+                          <option>Stop Limit</option>
+                          <option>Stop Limit</option>
+                          <option>Stop Limit</option>
+                        </select>
+                      </div>
+                      <div class="actions__field">
+                        <div class="actions__label">limit price</div><input class="actions__input" type="tel">
+                        <div class="actions__currency color-green">USDT </div>
+                      </div>
+                      <div class="actions__field">
+                        <div class="actions__label">amount</div><input class="actions__input" type="tel">
+                        <div class="actions__currency color-orange">BTC</div>
+                      </div>
+                      <div class="actions__field">
+                        <div class="actions__label">amount</div><input class="actions__input" type="tel">
+                        <div class="actions__currency color-green">USDT</div>
+                      </div>
+                    </div>
+                    <button class="actions__btn btn btn_blue btn_wide">Buy BTC</button>
+                  </form>
+                </div>
+                <div class="exchange__banner" style="background-image: url('img/banner.jpg')">
+                  <div class="exchange__date">November 2020 </div>
+                  <div class="exchange__title h4">Trading & Asset Updates</div><button class="exchange__btn btn btn_white btn_sm">Explore Now</button>
+                </div>
+              </div>
+            </div>
+            <div class="exchange__foot">
+              <div class="exchange__menu"><a class="exchange__link active" href="#" data-class=".exchange__top, .market__tabs"><svg class="icon icon-chart">
+                    <use xlink:href="img/sprite.svg#icon-chart"></use>
+                  </svg></a><a class="exchange__link" href="#" data-class=".market__transactions"><svg class="icon icon-document-plus">
+                    <use xlink:href="img/sprite.svg#icon-document-plus"></use>
+                  </svg></a><a class="exchange__link" href="#" data-class=".orders"><svg class="icon icon-swap">
+                    <use xlink:href="img/sprite.svg#icon-swap"></use>
+                  </svg></a><a class="exchange__link note" href="#" data-class=".actions"><svg class="icon icon-document-two-lines">
+                    <use xlink:href="img/sprite.svg#icon-document-two-lines"></use>
+                  </svg></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup popup_settings mfp-hide" id="popup-settings">
+      <div class="popup__title h6">Account Settings</div>
+      <div class="popup__tabs js-tabs">
+        <div class="popup__select mobile-show"><select class="select js-tabs-select">
+            <option>Profile</option>
+            <option>Referrals</option>
+            <option>Password</option>
+            <option>2FA</option>
+            <option>Sessions & Login History</option>
+          </select></div>
+        <div class="popup__nav"><a class="popup__link js-tabs-link active" href="#">Profile</a><a class="popup__link js-tabs-link" href="#">Referrals</a><a class="popup__link js-tabs-link" href="#">Password</a><a class="popup__link js-tabs-link" href="#">2FA</a><a class="popup__link js-tabs-link" href="#">Sessions & Login History</a></div>
+        <div class="popup__container">
+          <div class="popup__item js-tabs-item" style="display: block;">
+            <div class="popup__user">
+              <div class="popup__label popup__label_mb32">Your Avatar</div>
+              <div class="popup__line">
+                <div class="popup__ava"><img class="popup__pic" src="img/ava-header.png" alt=""></div>
+                <div class="popup__details">
+                  <div class="popup__btns">
+                    <div class="popup__loading"><input class="popup__file" type="file"><button class="popup__upload">Upload New</button></div><button class="popup__btn btn btn_gray">Delete Avatar</button>
+                  </div><a class="popup__default" href="#">Use default avatar</a>
+                </div>
+              </div>
+            </div>
+            <div class="popup__fieldset">
+              <div class="popup__row">
+                <div class="popup__field">
+                  <div class="popup__label">Your Full Name</div>
+                  <div class="popup__wrap"><input class="popup__input" type="text"></div>
+                </div>
+                <div class="popup__field">
+                  <div class="popup__label">Display Name</div>
+                  <div class="popup__wrap"><input class="popup__input" type="text"></div>
+                </div>
+              </div>
+              <div class="popup__row">
+                <div class="popup__field">
+                  <div class="popup__label">Email</div>
+                  <div class="popup__wrap"><input class="popup__input" type="email"></div>
+                </div>
+                <div class="popup__field">
+                  <div class="popup__label">Location</div>
+                  <div class="popup__wrap"><input class="popup__input" type="text"></div>
+                </div>
+              </div>
+              <div class="popup__row">
+                <div class="popup__field">
+                  <div class="popup__label">Deposit Assets</div>
+                  <div class="popup__wrap"><select class="select select_arrows select_sm">
+                      <option>Enabled</option>
+                      <option>Disabled</option>
+                    </select></div>
+                </div>
+                <div class="popup__field">
+                  <div class="popup__label">Withdraw assets</div>
+                  <div class="popup__wrap"><select class="select select_arrows select_sm">
+                      <option>Enabled $1,000,000 USD/day</option>
+                      <option>Disable $1,000,000 USD/day</option>
+                    </select></div>
+                </div>
+              </div>
+            </div>
+            <div class="popup__label">Notifications</div>
+            <div class="popup__variants"><label class="checkbox"><input class="checkbox__input" type="checkbox" checked><span class="checkbox__in"><span class="checkbox__tick"></span><span class="checkbox__text">Promotions</span></span></label><label class="checkbox"><input class="checkbox__input" type="checkbox" checked><span class="checkbox__in"><span class="checkbox__tick"></span><span class="checkbox__text">Exchange</span></span></label><label class="checkbox"><input class="checkbox__input" type="checkbox"><span class="checkbox__in"><span class="checkbox__tick"></span><span class="checkbox__text">Withdrawals</span></span></label></div><button class="popup__btn btn btn_blue" type="submit">Update Profile</button>
+          </div>
+          <div class="popup__item js-tabs-item">
+            <div class="popup__invite">
+              <div class="popup__info h6">Invite your friends to Unity Exchange and Earn 15% on Friends trading fees</div>
+              <div class="popup__label">Your Referral Link</div>
+              <div class="popup__wrap"><input class="popup__input" type="text" value="https://unityexchange.design/ref?tranmautritam"><button class="popup__copy"><svg class="icon icon-copy">
+                    <use xlink:href="img/sprite.svg#icon-copy"></use>
+                  </svg></button></div>
+            </div>
+            <div class="popup__category">Total Rewards</div>
+            <div class="popup__flex">
+              <div class="popup__money h3">128.256</div>
+              <div class="popup__currency">USTD</div>
+            </div>
+            <div class="popup__parameters">
+              <div class="popup__parameter">
+                <div class="popup__head">
+                  <div class="popup__text">Inviter Rewards</div>
+                  <div class="popup__text">0.00 USDT</div>
+                </div>
+                <div class="popup__body">You’re earning 20% of the trading fees your referrals pay.</div>
+              </div>
+              <div class="popup__parameter">
+                <div class="popup__head">
+                  <div class="popup__text">Total Invited</div>
+                  <div class="popup__text">64</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="popup__item js-tabs-item">
+            <form class="popup__form">
+              <div class="popup__title h6">Change Password</div>
+              <div class="popup__field field js-field">
+                <div class="field__label">current Password</div>
+                <div class="field__wrap"><input class="field__input js-field-input" type="password"></div>
+              </div>
+              <div class="popup__field field js-field">
+                <div class="field__label">new Password</div>
+                <div class="field__wrap"><input class="field__input js-field-input" type="password"></div>
+              </div>
+              <div class="popup__field field js-field">
+                <div class="field__label">Confirm new Password</div>
+                <div class="field__wrap"><input class="field__input js-field-input" type="password"></div>
+              </div><button class="popup__btn btn btn_blue btn_wide">Change Password</button>
+            </form>
+          </div>
+          <div class="popup__item js-tabs-item">
+            <div class="popup__box">
+              <div class="popup__title h6">Scan Code</div>
+              <div class="popup__scan">
+                <div class="popup__preview"><img src="img/qr-code.png" alt=""></div>
+                <div class="popup__details">
+                  <div class="popup__text">If you want to turn on 2FA, use <a href="#">Google Authenticator app</a> to scan code, then enter six-digit code provided by the app to the form below.</div><button class="popup__btn btn btn_blue">Download 2FA App</button>
+                </div>
+              </div>
+            </div>
+            <div class="popup__box">
+              <div class="popup__title h6">Enter six-digit code</div>
+              <div class="popup__numbers">
+                <div class="popup__number success"><input type="tel" value="5"></div>
+                <div class="popup__number success"><input type="tel" value="6"></div>
+                <div class="popup__number success"><input type="tel" value="7"></div>
+                <div class="popup__number success"><input type="tel" value="9"></div>
+                <div class="popup__number"><input type="tel"></div>
+                <div class="popup__number"><input type="tel"></div>
+              </div>
+            </div>
+          </div>
+          <div class="popup__item js-tabs-item">
+            <div class="popup__box">
+              <div class="popup__title h6">Active Sessions</div>
+              <table class="popup__table">
+                <tr>
+                  <th>DATE/TIME</th>
+                  <th>DEVICE</th>
+                  <th>LOCATION</th>
+                  <th>IP ADDRESS</th>
+                  <th> </th>
+                </tr>
+                <tr>
+                  <td>2020-12-02 07:50:18</td>
+                  <td>iMac Pro</td>
+                  <td><span class="popup__flag">🇺🇸</span> USA </td>
+                  <td>123.45.678.987</td>
+                  <td><button class="popup__close"><svg class="icon icon-close">
+                        <use xlink:href="img/sprite.svg#icon-close"></use>
+                      </svg></button></td>
+                </tr>
+              </table>
+            </div>
+            <div class="popup__box">
+              <div class="popup__title h6">Login History</div>
+              <table class="popup__table">
+                <tr>
+                  <th>DATE/TIME</th>
+                  <th>DEVICE</th>
+                  <th>LOCATION</th>
+                  <th>IP ADDRESS</th>
+                  <th>2FA</th>
+                </tr>
+                <tr>
+                  <td>2020-12-02 07:50:18</td>
+                  <td>iMac Pro</td>
+                  <td><span class="popup__flag">🇻🇳</span> VN</td>
+                  <td>123.45.678.987</td>
+                  <td><svg class="icon icon-check">
+                      <use xlink:href="img/sprite.svg#icon-check"></use>
+                    </svg></td>
+                </tr>
+                <tr>
+                  <td>2020-12-02 07:50:18</td>
+                  <td>iPhone X</td>
+                  <td><span class="popup__flag">🇺🇸</span> USA </td>
+                  <td>123.45.678.987</td>
+                  <td><svg class="icon icon-check">
+                      <use xlink:href="img/sprite.svg#icon-check"></use>
+                    </svg></td>
+                </tr>
+                <tr>
+                  <td>2020-12-02 07:50:18</td>
+                  <td>iMac Pro</td>
+                  <td><span class="popup__flag">🇻🇳</span> VN</td>
+                  <td>123.45.678.987</td>
+                  <td><svg class="icon icon-check">
+                      <use xlink:href="img/sprite.svg#icon-check"></use>
+                    </svg></td>
+                </tr>
+                <tr>
+                  <td>2020-12-02 07:50:18</td>
+                  <td>iMac Pro</td>
+                  <td><span class="popup__flag">🇺🇸</span> USA </td>
+                  <td>123.45.678.987</td>
+                  <td><svg class="icon icon-check">
+                      <use xlink:href="img/sprite.svg#icon-check"></use>
+                    </svg></td>
+                </tr>
+                <tr>
+                  <td>2020-12-02 07:50:18</td>
+                  <td>iMac Pro</td>
+                  <td><span class="popup__flag">🇺🇸</span> USA </td>
+                  <td>123.45.678.987</td>
+                  <td><svg class="icon icon-check">
+                      <use xlink:href="img/sprite.svg#icon-check"></use>
+                    </svg></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- scripts-->
+    <script src="js/lib/jquery.min.js"></script>
+    <script src="js/lib/svg4everybody.min.js"></script>
+    <script src="js/lib/owl.carousel.min.js"></script>
+    <script src="js/lib/jquery.nice-select.min.js"></script>
+    <script src="js/lib/apexcharts.min.js"></script>
+    <script src="js/lib/jquery.magnific-popup.min.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

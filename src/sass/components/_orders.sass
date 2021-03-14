@@ -1,0 +1,89 @@
+.orders
+	&__head
+		display: flex
+		align-items: center
+		margin-bottom: 24px
+	&__title
+		margin-right: auto
+	&__sorting
+		display: flex
+	&__link
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: flex-start
+		flex-shrink: 0
+		width: 32px
+		height: 32px
+		border-radius: 50%  
+		padding: 8px
+		transition: box-shadow .2s 
+		span
+			width: 100% 
+			height: 2px
+			border-radius: 1
+			&:last-child
+				width: 50%
+			+nl
+				margin-bottom: 3px
+		&.active
+			box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1) 
+		+nl
+			margin-right: 24px
+	&__table
+		border-radius: 12px 
+		border: 1px solid $gray-light
+		overflow: hidden
+	&__row
+		display: flex
+		align-items: center
+		&_head
+			+chip
+			color: $gray 
+		&:not(.orders__row_head)
+			+caption-sm
+	&__cell
+		display: flex
+		align-items: center
+		flex: 1
+		height: 32px
+		padding-right: 12px
+		&:first-child
+			position: relative
+			padding-left: 12px
+		+nf
+			justify-content: flex-end
+	&__row_head &__cell
+		height: 24px
+	&__price
+		display: flex
+		justify-content: center
+		align-items: center
+		height: 40px
+		border-width: 1px 0
+		border-style: solid  
+		border-color: $gray-light
+		+title 
+	&__bg
+		position: absolute
+		top: 0
+		left: 0
+		bottom: 0
+	&__up
+		color: $red-light
+	&__up &__bg
+		background: rgba($red-light, .3) 
+	&__down
+		color: $green-dark
+	&__down &__bg
+		background: rgba($green-dark, .3)
+
++dark
+	.orders
+		&__link.active
+			background: $dark-active
+		&__table
+			background: $dark-color
+			border-color: $dark-border
+		&__price
+			border-color: $dark-border 

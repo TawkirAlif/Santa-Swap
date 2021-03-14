@@ -1,0 +1,79 @@
+.search
+	&__container
+		position: relative
+		padding: 48px
+		border-radius: 24px
+		background: $gradient-purple
+		color: $white
+		+d
+			padding: 32px 
+		+m
+			height: 590px
+			overflow: hidden
+	&__wrap
+		position: relative
+		z-index: 3
+		max-width: 380px
+		margin-bottom: 36px
+	&__title
+		margin-bottom: 16px
+	&__form
+		position: relative
+		z-index: 3
+		max-width: 496px
+		box-shadow: 0 5px 20px rgba(#000, .07) 
+		+x
+			max-width: 450px
+		+d
+			max-width: 360px
+		+m
+			max-width: 100% 
+	&__input
+		width: 100%
+		height: 64px
+		padding: 0 64px 0 30px 
+		border-radius: 16px  
+		+h6
+		color: $black
+		+m
+			padding-left: 20px
+		+placeholder
+			color: $gray
+	&__btn
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		width: 64px
+		font-size: 0
+		.icon
+			font-size: 20px
+			fill: $black
+			transition: fill .2s
+		&:hover .icon
+			fill: $blue 
+	&__preview
+		position: absolute
+		top: -27px
+		left: 50%
+		width: 740px
+		+w
+			left: 45%
+		+d
+			width: 600px
+		+t
+			left: 52%
+			width: 550px
+		+m
+			top: auto
+			left: -18%
+			bottom: -22%
+			width: 600px
+		img
+			width: 100%
+	+nl
+		margin-bottom: 136px
+		+t
+			margin-bottom: 80px
+		+m
+			margin-bottom: 32px

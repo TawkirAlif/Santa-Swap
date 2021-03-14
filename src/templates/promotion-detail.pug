@@ -1,0 +1,119 @@
+---
+title: Promotion
+---
+extends layouts/_layout
+block content
+	.page
+		+sidebar('', '', '', '', 'active')
+		.page__content
+			+header('header_border')
+			.page__row
+				.page__col
+					.page__category.h5 Unity Exchange
+					.page__title.h2 Bitcoin x TRON Net Deposit Campaign
+					.promotion
+						.promotion__preview
+							img(src="img/promotion-pic.jpg" alt="")
+						.promotion__body
+							.promotion__title Competition Overview
+							.promotion__text To celebrate our new multi-chain deposit and withdrawal support for Bitcoin on TRON (BTCTRON), we’re beginning a 30-day net deposit campaign for Bitcoin where users can earn APR rewards based on their total net deposits over the campaign period. The top 40 net depositors over the campaign period will earn additional prizes. At the end of the campaign, we will convert the total net deposits from this campaign from BTC to BTC on TRON.
+							.promotion__note
+								.promotion__icon
+									img(src="img/calendar.svg" alt="")
+								.promotion__info Campaign Period: October 26, 2020 at 21:00 UTC to November 25, 2020 at 20:59 UTC
+							.promotion__category Prizes
+							.promotion__list
+								.promotion__line
+									+i('award')
+									| 1st Place 2.5 BTC
+								.promotion__line
+									+i('award')
+									| 2nd Place 1.5 BTC
+								.promotion__line
+									+i('award')
+									| 3rd Place 1 BTC
+								.promotion__line
+									+i('award')
+									| 4th Place 0.5 BTC
+								.promotion__line
+									+i('award')
+									| 5th - 10th Place Share a pool of 1.5 BTC
+							.promotion__text Have a total net deposit score of at least 0.01 BTC during the competition to be eligible for prizes.
+							button.promotion__btn.btn.btn_blue Deposit Now
+				.page__col.page__col_pt198
+					.promotions.promotions_flex
+						.promotions__transactions
+							.promotions__category.h6 Top Deposit Rankings
+							.promotions__updated
+								+i('clock')
+								| Last Updated: 20:59 UTC
+							.promotions__table
+								.promotions__flex.promotions__flex_head
+									.promotions__cell RANK
+									.promotions__cell ACC
+									.promotions__cell NET DEPOSIT
+								.promotions__flex
+									.promotions__cell #1
+									.promotions__cell 16***07
+									.promotions__cell 14,999,999 BTC
+								.promotions__flex
+									.promotions__cell #2
+									.promotions__cell 16***07
+									.promotions__cell 12,987,456 BTC
+								.promotions__flex
+									.promotions__cell #3
+									.promotions__cell 16***07
+									.promotions__cell 11,987,456 BTC
+								.promotions__flex
+									.promotions__cell #4
+									.promotions__cell 16***07
+									.promotions__cell 10,012,345 BTC
+								.promotions__flex
+									.promotions__cell #5
+									.promotions__cell 16***07
+									.promotions__cell $9,888,666 BTC
+								.promotions__flex
+									.promotions__cell #6
+									.promotions__cell 16***07
+									.promotions__cell $4,566,689 BTC
+								.promotions__flex
+									.promotions__cell #7
+									.promotions__cell 16***07
+									.promotions__cell $3,887,466 BTC
+								.promotions__flex
+									.promotions__cell #8
+									.promotions__cell 16***07
+									.promotions__cell 3,887,466 BTC
+								.promotions__flex
+									.promotions__cell #9
+									.promotions__cell 16***07
+									.promotions__cell 3,887,466 BTC
+								.promotions__flex
+									.promotions__cell #10
+									.promotions__cell 16***07
+									.promotions__cell 3,887,466 BTC
+							.promotions__btns
+								button.promotions__btn.btn.btn_gray Load more
+						.promotions__wrap
+							.promotions__head
+								.promotions__category.h6 Featured Promotions
+								+dropdown('Featured Promotions', 'New Promotions', 'All Promotions', 'Featured Promotions')
+							.promotions__group.promotions__group_sm
+								a.promotions__box(href="promotion-detail.html")
+									.promotions__icon
+										img(src="img/promotions-icon-1.png" alt="")
+									.promotions__details
+										.promotions__date Oct 26th - Nov 25th
+										.promotions__info BTC Net Deposit Campaign
+								a.promotions__box(href="promotion-detail.html")
+									.promotions__icon
+										img(src="img/promotions-icon-2.png" alt="")
+									.promotions__details
+										.promotions__date Oct 26th - Nov 25th
+										.promotions__info BTC Net Deposit Campaign
+								a.promotions__box(href="promotion-detail.html")
+									.promotions__icon
+										img(src="img/promotions-icon-3.png" alt="")
+									.promotions__details
+										.promotions__date Oct 26th - Nov 25th
+										.promotions__info BTC Net Deposit Campaign

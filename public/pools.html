@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Pools</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#fff">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="img/site.webmanifest">
+    <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="The Premium Production-ready Crypto Asset Exchange Platform">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@ui8">
+    <meta name="twitter:title" content="Santa Swap - Exchange You Money Fast And Secure Way">
+    <meta name="twitter:description" content="The Premium Production-ready Crypto Asset Exchange Platform">
+    <meta name="twitter:creator" content="@ui8">
+    <meta name="twitter:image" content="">
+    <meta property="og:title" content="Santa Swap - Exchange You Money Fast And Secure Way">
+    <meta property="og:type" content="Article">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="The Premium Production-ready Crypto Asset Exchange Platform">
+    <meta property="og:site_name" content="Santa Swap - Exchange You Money Fast And Secure Way">
+    <meta property="fb:admins" content="132951670226590">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@500;600&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="css/app.css">
+    <script>var viewportmeta = document.querySelector('meta[name="viewport"]');
+if (viewportmeta) {
+  if (screen.width < 375) {
+    var newScale = screen.width / 375;
+    viewportmeta.content = 'width=375, minimum-scale=' + newScale + ', maximum-scale=1.0, user-scalable=no, initial-scale=' + newScale + '';
+  } else {
+    viewportmeta.content = 'width=device-width, maximum-scale=1.0, initial-scale=1.0';
+  }
+}</script>
+  </head>
+  <body>
+    <script>console.log(localStorage.getItem('darkMode'));
+if (localStorage.getItem('darkMode') === "on") {
+		document.body.classList.add("dark");
+		document.addEventListener("DOMContentLoaded", function() {
+		  document.querySelector('.js-switch-theme input').checked = true;
+		});
+}
+</script>
+    <div class="page">
+      <div class="sidebar">
+        <div class="sidebar__head"><a class="sidebar__logo" href="index.html"><img class="sidebar__pic sidebar__pic_light" src="img/logo.svg" alt="" /><img class="sidebar__pic sidebar__pic_dark" src="img/logo-white.svg" alt="" /></a><button class="sidebar__toggle"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d="M22 12H3" stroke="#11142d"></path>
+              <g stroke="#808191">
+                <path d="M22 4H13"></path>
+                <path opacity=".301" d="M22 20H13"></path>
+              </g>
+              <path d="M7 7l-5 5 5 5" stroke="#11142d"></path>
+            </svg></button><button class="sidebar__close"><svg class="icon icon-close">
+              <use xlink:href="img/sprite.svg#icon-close"></use>
+            </svg></button></div>
+        <div class="sidebar__body">
+          <nav class="sidebar__nav"><a class="sidebar__item " href="index.html">
+              <div class="sidebar__icon"><svg class="icon icon-home">
+                  <use xlink:href="img/sprite.svg#icon-home"></use>
+                </svg></div>
+              <div class="sidebar__text">Home</div>
+            </a>
+              <a class="sidebar__item active" href="pools.html">
+              <div class="sidebar__icon"><svg class="icon icon-document">
+                  <use xlink:href="img/sprite.svg#icon-document"></use>
+                </svg></div>
+              <div class="sidebar__text">Pools</div>
+            </a><a class="sidebar__item" href="LpStake.html">
+              <div class="sidebar__icon"><svg class="icon icon-wallet">
+                  <use xlink:href="img/sprite.svg#icon-wallet"></use>
+                </svg></div>
+              <div class="sidebar__text">LP Stake</div>
+            </a><a class="sidebar__item" href="stake.html">
+              <div class="sidebar__icon"><svg class="icon icon-activity">
+                  <use xlink:href="img/sprite.svg#icon-activity"></use>
+                </svg></div>
+              <div class="sidebar__text">Stake</div>
+            </a><a class="sidebar__item js-popup-open" href="#popup-settings" data-effect="mfp-zoom-in">
+              <div class="sidebar__icon"><svg class="icon icon-settings">
+                  <use xlink:href="img/sprite.svg#icon-settings"></use>
+                </svg></div>
+              <div class="sidebar__text">Settings</div>
+            </a></nav>
+
+              <div class="sidebar__text">Settings</div>
+            </a></nav>
+          <div class="sidebar__mail"><button class="sidebar__close"><svg class="icon icon-close">
+                <use xlink:href="img/sprite.svg#icon-close"></use>
+              </svg></button>
+            <div class="sidebar__info">Send Cryto to An Email Address</div><button class="sidebar__btn btn btn_white btn_sm">Send Now</button>
+          </div>
+          <form class="sidebar__search"><input class="sidebar__input" type="text" placeholder="Search" /><button class="sidebar__start"><svg class="icon icon-search">
+                <use xlink:href="img/sprite.svg#icon-search"></use>
+              </svg></button></form>
+        </div>
+        <div class="sidebar__bottom"><label class="switch switch_theme js-switch-theme"><input class="switch__input" type="checkbox" /><span class="switch__in"><span class="switch__box"></span><span class="switch__icon"><svg class="icon icon-theme-light">
+                  <use xlink:href="img/sprite.svg#icon-theme-light"></use>
+                </svg><svg class="icon icon-theme-dark">
+                  <use xlink:href="img/sprite.svg#icon-theme-dark"></use>
+                </svg></span></span></label><a class="sidebar__user" href="sign-in.html"><img src="img/ava-header.png" alt="" /></a></div>
+      </div>
+      <div class="page__content">
+        <div class="header">
+          <form class="header__search"><input class="header__input" type="text" placeholder="Search" /><button class="header__start"><svg class="icon icon-search">
+                <use xlink:href="img/sprite.svg#icon-search"></use>
+              </svg></button></form><a class="header__logo" href="index.html"><img src="img/logo-sm.svg" alt="" /></a>
+          <div class="header__group">
+            <div class="header__item header__item_notifications"><button class="header__head active"><svg class="icon icon-notification">
+                  <use xlink:href="img/sprite.svg#icon-notification"></use>
+                </svg></button>
+              <div class="header__body">
+                <div class="header__notifications">
+                  <div class="header__notification">
+                    <div class="header__icon"><img src="img/paper.svg" alt="" /></div>
+                    <div class="header__details">
+                      <div class="header__info">Wrapped Bitcoin is now listed on Unity Exchange</div>
+                      <div class="header__line">
+                        <div class="header__time">24m ago</div>
+                        <div class="header__status"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="header__notification">
+                    <div class="header__icon"><img src="img/paper.svg" alt="" /></div>
+                    <div class="header__details">
+                      <div class="header__info">Wrapped Bitcoin is now listed on Unity Exchange</div>
+                      <div class="header__line">
+                        <div class="header__time">24m ago</div>
+                        <div class="header__status"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="header__notification">
+                    <div class="header__icon"><img src="img/paper.svg" alt="" /></div>
+                    <div class="header__details">
+                      <div class="header__info">Wrapped Bitcoin is now listed on Unity Exchange</div>
+                      <div class="header__line">
+                        <div class="header__time">24m ago</div>
+                        <div class="header__status"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="header__notification">
+                    <div class="header__icon"><img src="img/paper.svg" alt="" /></div>
+                    <div class="header__details">
+                      <div class="header__info">Wrapped Bitcoin is now listed on Unity Exchange</div>
+                      <div class="header__line">
+                        <div class="header__time">24m ago</div>
+                        <div class="header__status"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="header__notification">
+                    <div class="header__icon"><img src="img/paper.svg" alt="" /></div>
+                    <div class="header__details">
+                      <div class="header__info">Wrapped Bitcoin is now listed on Unity Exchange</div>
+                      <div class="header__line">
+                        <div class="header__time">24m ago</div>
+                        <div class="header__status"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div><a class="header__btn btn btn_blue btn_wide" href="notifications.html">See all notifications</a>
+              </div>
+            </div>
+            <div class="header__item header__item_download"><button class="header__head"><svg class="icon icon-arrow-down-square">
+                  <use xlink:href="img/sprite.svg#icon-arrow-down-square"></use>
+                </svg></button>
+              <div class="header__body">
+                <div class="header__row">
+                  <div class="header__col">
+                    <div class="header__category">Downloads</div>
+                    <div class="header__downloads"><a class="header__download" href="#"><img src="img/app-store.svg" alt="" /></a><a class="header__download" href="#"><img src="img/google-play.svg" alt="" /></a></div>
+                  </div>
+                  <div class="header__col">
+                    <div class="header__category">Scan Code</div>
+                    <div class="header__code"><img src="img/qr-code.png" alt="" /></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="header__item header__item_lang"><button class="header__head">Eng/USD</button>
+              <div class="header__body">
+                <div class="header__lang">
+                  <div class="header__cell"><a class="header__link active" href="#"><span class="header__flag">🇺🇸</span> English</a><a class="header__link" href="#"><span class="header__flag">🇨🇳</span> 中文</a><a class="header__link" href="#"><span class="header__flag">🇪🇸</span> Española</a><a class="header__link" href="#"><span class="header__flag">🇫🇷</span> Français</a><a class="header__link" href="#"><span class="header__flag">🇻🇳</span> Tiếng Việt</a></div>
+                  <div class="header__cell"><a class="header__link active" href="#">USD</a><a class="header__link" href="#">EUR</a><a class="header__link" href="#">JPY</a><a class="header__link" href="#">BTC</a></div>
+                </div>
+              </div>
+            </div>
+          </div><a class="header__user" href="sign-in.html"><img src="img/ava-header.png" alt="" /></a><button class="header__toggle"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d="M22 12H3" stroke="#11142d"></path>
+              <g stroke="#808191">
+                <path d="M22 4H13"></path>
+                <path opacity=".301" d="M22 20H13"></path>
+              </g>
+              <path d="M7 7l-5 5 5 5" stroke="#11142d"></path>
+            </svg></button>
+        </div>
+        <div class="page__container">
+          <div class="search">
+            <div class="search__container">
+              <div class="search__wrap">
+                <div class="search__title h4">Search by token name, symbol, or address</div>
+                <div class="search__info">Find the best prices across exchange networks</div>
+              </div>
+              <form class="search__form"><input class="search__input" type="text" placeholder="Search"><button class="search__btn"><svg class="icon icon-search">
+                    <use xlink:href="img/sprite.svg#icon-search"></use>
+                  </svg></button></form>
+              <div class="search__preview"><img src="img/figures-2.png" alt=""></div>
+            </div>
+          </div>
+          <div class="categories">
+            <div class="categories__title h5 mobile-hide">Categories</div>
+            <div class="categories__select mobile-show"><select class="select">
+                <option>Recently Added</option>
+                <option>Top Gainers</option>
+                <option>Top Lossers</option>
+                <option>Stable Coins</option>
+                <option>Potential Coins</option>
+              </select></div>
+            <div class="categories__container">
+              <div class="categories__slider js-slider-categories owl-carousel"><a class="categories__item" href="#">
+                  <div class="categories__preview bg-green-gradient"><img src="img/money-time.svg" alt=""></div>
+                  <div class="categories__text">Recently Added</div>
+                </a><a class="categories__item" href="#">
+                  <div class="categories__preview bg-pink-gradient"><img src="img/boxing-glove.svg" alt=""></div>
+                  <div class="categories__text">Top Gainers</div>
+                </a><a class="categories__item" href="#">
+                  <div class="categories__preview bg-purple-gradient"><img src="img/money-bag-fill.svg" alt=""></div>
+                  <div class="categories__text">Top Lossers</div>
+                </a><a class="categories__item" href="#">
+                  <div class="categories__preview bg-blue-gradient"><img src="img/savings.svg" alt=""></div>
+                  <div class="categories__text">Stable Coins</div>
+                </a><a class="categories__item" href="#">
+                  <div class="categories__preview bg-orange-gradient"><img src="img/spaceship.svg" alt=""></div>
+                  <div class="categories__text">Potential Coins</div>
+                </a><a class="categories__item" href="#">
+                  <div class="categories__preview bg-pink-gradient"><img src="img/money-time.svg" alt=""></div>
+                  <div class="categories__text">Recently Added</div>
+                </a><a class="categories__item" href="#">
+                  <div class="categories__preview bg-green-gradient"><img src="img/money-time.svg" alt=""></div>
+                  <div class="categories__text">Stable Coins</div>
+                </a><a class="categories__item" href="#">
+                  <div class="categories__preview bg-pink-gradient"><img src="img/boxing-glove.svg" alt=""></div>
+                  <div class="categories__text">Top Gainers</div>
+                </a><a class="categories__item" href="#">
+                  <div class="categories__preview bg-purple-gradient"><img src="img/money-bag-fill.svg" alt=""></div>
+                  <div class="categories__text">Top Lossers</div>
+                </a></div>
+            </div>
+          </div>
+          <div class="prices">
+            <div class="prices__head">
+              <div class="prices__title h5"><br>Belt Pools</div><select class="select select_empty">
+                <option>Market Cap</option>
+                <option>A - Z</option>
+                <option>Volumes</option>
+                <option>Last 24h</option>
+                <option>Price</option>
+              </select>
+            </div>
+            <div class='BeltPools_box'>
+            <div class='BeltPools_box_left'>
+            <div class='BeltPools_box_left_left'>
+            <h3> 1 Vanues</h3>
+            </div>
+            <div class='BeltPools_box_left_right'>
+              <h3> (v)USDT-(v)USDC-(v)BUSD-(v)DAI</h3>
+            </div>
+            </div>
+            <div class='BeltPools_box_right'>
+            <div class='BeltPools_box_right_left' id='BeltPools_box_right_left'>
+            <div class='BeltPools_box_right_left1'>
+            <h3>TVL</h3>
+            <h3 class='BeltPools_box_left_left'>$663,513,066</h3>
+            </div>
+            <div class='BeltPools_box_right_left1'>
+            <h3>VOL</h3>
+            <h3 class='BeltPools_box_left_left'>$663,513,066</h3>
+            </div>
+            
+            </div>
+            <div class='BeltPools_box_right_right_right' id='BeltPools_box_right_right_right'>
+            <div class='BeltPools_box_right_right1'>
+            <h3>APR</h3>
+            <h3 class='BeltPools_box_left_left'>99.55%</h3>
+            </div>
+            <div class='BeltPools_box_right_right2' id='BeltPools_box_right_right2'>
+            <h3>DAILY</h3>
+            <h3 class='BeltPools_box_left_left'>0.55%</h3>
+            </div>
+            <div class='BeltPools_box_right_right3'>
+            <h3>REWARDS</h3>
+            <div class='BeltPools_box_right_rewords_imgs'>
+            <img src='https://s.belt.fi/status/USDT_icon.png'/>
+            <img src='https://s.belt.fi/status/USDC_icon.png'/>
+            <img src='https://s.belt.fi/status/BELT_icon.png'/>
+            <img src='https://s.belt.fi/status/DAI_icon.png'/>
+            </div>
+            </div>
+            </div>
+            </div>
+            <h2 class='belt_drop_down' id='belt_drop_up' onclick='hideBelt()'>⌃</h2>
+            <h2 class='belt_drop_up' id='belt_drop_down' onclick='showBelt()'>⌄</h2>
+            </div>
+
+              <div class='BeltPools_box'>
+            <div class='BeltPools_box_left'>
+            <div class='BeltPools_box_left_left'>
+            <h3> 2 VAI</h3>
+            </div>
+            <div class='BeltPools_box_left_right'>
+              <h3> VAI-VENUS BLP</h3>
+              <div class='coming_soon'><h3>Coming Soon</h3></div>
+            </div>
+            </div>
+            <div class='BeltPools_box_right' >
+            <div class='BeltPools_box_right_left' id='BeltPools_box_right_left1'>
+            <div class='BeltPools_box_right_left1'>
+            <h3>TVL</h3>
+            <h3 class='BeltPools_box_left_left'>$663,513,066</h3>
+            </div>
+            <div class='BeltPools_box_right_left1'>
+            <h3>VOL</h3>
+            <h3 class='BeltPools_box_left_left'>$663,513,066</h3>
+            </div>
+            
+            </div>
+            <div class='BeltPools_box_right_right_right' id='BeltPools_box_right_right_right1'>
+            <div class='BeltPools_box_right_right1'>
+            <h3>APR</h3>
+            <h3 class='BeltPools_box_left_left'>99.55%</h3>
+            </div>
+            <div class='BeltPools_box_right_right2' id='BeltPools_box_right_right21'>
+            <h3>DAILY</h3>
+            <h3 class='BeltPools_box_left_left'>0.55%</h3>
+            </div>
+            <div class='BeltPools_box_right_right3'>
+            <h3>REWARDS</h3>
+            <div class='BeltPools_box_right_rewords_imgs'>
+            <img src='https://s.belt.fi/status/USDT_icon.png'/>
+            <img src='https://s.belt.fi/status/USDC_icon.png'/>
+            <img src='https://s.belt.fi/status/BELT_icon.png'/>
+            <img src='https://s.belt.fi/status/DAI_icon.png'/>
+            </div>
+            </div>
+            </div>
+            </div>
+            <h2 class='belt_drop_down' id='belt_drop_up1' onclick='hideBelt1()'>⌃</h2>
+            <h2 class='belt_drop_up' id='belt_drop_down1' onclick='showBelt1()'>⌄</h2>
+            </div>
+
+              <div class='BeltPools_box'>
+            <div class='BeltPools_box_left'>
+            <div class='BeltPools_box_left_left'>
+            <h3> 3 BETH</h3>
+            </div>
+            <div class='BeltPools_box_left_right'>
+              <h3> (v)ETH-(v)BETH</h3>
+              <div class='coming_soon'><h3>Coming Soon</h3></div>
+            </div>
+            </div>
+            <div class='BeltPools_box_right'>
+            <div class='BeltPools_box_right_left' id='BeltPools_box_right_left2'>
+            <div class='BeltPools_box_right_left1'>
+            <h3>TVL</h3>
+            <h3 class='BeltPools_box_left_left'>$663,513,066</h3>
+            </div>
+            <div class='BeltPools_box_right_left1'>
+            <h3>VOL</h3>
+            <h3 class='BeltPools_box_left_left'>$663,513,066</h3>
+            </div>
+            
+            </div>
+            <div class='BeltPools_box_right_right_right' id='BeltPools_box_right_right_right2'>
+            <div class='BeltPools_box_right_right1'>
+            <h3>APR</h3>
+            <h3 class='BeltPools_box_left_left'>99.55%</h3>
+            </div>
+            <div class='BeltPools_box_right_right2' id='BeltPools_box_right_right22'>
+            <h3>DAILY</h3>
+            <h3 class='BeltPools_box_left_left'>0.55%</h3>
+            </div>
+            <div class='BeltPools_box_right_right3'>
+            <h3>REWARDS</h3>
+            <div class='BeltPools_box_right_rewords_imgs'>
+            <img src='https://s.belt.fi/status/USDT_icon.png'/>
+            <img src='https://s.belt.fi/status/USDC_icon.png'/>
+            <img src='https://s.belt.fi/status/BELT_icon.png'/>
+            <img src='https://s.belt.fi/status/DAI_icon.png'/>
+            </div>            </div>
+            </div>
+            </div>
+            <h2 class='belt_drop_down' id='belt_drop_up2' onclick='hideBelt2()'>⌃</h2>
+            <h2 class='belt_drop_up' id='belt_drop_down2' onclick='showBelt2()'>⌄</h2>
+            </div>
+            <div class="prices__btns"><button class="prices__btn btn btn_blue">Load more</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup popup_settings mfp-hide" id="popup-settings">
+      <div class="popup__title h6">Account Settings</div>
+      <div class="popup__tabs js-tabs">
+        <div class="popup__select mobile-show"><select class="select js-tabs-select">
+            <option>Profile</option>
+            <option>Referrals</option>
+            <option>Password</option>
+            <option>2FA</option>
+            <option>Sessions & Login History</option>
+          </select></div>
+        <div class="popup__nav"><a class="popup__link js-tabs-link active" href="#">Profile</a><a class="popup__link js-tabs-link" href="#">Referrals</a><a class="popup__link js-tabs-link" href="#">Password</a><a class="popup__link js-tabs-link" href="#">2FA</a><a class="popup__link js-tabs-link" href="#">Sessions & Login History</a></div>
+        <div class="popup__container">
+          <div class="popup__item js-tabs-item" style="display: block;">
+            <div class="popup__user">
+              <div class="popup__label popup__label_mb32">Your Avatar</div>
+              <div class="popup__line">
+                <div class="popup__ava"><img class="popup__pic" src="img/ava-header.png" alt=""></div>
+                <div class="popup__details">
+                  <div class="popup__btns">
+                    <div class="popup__loading"><input class="popup__file" type="file"><button class="popup__upload">Upload New</button></div><button class="popup__btn btn btn_gray">Delete Avatar</button>
+                  </div><a class="popup__default" href="#">Use default avatar</a>
+                </div>
+              </div>
+            </div>
+            <div class="popup__fieldset">
+              <div class="popup__row">
+                <div class="popup__field">
+                  <div class="popup__label">Your Full Name</div>
+                  <div class="popup__wrap"><input class="popup__input" type="text"></div>
+                </div>
+                <div class="popup__field">
+                  <div class="popup__label">Display Name</div>
+                  <div class="popup__wrap"><input class="popup__input" type="text"></div>
+                </div>
+              </div>
+              <div class="popup__row">
+                <div class="popup__field">
+                  <div class="popup__label">Email</div>
+                  <div class="popup__wrap"><input class="popup__input" type="email"></div>
+                </div>
+                <div class="popup__field">
+                  <div class="popup__label">Location</div>
+                  <div class="popup__wrap"><input class="popup__input" type="text"></div>
+                </div>
+              </div>
+              <div class="popup__row">
+                <div class="popup__field">
+                  <div class="popup__label">Deposit Assets</div>
+                  <div class="popup__wrap"><select class="select select_arrows select_sm">
+                      <option>Enabled</option>
+                      <option>Disabled</option>
+                    </select></div>
+                </div>
+                <div class="popup__field">
+                  <div class="popup__label">Withdraw assets</div>
+                  <div class="popup__wrap"><select class="select select_arrows select_sm">
+                      <option>Enabled $1,000,000 USD/day</option>
+                      <option>Disable $1,000,000 USD/day</option>
+                    </select></div>
+                </div>
+              </div>
+            </div>
+            <div class="popup__label">Notifications</div>
+            <div class="popup__variants"><label class="checkbox"><input class="checkbox__input" type="checkbox" checked><span class="checkbox__in"><span class="checkbox__tick"></span><span class="checkbox__text">Promotions</span></span></label><label class="checkbox"><input class="checkbox__input" type="checkbox" checked><span class="checkbox__in"><span class="checkbox__tick"></span><span class="checkbox__text">Exchange</span></span></label><label class="checkbox"><input class="checkbox__input" type="checkbox"><span class="checkbox__in"><span class="checkbox__tick"></span><span class="checkbox__text">Withdrawals</span></span></label></div><button class="popup__btn btn btn_blue" type="submit">Update Profile</button>
+          </div>
+          <div class="popup__item js-tabs-item">
+            <div class="popup__invite">
+              <div class="popup__info h6">Invite your friends to Unity Exchange and Earn 15% on Friends trading fees</div>
+              <div class="popup__label">Your Referral Link</div>
+              <div class="popup__wrap"><input class="popup__input" type="text" value="https://unityexchange.design/ref?tranmautritam"><button class="popup__copy"><svg class="icon icon-copy">
+                    <use xlink:href="img/sprite.svg#icon-copy"></use>
+                  </svg></button></div>
+            </div>
+            <div class="popup__category">Total Rewards</div>
+            <div class="popup__flex">
+              <div class="popup__money h3">128.256</div>
+              <div class="popup__currency">USTD</div>
+            </div>
+            <div class="popup__parameters">
+              <div class="popup__parameter">
+                <div class="popup__head">
+                  <div class="popup__text">Inviter Rewards</div>
+                  <div class="popup__text">0.00 USDT</div>
+                </div>
+                <div class="popup__body">You’re earning 20% of the trading fees your referrals pay.</div>
+              </div>
+              <div class="popup__parameter">
+                <div class="popup__head">
+                  <div class="popup__text">Total Invited</div>
+                  <div class="popup__text">64</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="popup__item js-tabs-item">
+            <form class="popup__form">
+              <div class="popup__title h6">Change Password</div>
+              <div class="popup__field field js-field">
+                <div class="field__label">current Password</div>
+                <div class="field__wrap"><input class="field__input js-field-input" type="password"></div>
+              </div>
+              <div class="popup__field field js-field">
+                <div class="field__label">new Password</div>
+                <div class="field__wrap"><input class="field__input js-field-input" type="password"></div>
+              </div>
+              <div class="popup__field field js-field">
+                <div class="field__label">Confirm new Password</div>
+                <div class="field__wrap"><input class="field__input js-field-input" type="password"></div>
+              </div><button class="popup__btn btn btn_blue btn_wide">Change Password</button>
+            </form>
+          </div>
+          <div class="popup__item js-tabs-item">
+            <div class="popup__box">
+              <div class="popup__title h6">Scan Code</div>
+              <div class="popup__scan">
+                <div class="popup__preview"><img src="img/qr-code.png" alt=""></div>
+                <div class="popup__details">
+                  <div class="popup__text">If you want to turn on 2FA, use <a href="#">Google Authenticator app</a> to scan code, then enter six-digit code provided by the app to the form below.</div><button class="popup__btn btn btn_blue">Download 2FA App</button>
+                </div>
+              </div>
+            </div>
+            <div class="popup__box">
+              <div class="popup__title h6">Enter six-digit code</div>
+              <div class="popup__numbers">
+                <div class="popup__number success"><input type="tel" value="5"></div>
+                <div class="popup__number success"><input type="tel" value="6"></div>
+                <div class="popup__number success"><input type="tel" value="7"></div>
+                <div class="popup__number success"><input type="tel" value="9"></div>
+                <div class="popup__number"><input type="tel"></div>
+                <div class="popup__number"><input type="tel"></div>
+              </div>
+            </div>
+          </div>
+          <div class="popup__item js-tabs-item">
+            <div class="popup__box">
+              <div class="popup__title h6">Active Sessions</div>
+              <table class="popup__table">
+                <tr>
+                  <th>DATE/TIME</th>
+                  <th>DEVICE</th>
+                  <th>LOCATION</th>
+                  <th>IP ADDRESS</th>
+                  <th> </th>
+                </tr>
+                <tr>
+                  <td>2020-12-02 07:50:18</td>
+                  <td>iMac Pro</td>
+                  <td><span class="popup__flag">🇺🇸</span> USA </td>
+                  <td>123.45.678.987</td>
+                  <td><button class="popup__close"><svg class="icon icon-close">
+                        <use xlink:href="img/sprite.svg#icon-close"></use>
+                      </svg></button></td>
+                </tr>
+              </table>
+            </div>
+            <div class="popup__box">
+              <div class="popup__title h6">Login History</div>
+              <table class="popup__table">
+                <tr>
+                  <th>DATE/TIME</th>
+                  <th>DEVICE</th>
+                  <th>LOCATION</th>
+                  <th>IP ADDRESS</th>
+                  <th>2FA</th>
+                </tr>
+                <tr>
+                  <td>2020-12-02 07:50:18</td>
+                  <td>iMac Pro</td>
+                  <td><span class="popup__flag">🇻🇳</span> VN</td>
+                  <td>123.45.678.987</td>
+                  <td><svg class="icon icon-check">
+                      <use xlink:href="img/sprite.svg#icon-check"></use>
+                    </svg></td>
+                </tr>
+                <tr>
+                  <td>2020-12-02 07:50:18</td>
+                  <td>iPhone X</td>
+                  <td><span class="popup__flag">🇺🇸</span> USA </td>
+                  <td>123.45.678.987</td>
+                  <td><svg class="icon icon-check">
+                      <use xlink:href="img/sprite.svg#icon-check"></use>
+                    </svg></td>
+                </tr>
+                <tr>
+                  <td>2020-12-02 07:50:18</td>
+                  <td>iMac Pro</td>
+                  <td><span class="popup__flag">🇻🇳</span> VN</td>
+                  <td>123.45.678.987</td>
+                  <td><svg class="icon icon-check">
+                      <use xlink:href="img/sprite.svg#icon-check"></use>
+                    </svg></td>
+                </tr>
+                <tr>
+                  <td>2020-12-02 07:50:18</td>
+                  <td>iMac Pro</td>
+                  <td><span class="popup__flag">🇺🇸</span> USA </td>
+                  <td>123.45.678.987</td>
+                  <td><svg class="icon icon-check">
+                      <use xlink:href="img/sprite.svg#icon-check"></use>
+                    </svg></td>
+                </tr>
+                <tr>
+                  <td>2020-12-02 07:50:18</td>
+                  <td>iMac Pro</td>
+                  <td><span class="popup__flag">🇺🇸</span> USA </td>
+                  <td>123.45.678.987</td>
+                  <td><svg class="icon icon-check">
+                      <use xlink:href="img/sprite.svg#icon-check"></use>
+                    </svg></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- scripts-->
+      <script type="text/javascript">
+    
+  function showBelt() {
+  document.getElementById("BeltPools_box_right_left").style.display = "block";
+  document.getElementById("BeltPools_box_right_right2").style.display = "block";
+  document.getElementById("BeltPools_box_right_right2").style.display = "flex";
+  document.getElementById("BeltPools_box_right_right_right").style.flexDirection = "column";
+  document.getElementById("belt_drop_up").style.display = "block";
+  document.getElementById("belt_drop_down").style.display = "none";
+  }
+  function hideBelt() {
+  document.getElementById("BeltPools_box_right_left").style.display = "none";
+  document.getElementById("BeltPools_box_right_right2").style.display = "none";
+  document.getElementById("BeltPools_box_right_right2").style.display = "none";
+  document.getElementById("BeltPools_box_right_right_right").style.flexDirection = "column";
+  document.getElementById("belt_drop_up").style.display = "none";
+  document.getElementById("belt_drop_down").style.display = "block";
+  }
+  
+  function showBelt1() {
+  document.getElementById("BeltPools_box_right_left1").style.display = "block";
+  document.getElementById("BeltPools_box_right_right21").style.display = "block";
+  document.getElementById("BeltPools_box_right_right21").style.display = "flex";
+  document.getElementById("BeltPools_box_right_right_right1").style.flexDirection = "column";
+  document.getElementById("belt_drop_up1").style.display = "block";
+  document.getElementById("belt_drop_down1").style.display = "none";
+  }
+  function hideBelt1() {
+  document.getElementById("BeltPools_box_right_left1").style.display = "none";
+  document.getElementById("BeltPools_box_right_right21").style.display = "none";
+  document.getElementById("BeltPools_box_right_right21").style.display = "none";
+  document.getElementById("BeltPools_box_right_right_right1").style.flexDirection = "column";
+  document.getElementById("belt_drop_up1").style.display = "none";
+  document.getElementById("belt_drop_down1").style.display = "block";
+  }
+
+  function showBelt2() {
+  document.getElementById("BeltPools_box_right_left2").style.display = "block";
+  document.getElementById("BeltPools_box_right_right22").style.display = "block";
+  document.getElementById("BeltPools_box_right_right22").style.display = "flex";
+  document.getElementById("BeltPools_box_right_right_right2").style.flexDirection = "column";
+  document.getElementById("belt_drop_up2").style.display = "block";
+  document.getElementById("belt_drop_down2").style.display = "none";
+  }
+  function hideBelt2() {
+  document.getElementById("BeltPools_box_right_left2").style.display = "none";
+  document.getElementById("BeltPools_box_right_right22").style.display = "none";
+  document.getElementById("BeltPools_box_right_right22").style.display = "none";
+  document.getElementById("BeltPools_box_right_right_right2").style.flexDirection = "column";
+  document.getElementById("belt_drop_up2").style.display = "none";
+  document.getElementById("belt_drop_down2").style.display = "block";
+  }
+
+
+
+
+
+
+
+</script>
+
+    <script src="js/lib/jquery.min.js"></script>
+    <script src="js/lib/svg4everybody.min.js"></script>
+    <script src="js/lib/owl.carousel.min.js"></script>
+    <script src="js/lib/jquery.nice-select.min.js"></script>
+    <script src="js/lib/apexcharts.min.js"></script>
+    <script src="js/lib/jquery.magnific-popup.min.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

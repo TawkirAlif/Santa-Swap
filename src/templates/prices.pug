@@ -1,0 +1,119 @@
+---
+title: Prices
+---
+extends layouts/_layout
+block content
+	.page
+		+sidebar('', '', 'active')
+		.page__content
+			+header
+			.page__container
+				.search
+					.search__container
+						.search__wrap
+							.search__title.h4 Search by token name, symbol, or address
+							.search__info Find the best prices across exchange networks
+						form.search__form
+							input.search__input(type="text" placeholder="Search")
+							button.search__btn
+								+i('search')
+						.search__preview
+							img(src="img/figures-2.png" alt="")
+				.categories
+					.categories__title.h5.mobile-hide Categories
+					.categories__select.mobile-show
+						select.select
+							option Recently Added
+							option Top Gainers
+							option Top Lossers
+							option Stable Coins
+							option Potential Coins
+					.categories__container
+						.categories__slider.js-slider-categories.owl-carousel
+							a.categories__item(href="#")
+								.categories__preview.bg-green-gradient
+									img(src="img/money-time.svg" alt="")
+								.categories__text Recently Added
+							a.categories__item(href="#")
+								.categories__preview.bg-pink-gradient
+									img(src="img/boxing-glove.svg" alt="")
+								.categories__text Top Gainers
+							a.categories__item(href="#")
+								.categories__preview.bg-purple-gradient
+									img(src="img/money-bag-fill.svg" alt="")
+								.categories__text Top Lossers
+							a.categories__item(href="#")
+								.categories__preview.bg-blue-gradient
+									img(src="img/savings.svg" alt="")
+								.categories__text Stable Coins
+							a.categories__item(href="#")
+								.categories__preview.bg-orange-gradient
+									img(src="img/spaceship.svg" alt="")
+								.categories__text Potential Coins
+							a.categories__item(href="#")
+								.categories__preview.bg-pink-gradient
+									img(src="img/money-time.svg" alt="")
+								.categories__text Recently Added
+							a.categories__item(href="#")
+								.categories__preview.bg-green-gradient
+									img(src="img/money-time.svg" alt="")
+								.categories__text Stable Coins
+							a.categories__item(href="#")
+								.categories__preview.bg-pink-gradient
+									img(src="img/boxing-glove.svg" alt="")
+								.categories__text Top Gainers
+							a.categories__item(href="#")
+								.categories__preview.bg-purple-gradient
+									img(src="img/money-bag-fill.svg" alt="")
+								.categories__text Top Lossers
+				.prices
+					.prices__head
+						.prices__title.h5 Today's <br>Cryptocurrency Prices
+						select.select.select_empty
+							option Market Cap
+							option A - Z
+							option Volumes
+							option Last 24h
+							option Price
+					.prices__container
+						.prices__table
+							.prices__row.prices__row_head
+								.prices__cell 
+								.prices__cell token
+								.prices__cell symbol
+								.prices__cell price
+								.prices__cell 24h
+								.prices__cell Market Cap
+								.prices__cell Volume
+								.prices__cell 
+							mixin pricesRow(src, text, status, idName)
+								a.prices__row(href="price-details.html")
+									.prices__cell
+										button.favorite 
+									.prices__cell
+										.prices__company
+											.prices__logo
+												img(src=src)
+											.prices__text=text 
+									.prices__cell BTC
+									.prices__cell $19,266.6454898
+									.prices__cell
+										if status
+											.status.positive +2.05%
+										else
+											.status.negative -2.73%
+									.prices__cell $357,466,449,337
+									.prices__cell $49,046,886,271
+									.prices__cell
+										.prices__chart
+											div(id=idName)
+							+pricesRow('img/logo/bitcoin.png', 'Bitcoin', true, 'spark-1')
+							+pricesRow('img/logo/ethereum.png', 'Ethereum', false, 'spark-5')
+							+pricesRow('img/logo/steem.png', 'Steem', true, 'spark-2')
+							+pricesRow('img/logo/ripple.png', 'Ripple', true, 'spark-3') 
+							+pricesRow('img/logo/tokenbox.png', 'Tokenbox', true, 'spark-4')
+							+pricesRow('img/logo/ubex.png', 'Ubex', true, 'spark-6') 
+					.prices__btns
+						button.prices__btn.btn.btn_blue Load more
+
+

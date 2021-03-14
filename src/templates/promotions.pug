@@ -1,0 +1,86 @@
+---
+title: Promotions
+---
+extends layouts/_layout
+block content
+	.page
+		+sidebar('', '', '', '', 'active')
+		.page__content
+			+header
+			.promotions
+				.promotions__wrapper
+					.promotions__brand.h5 Unity Exchange
+					.promotions__title.h2 Promotions
+					.promotions__row
+						.promotions__col
+							.slider.slider_promotions
+								.slider__container
+									.slider__list.js-slider.owl-carousel
+										.slider__item
+											.slider__wrap
+												.slider__date Oct 26th - Nov 25th
+												.slider__title Bitcoin x TRON Net Deposit Campaign
+												.slider__info To celebrate our new multi-chain deposit and withdrawal support for Bitcoin on TRON (BTCTRON), we’re beginning a 30-day net deposit…
+												button.slider__btn.btn.btn_white Earn Crypto
+											.slider__preview
+												img(src="img/figures-2.png" alt="")
+										.slider__item
+											.slider__wrap
+												.slider__date Oct 26th - Nov 25th
+												.slider__title Bitcoin x TRON Net Deposit Campaign
+												.slider__info To celebrate our new multi-chain deposit and withdrawal support for Bitcoin on TRON (BTCTRON), we’re beginning a 30-day net deposit…
+												button.slider__btn.btn.btn_white Earn Crypto
+											.slider__preview
+												img(src="img/figures-2.png" alt="")
+										.slider__item
+											.slider__wrap
+												.slider__date Oct 26th - Nov 25th
+												.slider__title Bitcoin x TRON Net Deposit Campaign
+												.slider__info To celebrate our new multi-chain deposit and withdrawal support for Bitcoin on TRON (BTCTRON), we’re beginning a 30-day net deposit…
+												button.slider__btn.btn.btn_white Earn Crypto
+											.slider__preview
+												img(src="img/figures-2.png" alt="")
+						.promotions__col
+							.promotions__head
+								.promotions__category.h6 Featured Promotions
+								+dropdown('Featured Promotions', 'New Promotions', 'All Promotions', 'Featured Promotions')
+							.promotions__group.promotions__group_row
+								a.promotions__box(href="promotion-detail.html")
+									.promotions__icon
+										img(src="img/promotions-icon-1.png" alt="")
+									.promotions__details
+										.promotions__date Oct 26th - Nov 25th
+										.promotions__info BTC x TRON Net Deposit Campaign
+								a.promotions__box(href="promotion-detail.html")
+									.promotions__icon
+										img(src="img/promotions-icon-2.png" alt="")
+									.promotions__details
+										.promotions__date Oct 26th - Nov 25th
+										.promotions__info BTC x TRON Net Deposit Campaign
+								a.promotions__box(href="promotion-detail.html")
+									.promotions__icon
+										img(src="img/promotions-icon-3.png" alt="")
+									.promotions__details
+										.promotions__date Oct 26th - Nov 25th
+										.promotions__info BTC x TRON Net Deposit Campaign
+					.promotions__stage.h5 Latest Promotions
+					.promotions__list
+						mixin promotionsItem(src, classColor)
+							.promotions__item
+								a.promotions__preview(href="promotion-detail.html")
+									img(src=src alt="")
+								.promotions__body
+									.promotions__date(class=classColor) Oct 26th - Nov 25th
+									a.promotions__info(href="promotion-detail.html") Bitcoin x TRON Net Deposit Campaign
+									button.promotions__btn.btn.btn_border
+										+i('withdraw')
+										span.btn__text Deposit Bitcoin
+						+promotionsItem('img/promotions-pic-1.jpg', 'bg-green-opacity color-green')
+						+promotionsItem('img/promotions-pic-2.jpg', 'bg-green-opacity color-green')
+						+promotionsItem('img/promotions-pic-3.jpg', 'bg-green-opacity color-green')
+						+promotionsItem('img/promotions-pic-4.jpg', 'bg-green-opacity color-green')
+						+promotionsItem('img/promotions-pic-5.jpg', 'bg-red-opacity color-red')
+						+promotionsItem('img/promotions-pic-1.jpg', 'bg-green-opacity color-green')
+					+pagination
+
+

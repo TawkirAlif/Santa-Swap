@@ -1,0 +1,40 @@
+---
+title: Sign up
+---
+extends layouts/_layout
+block content
+	.login
+		.login__row
+			.login__col
+				a.login__logo(href="index.html")
+					img(src="img/logo-white.svg" alt="")
+				h1.login__title.h1 The Crypto <br>Asset Exchange
+				.login__info.h6 UI Design Kit
+				.login__preview
+					img(src="img/figures-2.png" alt="")
+			.login__col
+				a.login__logo(href="index.html")
+					img(src="img/logo-sm.svg" alt="")
+				.login__form
+					.login__stage.h4 Sign Up
+					.login__field.field.js-field
+						.field__label Email address
+						.field__wrap
+							input.field__input.js-field-input(type="email")
+					.login__field.field.js-field
+						.field__label Password
+						.field__wrap
+							input.field__input.js-field-input(type="password")
+					.login__field.field.js-field
+						.field__label Confirm Password
+						.field__wrap
+							input.field__input.js-field-input(type="password")
+					a.login__verify.success(href="#") Click to verify 
+						+i('verify')
+						.login__status 
+					.login__note By signing up I agree that I am 18 years of age or older, to the <a href="#">User Agreement</a>, <a href="#">Privacy Policy</a>, <a href="#">Cookie Policy</a>, and <a href="#">E-Sign Consent</a>.
+					a.login__btn.btn.btn_blue.btn_wide(href="index.html") Sign Up
+
+
+
+

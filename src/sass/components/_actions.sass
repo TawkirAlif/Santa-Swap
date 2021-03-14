@@ -1,0 +1,108 @@
+.actions
+	position: relative
+	display: flex
+	flex-direction: column 
+	padding: 30px 24px 15px
+	border-radius: 24px
+	background: $white 
+	&:before
+		content: ""
+		position: absolute
+		top: 8px
+		left: 12px
+		right: 12px
+		bottom: -8px
+		z-index: -1
+		border-radius: 24px
+		background: $gray-light 
+		filter: blur(86.985px)  
+	&__menu
+		display: flex
+		margin: 0 -4px 20px
+	&__link
+		flex: 1
+		margin: 0 4px
+		border-radius: 20px 
+		text-align: center
+		line-height: 40px
+		font-weight: 600
+		color: $gray
+		transition: all .2s
+		&:hover
+			color: $black
+		&.active
+			background: rgba($gray-light, .3) 
+			color: $blue
+	&__form
+		+d
+			display: flex
+			flex-direction: column
+			flex-grow: 1
+	&__fieldset
+		margin-bottom: 48px
+		+m
+			margin-bottom: 24px
+	&__field
+		position: relative
+		+nl
+			margin-bottom: 12px
+	&__label
+		position: absolute
+		top: 12px
+		left: 24px
+		z-index: 3
+		pointer-events: none
+		+chip
+		color: $gray  
+	.select
+		padding-top: 34px
+		padding-left: 24px
+		border-radius: 12px 
+		line-height: 1
+	&__input
+		width: 100%
+		height: 64px
+		padding: 26px 80px 10px 24px
+		border-radius: 12px 
+		background: rgba($gray-light, .3)
+		+fi
+		font-size: 14px
+		font-weight: 700
+		color: $black
+		transition: all .2s
+		&:focus
+			background: $white 
+			box-shadow: 0 0 0 2px $blue  
+	&__currency
+		position: absolute
+		top: 28px
+		right: 24px
+		pointer-events: none
+		text-align: right
+		font-weight: 700
+	&__btn
+		+d
+			margin-top: auto 
+
++dark
+	.actions
+		background: $dark-color 
+		&:before
+			display: none
+		&__link
+			&:hover
+				color: $white
+			&.active
+				background: $dark-active
+				color: $blue
+		&__input
+			background: $dark-active
+			color: $white 
+			&:focus
+				background: none 
+		.select
+			background: $dark-active
+			+m
+				height: 64px
+			&.open
+				background: none 

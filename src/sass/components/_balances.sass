@@ -1,0 +1,93 @@
+.balances
+	&__title
+		margin-bottom: 32px
+		+m
+			margin-bottom: 24px
+	&__table
+		display: table
+		width: 100%
+	&__row
+		display: table-row
+		border-radius: 12px 
+		cursor: pointer
+		transition: all .2s 
+		-webkit-tap-highlight-color: rgba(0,0,0,0)
+		&:nth-child(2n+1)
+			background: rgba($gray-light, .2) 
+		&:not(.balances__row_head):hover
+			background: none 
+			box-shadow: 0 0 0 2px $blue 
+	&__cell
+		display: table-cell
+		vertical-align: middle
+		padding-left: 24px
+		+m
+			padding-left: 16px
+		&:first-child
+			border-radius: 12px 0 0 12px
+			font-size: 0
+		&:nth-child(3)
+			font-weight: 600 
+			color: $gray
+		&:nth-child(3),
+		&:nth-child(4)
+			+t
+				display: none 
+		&:nth-child(n+3)
+			+m
+				display: none
+		&:last-child
+			padding-right: 24px
+			border-radius: 0 12px 12px 0
+			+m
+				display: table-cell
+				padding-right: 16px
+	&__table.small &__cell:nth-child(4),
+	&__table.small &__cell:nth-child(5)
+		display: none
+		+x
+			display: table-cell
+		+m
+			display: none
+	&__table.small &__cell:nth-child(4)
+		+t
+			display: none
+	&__row_head &__cell
+		height: 40px
+		+chip
+		color: $gray 
+		&:first-child
+			border-radius: 8px 0 0 8px
+		&:last-child
+			border-radius: 0 8px 8px 0
+	&__row:not(.balances__row_head) &__cell
+		height: 80px
+	&__company
+		display: inline-flex
+		align-items: center
+		font-weight: 600 
+	&__logo
+		flex-shrink: 0
+		width: 32px
+		height: 32px
+		margin-right: 16px
+		img
+			width: 100%
+			min-height: 100%
+			border-radius: 50%
+	&__number
+		font-weight: 600
+	&__price
+		+caption-sm
+		color: $gray 
+	&__btns
+		margin-top: 32px
+		text-align: center 
+		+m
+			margin-top: 24px  
+	 
++dark
+	.balances
+		&__row
+			&:nth-child(2n+1)
+				background: rgba($gray-light, .04) 

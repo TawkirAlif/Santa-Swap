@@ -1,0 +1,202 @@
+mixin i(name)
+	svg.icon(class='icon-' + name)
+		use(xlink:href='img/sprite.svg#icon-' + name)
+
+mixin sidebar(class1, class2, class3, class4, class5, class6, class7, classSidebar)
+	.sidebar(class=classSidebar)
+		.sidebar__head
+			a.sidebar__logo(href="index.html")
+				img.sidebar__pic.sidebar__pic_light(src="img/logo.svg" alt="")
+				img.sidebar__pic.sidebar__pic_dark(src="img/logo-white.svg" alt="")
+			button.sidebar__toggle
+				svg(xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24")
+					path(d="M22 12H3" stroke="#11142d")
+					g(stroke="#808191")
+						path(d="M22 4H13")
+						path(opacity=".301" d="M22 20H13")
+					path(d="M7 7l-5 5 5 5" stroke="#11142d")
+			button.sidebar__close
+				+i('close')
+		.sidebar__body
+			nav.sidebar__nav
+				a.sidebar__item(href="index.html" class=class1)
+					.sidebar__icon
+						+i('home')
+					.sidebar__text Home
+				a.sidebar__item(href="exchange.html" class=class2)
+					.sidebar__icon
+						+i('chart')
+					.sidebar__text Exchange
+				a.sidebar__item(href="prices.html" class=class3)
+					.sidebar__icon
+						+i('document')
+					.sidebar__text Prices
+				a.sidebar__item(href="wallets.html" class=class4)
+					.sidebar__icon
+						+i('wallet')
+					.sidebar__text Wallets
+				a.sidebar__item(href="promotions.html" class=class5)
+					.sidebar__icon
+						+i('discount')
+					.sidebar__text Promotions
+				a.sidebar__item(href="activities.html" class=class6)
+					.sidebar__icon
+						+i('activity')
+					.sidebar__text Activities
+				a.sidebar__item(href="notifications.html" class=class7)
+					.sidebar__icon
+						+i('notification')
+					.sidebar__text Notifications
+				a.sidebar__item.js-popup-open(href="#popup-settings" data-effect="mfp-zoom-in")
+					.sidebar__icon
+						+i('settings')
+					.sidebar__text Settings
+			.sidebar__mail
+				button.sidebar__close
+					+i('close')
+				.sidebar__info Send Cryto to An Email Address
+				button.sidebar__btn.btn.btn_white.btn_sm Send Now
+			form.sidebar__search
+				input.sidebar__input(type="text" placeholder="Search")
+				button.sidebar__start
+					+i('search')
+		.sidebar__bottom
+			label.switch.switch_theme.js-switch-theme
+				input.switch__input(type="checkbox")
+				span.switch__in
+					span.switch__box
+					span.switch__icon
+						+i('theme-light')
+						+i('theme-dark')
+			a.sidebar__user(href="sign-in.html")
+				img(src="img/ava-header.png" alt="")
+
+mixin header(classHeader, search, indicator)
+	.header(class=classHeader)
+		if search
+		else
+			form.header__search
+				input.header__input(type="text" placeholder="Search")
+				button.header__start
+					+i('search')
+		a.header__logo(href="index.html")
+			img(src="img/logo-sm.svg" alt="")
+		.header__group
+			if indicator
+				.header__indicator
+					.header__img
+						img(src="img/pulse.svg" alt="")
+					| 24
+			.header__item.header__item_notifications
+				button.header__head.active
+					+i('notification')
+				.header__body
+					.header__notifications
+						.header__notification
+							.header__icon
+								img(src="img/paper.svg" alt="")
+							.header__details
+								.header__info Wrapped Bitcoin is now listed on Unity Exchange
+								.header__line
+									.header__time 24m ago
+									.header__status
+						.header__notification
+							.header__icon
+								img(src="img/paper.svg" alt="")
+							.header__details
+								.header__info Wrapped Bitcoin is now listed on Unity Exchange
+								.header__line
+									.header__time 24m ago
+									.header__status
+						.header__notification
+							.header__icon
+								img(src="img/paper.svg" alt="")
+							.header__details
+								.header__info Wrapped Bitcoin is now listed on Unity Exchange
+								.header__line
+									.header__time 24m ago
+									.header__status
+						.header__notification
+							.header__icon
+								img(src="img/paper.svg" alt="")
+							.header__details
+								.header__info Wrapped Bitcoin is now listed on Unity Exchange
+								.header__line
+									.header__time 24m ago
+									.header__status
+						.header__notification
+							.header__icon
+								img(src="img/paper.svg" alt="")
+							.header__details
+								.header__info Wrapped Bitcoin is now listed on Unity Exchange
+								.header__line
+									.header__time 24m ago
+									.header__status
+					a.header__btn.btn.btn_blue.btn_wide(href="notifications.html") See all notifications
+			.header__item.header__item_download
+				button.header__head
+					+i('arrow-down-square')
+				.header__body
+					.header__row
+						.header__col
+							.header__category Downloads
+							.header__downloads
+								a.header__download(href="#")
+									img(src="img/app-store.svg" alt="")
+								a.header__download(href="#")
+									img(src="img/google-play.svg" alt="")
+						.header__col
+							.header__category Scan Code
+							.header__code
+								img(src="img/qr-code.png" alt="")
+			.header__item.header__item_lang
+				button.header__head Eng/USD
+				.header__body
+					.header__lang
+						.header__cell
+							a.header__link.active(href="#") <span class="header__flag">🇺🇸</span> English
+							a.header__link(href="#") <span class="header__flag">🇨🇳</span> 中文
+							a.header__link(href="#") <span class="header__flag">🇪🇸</span> Española
+							a.header__link(href="#") <span class="header__flag">🇫🇷</span> Français
+							a.header__link(href="#") <span class="header__flag">🇻🇳</span> Tiếng Việt
+						.header__cell
+							a.header__link.active(href="#") USD
+							a.header__link(href="#") EUR
+							a.header__link(href="#") JPY
+							a.header__link(href="#") BTC
+		a.header__user(href="sign-in.html")
+			img(src="img/ava-header.png" alt="")
+		button.header__toggle
+			svg(xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24")
+				path(d="M22 12H3" stroke="#11142d")
+				g(stroke="#808191")
+					path(d="M22 4H13")
+					path(opacity=".301" d="M22 20H13")
+				path(d="M7 7l-5 5 5 5" stroke="#11142d")
+
+mixin dropdown(link1, link2, link3, link4)
+	.dropdown
+		button.dropdown__head
+			+i('dots')
+		.dropdown__body
+			a.dropdown__link.selected(href="#")=link1
+			a.dropdown__link(href="#")=link2
+			a.dropdown__link(href="#")=link3
+			a.dropdown__link(href="#")=link4
+
+mixin more
+	.more
+		button.more__btn.btn.btn_blue
+			.loader
+
+mixin pagination
+	.pagination
+		a.pagination__item.active(href="#") 1
+		a.pagination__item(href="#") 2
+		a.pagination__item(href="#") 3
+		a.pagination__item(href="#") 4
+		a.pagination__next(href="#") Next
+			+i('check')
+
+
+

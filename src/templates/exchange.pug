@@ -1,0 +1,327 @@
+---
+title: Exchange
+---
+extends layouts/_layout
+block content
+	.page.full
+		+sidebar('', 'active', '', '', '', '', '', 'small')
+		.page__content
+			+header('', '', true)
+			.page__container.page__container_exchange
+				.exchange
+					.exchange__top
+						.exchange__cell
+							.exchange__company
+								.exchange__head
+									.exchange__logo
+										img(src="img/logo/bitcoin.png" alt="")
+									.exchange__details
+										.exchange__currency BTC/USDT
+										.exchange__info Bitcoin
+									.exchange__arrow
+										+i('arrow-down')
+								.exchange__body
+									a.exchange__item(href="#")
+										.exchange__logo
+											img(src="img/logo/bitcoin.png" alt="")
+										.exchange__details
+											.exchange__currency BTC/USDT
+											.exchange__info Bitcoin
+									a.exchange__item(href="#")
+										.exchange__logo
+											img(src="img/logo/ethereum.png" alt="")
+										.exchange__details
+											.exchange__currency BTC/USDT
+											.exchange__info Ethereum
+									a.exchange__item(href="#")
+										.exchange__logo
+											img(src="img/logo/ripple.png" alt="")
+										.exchange__details
+											.exchange__currency BTC/USDT
+											.exchange__info Ripple
+						.exchange__cell
+							.exchange__info 24h Change
+							.status.positive 0.44%
+						.exchange__cell
+							.exchange__info Last Pricea
+							.exchange__price 18372.595198 USDT
+						.exchange__cell
+							.exchange__info 24h Low
+							.exchange__price 18042.595198 USDT
+						.exchange__cell
+							.exchange__info 24h High
+							.exchange__price 18589.595198 USDT
+						.exchange__cell
+							.exchange__info Volume
+							.exchange__price 38645464.476 USDT
+					.exchange__row
+						.exchange__container
+							.market
+								.market__tabs.js-tabs
+									.market__head
+										.market__menu
+											a.market__link.js-tabs-link.active(href="#") Price Chart
+											a.market__link.js-tabs-link(href="#") Deep Chart
+										.market__group
+											.market__actions
+												a.market__action(href="#")
+													+i('time-clock')
+													span 30m
+												a.market__action(href="#")
+													+i('ranking')
+													span Indicator
+												a.market__action(href="#")
+													+i('arrow-up-right-square')
+									.market__body
+										.market__container
+											.market__item.js-tabs-item(style="display: block;")
+												.market__legend
+													.market__variant BTC/USDT
+													.market__variant O <span class="negative">18432.3204898</span>
+													.market__variant H <span class="negative">18432.3204898</span>
+													.market__variant L <span class="negative">18432.3204898</span>
+													.market__variant C <span class="negative">18432.3204898</span>
+												.market__chart.market__chart_price
+													div#chart-exhcange-price
+											.market__item.js-tabs-item
+												.market__legend
+													.market__variant BTC/USDT
+													.market__variant O <span class="positive">18432.3204898</span>
+													.market__variant H <span class="positive">18432.3204898</span>
+													.market__variant L <span class="positive">18432.3204898</span>
+													.market__variant C <span class="positive">18432.3204898</span>
+												.market__chart.market__chart_deep
+													div#chart-exhcange-deep
+								.market__transactions
+									.market__top.js-tabs
+										.market__menu.mobile-hide
+											a.market__link.js-tabs-link.active(href="#") Price Chart
+											a.market__link.js-tabs-link(href="#") Deep Chart
+											a.market__link.js-tabs-link(href="#") Open Orders
+											a.market__link.js-tabs-link(href="#") Favorites
+										.market__title.h6 Market Trades
+										.market__select.mobile-show
+											select.select
+												option Price Chart
+												option Deep Chart
+												option Open Orders
+												option Favorites
+									.market__table
+										.market__row.market__row_head
+											.market__cell time
+											.market__cell price <span class="mobile-hide">(usdt)</span>
+											.market__cell amount <span class="mobile-hide">(btc)</span>
+											.market__cell total <span class="mobile-hide">(usdt)</span>
+										.market__row
+											.market__cell 18:02:12
+											.market__cell.positive 18432.3204898
+											.market__cell 18446.62230935
+											.market__cell 18446.62230935
+										.market__row
+											.market__cell 18:02:12
+											.market__cell.negative 18432.3204898
+											.market__cell 18446.62230935
+											.market__cell 18446.62230935
+										.market__row
+											.market__cell 18:02:12
+											.market__cell.positive 18432.3204898
+											.market__cell 18446.62230935
+											.market__cell 18446.62230935
+										.market__row
+											.market__cell 18:02:12
+											.market__cell.negative 18432.3204898
+											.market__cell 18446.62230935
+											.market__cell 18446.62230935
+										.market__row
+											.market__cell 18:02:12
+											.market__cell.positive 18432.3204898
+											.market__cell 18446.62230935
+											.market__cell 18446.62230935
+										.market__row
+											.market__cell 18:02:12
+											.market__cell.negative 18432.3204898
+											.market__cell 18446.62230935
+											.market__cell 18446.62230935
+										.market__row
+											.market__cell 18:02:12
+											.market__cell.positive 18432.3204898
+											.market__cell 18446.62230935
+											.market__cell 18446.62230935
+										.market__row
+											.market__cell 18:02:12
+											.market__cell.negative 18432.3204898
+											.market__cell 18446.62230935
+											.market__cell 18446.62230935
+										.market__row
+											.market__cell 18:02:12
+											.market__cell.positive 18432.3204898
+											.market__cell 18446.62230935
+											.market__cell 18446.62230935
+										.market__row
+											.market__cell 18:02:12
+											.market__cell.negative 18432.3204898
+											.market__cell 18446.62230935
+											.market__cell 18446.62230935
+										.market__row
+											.market__cell 18:02:12
+											.market__cell.positive 18432.3204898
+											.market__cell 18446.62230935
+											.market__cell 18446.62230935
+										.market__row
+											.market__cell 18:02:12
+											.market__cell.negative 18432.3204898
+											.market__cell 18446.62230935
+											.market__cell 18446.62230935
+										.market__row
+											.market__cell 18:02:12
+											.market__cell.positive 18432.3204898
+											.market__cell 18446.62230935
+											.market__cell 18446.62230935
+										.market__row
+											.market__cell 18:02:12
+											.market__cell.negative 18432.3204898
+											.market__cell 18446.62230935
+											.market__cell 18446.62230935
+										.market__row
+											.market__cell 18:02:12
+											.market__cell.positive 18432.3204898
+											.market__cell 18446.62230935
+											.market__cell 18446.62230935
+										.market__row
+											.market__cell 18:02:12
+											.market__cell.negative 18432.3204898
+											.market__cell 18446.62230935
+											.market__cell 18446.62230935
+						.exchange__sidebar
+							.orders
+								.orders__head
+									.orders__title.h6 Order Book
+									.orders__sorting
+										a.orders__link(href="#") 
+											span(style="background-color: #3DBAA2;")
+											span(style="background-color: #3DBAA2;")
+											span(style="background-color: #3DBAA2;")
+										a.orders__link(href="#")
+											span(style="background-color: #FF7A68;")
+											span(style="background-color: #FF7A68;")
+											span(style="background-color: #FF7A68;")
+										a.orders__link.active(href="#")
+											span(style="background-color: #FF7A68;") 
+											span(style="background-color: #3DBAA2;")
+											span(style="background-color: #E4E4E4;")
+								.orders__table
+									.orders__row.orders__row_head
+										.orders__cell PRICE (USDT)
+										.orders__cell AMOUNT (BTC)
+										.orders__cell TOTAL (USDT)
+									.orders__row
+										.orders__cell.orders__up 18446.62230935
+											.orders__bg(style="width: 90%;")
+										.orders__cell 5.43268623
+										.orders__cell 5.43268623
+									.orders__row
+										.orders__cell.orders__up 18446.62230935
+											.orders__bg(style="width: 60%;")
+										.orders__cell 0.254878
+										.orders__cell 5.43268623
+									.orders__row
+										.orders__cell.orders__up 18446.62230935
+											.orders__bg(style="width: 55%;")
+										.orders__cell 5.43268623
+										.orders__cell 5.43268623
+									.orders__row
+										.orders__cell.orders__up 18446.62230935
+											.orders__bg(style="width: 70%;")
+										.orders__cell 0.4268623
+										.orders__cell 5.43268623
+									.orders__row
+										.orders__cell.orders__up 18446.62230935
+											.orders__bg(style="width: 85%;")
+										.orders__cell 5.43268623
+										.orders__cell 5.43268623
+									.orders__row
+										.orders__cell.orders__up 18446.62230935
+											.orders__bg(style="width: 73%;")
+										.orders__cell 0.3268
+										.orders__cell 5.43268623
+									.orders__row
+										.orders__cell.orders__up 5.43268623
+											.orders__bg(style="width: 30%;")
+										.orders__cell 0.254878
+										.orders__cell 5.43268623
+									.orders__price 18372.54657323 USDT
+									.orders__row
+										.orders__cell.orders__down 18446.62230935
+											.orders__bg(style="width: 15%;")
+										.orders__cell 5.43268623
+										.orders__cell 5.43268623
+									.orders__row
+										.orders__cell.orders__down 18446.62230935
+											.orders__bg(style="width: 9%;")
+										.orders__cell 5.43268623
+										.orders__cell 5.43268623
+									.orders__row
+										.orders__cell.orders__down 18446.62230935
+											.orders__bg(style="width: 36%;")
+										.orders__cell 5.43268623
+										.orders__cell 5.43268623
+									.orders__row
+										.orders__cell.orders__down 18446.62230935
+											.orders__bg(style="width: 47%;")
+										.orders__cell 5.43268623
+										.orders__cell 5.43268623
+									.orders__row
+										.orders__cell.orders__down 18446.62230935
+											.orders__bg(style="width: 54%;")
+										.orders__cell 5.43268623
+										.orders__cell 5.43268623
+									.orders__row
+										.orders__cell.orders__down 18446.62230935
+											.orders__bg(style="width: 25%;")
+										.orders__cell 5.43268623
+										.orders__cell 5.43268623
+									.orders__row
+										.orders__cell.orders__down 18446.62230935
+											.orders__bg(style="width: 55%;")
+										.orders__cell 5.43268623
+										.orders__cell 5.43268623
+							.actions
+								.actions__menu
+									a.actions__link.active(href="#") Buy
+									a.actions__link(href="#") Sell
+								form.actions__form
+									.actions__fieldset
+										.actions__field
+											.actions__label order type
+											select.select
+												option Stop Limit
+												option Stop Limit
+												option Stop Limit
+										.actions__field
+											.actions__label limit price
+											input.actions__input(type="tel")
+											.actions__currency.color-green USDT 
+										.actions__field
+											.actions__label amount
+											input.actions__input(type="tel")
+											.actions__currency.color-orange BTC
+										.actions__field
+											.actions__label amount
+											input.actions__input(type="tel")
+											.actions__currency.color-green USDT
+									button.actions__btn.btn.btn_blue.btn_wide Buy BTC
+							.exchange__banner(style="background-image: url('img/banner.jpg')")
+								.exchange__date November 2020 
+								.exchange__title.h4 Trading & Asset Updates
+								button.exchange__btn.btn.btn_white.btn_sm Explore Now
+					.exchange__foot
+						.exchange__menu
+							a.exchange__link.active(href="#" data-class=".exchange__top, .market__tabs")
+								+i('chart')
+							a.exchange__link(href="#" data-class=".market__transactions")
+								+i('document-plus')
+							a.exchange__link(href="#" data-class=".orders")
+								+i('swap')
+							a.exchange__link.note(href="#" data-class=".actions")
+								+i('document-two-lines')
+				

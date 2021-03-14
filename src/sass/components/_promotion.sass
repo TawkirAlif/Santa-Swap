@@ -1,0 +1,97 @@
+.promotion
+	padding: 8px
+	border-radius: 20px
+	background: $white
+	box-shadow: 0 8px 30px rgba(#000, .08)
+	&__preview
+		img
+			width: 100%
+			border-radius: 16px 
+	&__body
+		padding: 28px 24px 32px
+		+m
+			padding: 24px 8px 16px 
+	&__title
+		position: relative
+		margin-bottom: 24px 
+		padding-bottom: 26px
+		+h6
+		&:before
+			content: ""
+			position: absolute
+			left: 0
+			bottom: 0
+			width: 64px
+			height: 2px
+			border-radius: 1px
+			background: $purple
+	&__text
+		color: $gray 
+		+nl
+			margin-bottom: 32px 
+			+m
+				margin-bottom: 24px
+	&__note
+		display: flex
+		align-items: center
+		margin-bottom: 32px
+		padding: 18px
+		border: 2px solid $blue-light
+		border-radius: 8px 
+		background: rgba($blue-light, .1)
+		font-weight: 600 
+		+m
+			align-items: flex-start
+	&__icon
+		display: flex
+		justify-content: center
+		align-items: center
+		flex-shrink: 0
+		width: 40px
+		height: 40px
+		margin-right: 20px
+		border-radius: 50%
+		background: $blue-light
+		+m
+			margin-top: 5px
+	&__category
+		margin-bottom: 24px
+		+h6
+	&__list
+		margin-bottom: 24px
+		border-radius: 8px
+		border: 1px solid $gray-light  
+	&__line
+		display: flex
+		min-height: 56px
+		padding: 16px 32px
+		font-size: 16px
+		font-weight: 600 
+		.icon
+			position: relative
+			bottom: -5px
+			margin-right: 16px
+			flex-shrink: 0 
+			font-size: 16px
+		&:first-child
+			color: $red
+			.icon
+				fill: $red
+		+nl
+			border-bottom: 1px solid $gray-light
+	&__btn
+		+m
+			min-width: 100% 
+
++dark
+	.promotion
+		background: $dark-color
+		&__list
+			border-color: $dark-border 
+		&__line
+			border-color: $dark-border
+			.icon
+				fill: $white 
+			&:first-child
+				.icon
+					fill: $red

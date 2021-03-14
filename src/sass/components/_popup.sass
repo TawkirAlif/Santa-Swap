@@ -1,0 +1,487 @@
+.popup
+	position: relative
+	& > &__title
+		margin-bottom: 48px
+		+m
+			margin-bottom: 32px
+	&__select
+		margin-bottom: 24px
+	&__nav
+		display: flex
+		margin: 0 -4px 28px 
+		+m
+			display: none
+	&__nav &__link
+		flex-grow: 1
+		margin: 0 4px
+		border: 1px solid $gray-light
+		border-radius: 20px 
+		text-align: center
+		line-height: 38px
+		font-weight: 600
+		color: $black   
+		transition: all .2s
+		&:hover
+			color: $blue 
+		&.active
+			background: rgba($gray-light, .3)
+			border-color: transparent 
+			color: $blue
+	&__item
+		display: none
+	&__user
+		+nl
+			margin-bottom: 32px
+			padding-bottom: 32px
+			border-bottom: 1px solid $gray-light
+			+m
+				padding-bottom: 24px
+	&__line
+		display: flex
+	&__ava
+		flex-shrink: 0
+		width: 80px
+		height: 80px
+		margin-right: 24px
+		+m
+			width: 70px
+			height: 70px
+			margin-right: 16px
+	&__ava &__pic
+		width: 100% 
+		min-height: 100%
+		border-radius: 50%
+		image-orientation: from-image
+	&__details
+		flex-grow: 1
+	&__btns
+		display: flex
+		margin-bottom: 7px
+		+m
+			margin-bottom: 5px
+	&__btns &__btn,
+	&__loading
+		+nl
+			margin-right: 8px
+	&__btns &__btn
+		+m
+			padding: 0 10px 
+	&__loading
+		position: relative
+		overflow: hidden
+	&__file
+		position: absolute
+		top: 0
+		left: 0
+		font-size: 140px
+		opacity: 0
+	&__upload
+		display: flex
+		justify-content: center
+		align-items: center
+		min-width: 131px
+		height: 48px
+		border: 2px solid $blue
+		border-radius: 12px 
+		+fi
+		font-size: 14px
+		font-weight: 700
+		color: $black
+		transition: all .2s 
+		+m
+			min-width: auto
+			padding: 0 10px   
+	&__loading:hover &__upload
+		background: $blue
+		color: $white
+	&__default
+		color: $blue
+		+m
+			font-size: 12px  
+	&__fieldset
+		margin-bottom: 20px
+	&__fieldset > &__field
+		+nl
+			margin-bottom: 20px
+	&__row
+		display: flex
+		margin: 0 -8px
+		+m
+			display: block
+			margin: 0
+		+nl
+			margin-bottom: 20px
+	&__row &__field
+		flex: 0 0 calc(50% - 16px)
+		width: calc(50% - 16px)
+		margin: 0 8px 
+		+m
+			width: 100%
+			margin: 0
+		+nl
+			+m
+				margin-bottom: 20px
+	&__label
+		margin-bottom: 16px
+		+caption-sm
+		color: $gray 
+		&_mb32
+			margin-bottom: 32px
+	&__wrap
+		position: relative
+	&__input
+		width: 100%
+		height: 56px
+		padding: 0 20px
+		border-radius: 8px  
+		background: rgba($gray-light, .3)  
+		+fi
+		font-size: 14px
+		font-weight: 600
+		color: $black
+		transition: all .2s
+		&:focus
+			box-shadow: inset 0 0 0 2px $blue 
+			background: $white 
+	&__item > &__btn
+		+m
+			min-width: 100% 
+	&__variants
+		display: flex
+		flex-direction: column
+		margin-bottom: 24px
+		padding: 24px
+		border-radius: 8px
+		background: rgba($gray-light, .3)
+		.checkbox
+			+nl
+				margin-bottom: 20px
+	&__invite
+		position: relative
+		margin-bottom: 48px
+		padding: 32px
+		border-radius: 16px
+		background: $gradient-purple
+		color: $white
+		&:before,
+		&:after
+			content: ""
+			position: absolute
+			border-radius: 16px 
+		&:before
+			top: 16px
+			left: 16px
+			right: 16px
+			bottom: -16px
+			z-index: -2
+			background: rgba($purple, .2)
+		&:after
+			top: 8px
+			left: 8px
+			right: 8px
+			bottom: -8px
+			z-index: -1
+			background: rgba($purple, .5)
+	&__invite &__info
+		max-width: 380px
+		margin-bottom: 24px
+	&__invite &__label
+		color: $white
+	&__invite &__input
+		padding-right: 56px
+		background: rgba($gray-light, .24)
+		color: $white
+		&:focus
+			box-shadow: inset 0 0 0 2px $white
+			background: rgba($gray-light, .24)
+	&__copy
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		width: 56px
+		font-size: 0
+		.icon
+			font-size: 14px
+			transition: opacity .2s
+		&:hover .icon
+			 opacity: .7 
+	&__category
+		margin-bottom: 12px
+		+title
+	&__flex
+		display: flex
+		align-items: center
+	&__currency
+		display: inline-block
+		padding: 6px 13px
+		border-radius: 16px 
+		background: $green-dark  
+		+title
+		color: $white 
+		+nf
+			margin-left: 20px
+	&__parameters
+		margin-top: 32px
+	&__parameter
+		padding: 32px 0
+		border-top: 1px solid $gray-light 
+		&:last-child
+			padding-bottom: 0
+	&__head
+		display: flex
+		justify-content: space-between
+		+title
+	&__body
+		max-width: 250px
+		margin-top: 12px
+		color: $gray 
+	&__form
+		max-width: 412px
+		margin: 60px auto 
+		+m
+			margin: 20px 0 0 
+	&__title
+		margin-bottom: 32px
+		+m
+			margin-bottom: 24px
+	&__form &__field
+		+nl
+			margin-bottom: 16px
+	&__box
+		+nl
+			margin-bottom: 48px
+			+m
+				margin-bottom: 32px
+	&__scan
+		display: flex
+		+m
+			display: block
+	&__scan &__preview
+		flex-shrink: 0
+		width: 205px
+		+m
+			width: 140px
+			margin: 0 auto 16px 
+		img
+			width: 100% 
+	&__scan &__details
+		flex-grow: 1
+		padding-left: 80px
+		+m
+			padding: 0
+			text-align: center
+	&__scan &__text
+		margin-bottom: 20px
+		color: $gray
+		a
+			color: $blue
+			&:hover
+				text-decoration: underline
+	&__numbers
+		display: flex
+		margin: 0 -8px
+		+m
+			margin: 0 -5px 
+	&__number
+		flex-grow: 1
+		margin: 0 8px
+		+m
+			margin: 0 5px 
+		input
+			width: 100% 
+			height: 80px
+			border-radius: 12px
+			background: rgba($gray-light, .3)
+			text-align: center
+			+h4
+			transition: all .2s
+			+m
+				height: 44px
+				font-size: 20px
+				font-weight: 500 
+			&:focus
+				box-shadow: inset 0 0 0 2px $blue
+				background: $white 
+		&.success input
+			background: $white 
+			box-shadow: inset 0 0 0 2px $green 
+	&__table
+		width: 100%
+		tr
+			cursor: pointer
+			transition: all .2s 
+			&:first-child
+				background: rgba($gray-light, .2) 
+			&:not(:first-child):hover
+				background: $blue
+				.popup__close .icon
+					fill: $white
+				th,
+				td
+					color: $white
+					.icon
+						fill: $white  
+	 	th,
+	 	td
+	 		height: 40px
+	 		vertical-align: middle
+	 		padding-right: 16px
+	 		transition: color .2s 
+	 		&:first-child
+	 			padding-left: 16px
+	 			border-radius: 8px 0 0 8px 
+	 		&:last-child
+	 			border-radius: 0 8px 8px 0 
+	 			text-align: center
+	 			font-size: 0
+	 			.icon
+	 				font-size: 14px
+	 		&:nth-child(3)
+	 			+m
+	 				border-radius: 0 8px 8px 0 
+	 		&:nth-child(n+4)
+	 			+m
+	 				display: none
+	 	th
+	 		font-size: 10px
+	 		text-transform: uppercase
+	 		font-weight: 600
+	 		letter-spacing: 1px
+	 		color: $gray 
+	 	td
+	 		+caption-sm
+	 		color: $gray 
+	&__close
+		font-size: 0
+		.icon
+			font-size: 14px
+			transition: fill .2s 
+	&__flag
+		margin-right: 5px  
+	.mfp-close
+		position: absolute
+		width: 48px
+		height: 48px
+		border-radius: 50% 
+		box-shadow: 0 5px 20px rgba(#E3E6EC, .85)
+		line-height: normal
+		opacity: 1
+		font-size: 0
+		background: $white url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath fill='%2311142d' d='M1.613.2l.094.083L5 3.585 8.293.293a1 1 0 0 1 1.414 0 1 1 0 0 1 .083 1.32l-.083.094L6.415 5l3.292 3.293a1 1 0 0 1-1.32 1.497l-.094-.083L5 6.415 1.707 9.707A1 1 0 0 1 .21 8.387l.083-.094L3.585 5 .293 1.707a1 1 0 0 1 0-1.414A1 1 0 0 1 1.613.21z'/%3E%3C/svg%3E") no-repeat 50% 50% / 10px auto
+		transition: box-shadow .25s 
+		-webkit-tap-highlight-color: rgba(0,0,0,0)
+		+m
+			width: 40px
+			height: 40px
+		&:hover
+			box-shadow: 0 5px 20px rgba(#000, .15)
+	&_settings
+		max-width: 630px
+		margin: 15px auto
+		padding: 40px 32px 
+		background: $white
+		border-radius: 24px
+		+m
+			min-height: 100vh 
+			margin: 0
+			padding: 32px 24px 
+			border-radius: 0 
+		.mfp-close
+			top: 24px
+			right: 32px
+			+t
+				right: 24px
+
+.mfp-container
+	padding: 20px
+	+m
+		padding: 0
+		
+@media (max-width: 900px)
+	.mfp-container
+		padding: 30px 20px 
+			
+.mfp-bg
+	background: rgba($dark, .9)
+
+.mfp-zoom-in 
+	.popup
+		opacity: 0
+		transition: all 0.2s ease-in-out
+		transform: scale(0.8) 
+	&.mfp-bg 
+		opacity: 0
+		transition: all 0.2s ease-out
+	&.mfp-ready
+		.popup
+			opacity: 1
+			transform: scale(1) 
+		&.mfp-bg 
+			opacity: 0.8
+	&.mfp-removing 
+		.popup 
+			transform: scale(0.8) 
+			opacity: 0
+		&.mfp-bg
+			opacity: 0
+
++dark
+	.popup
+		background: $dark-color
+		border: 1px solid $dark-border
+		&__nav .popup__link
+			border-color: $dark-border
+			color: $white
+			&:hover
+				background: $dark-border
+				border-color: transparent
+			&.active
+				background: $dark-active
+				color: $blue
+		&__user
+			border-color: $dark-border 
+		&__upload
+			color: $white
+		&__field .popup__input
+			background: $dark-active
+			color: $white   
+			&:focus
+				background: none 
+		&__field .select
+			background: $dark-active
+			&.open
+				background: none 
+		&__variants
+			background: rgba($gray-light, .03) 
+		&__parameter
+			border-color: $dark-border
+		&__invite .popup__input 
+			background: none
+			box-shadow: 0 0 0 2px rgba($white, .5)
+			&:focus
+				box-shadow: 0 0 0 2px $white
+		.field__input
+			background: $dark-active
+			&:focus
+				background: none 
+		&__number input
+			background: rgba($dark-active, .3)
+			color: $white
+		&__table 
+			tr
+				&:first-child
+					background: rgba($gray-light, .02) 
+				&:not(:first-child):hover
+					background: rgba($gray-light, .02) 
+			th,
+			td
+				&:last-child
+					.icon
+						fill: $white
+		.mfp-close
+			background-color: $dark-active
+			box-shadow: none 
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath fill='%23ffffff' d='M1.613.2l.094.083L5 3.585 8.293.293a1 1 0 0 1 1.414 0 1 1 0 0 1 .083 1.32l-.083.094L6.415 5l3.292 3.293a1 1 0 0 1-1.32 1.497l-.094-.083L5 6.415 1.707 9.707A1 1 0 0 1 .21 8.387l.083-.094L3.585 5 .293 1.707a1 1 0 0 1 0-1.414A1 1 0 0 1 1.613.21z'/%3E%3C/svg%3E")
+		
+	

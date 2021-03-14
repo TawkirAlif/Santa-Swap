@@ -1,0 +1,316 @@
+body
+	min-width: 375px
+	+fi
+	font-size: 14px
+	line-height: (24/14) 
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+	color: $black
+	&.dark
+		background: $dark-bg
+		color: $white   
+
+body,
+html
+	&.no-scroll
+		overflow: hidden
+
+button,
+input,
+textarea,
+select
+	+fi
+
+img
+	max-width: 100%
+	vertical-align: middle
+
+.select
+	height: 64px
+	padding-left: 20px
+	padding-right: 45px
+	background: rgba($gray-light, .3) 
+	border-radius: 16px 
+	border: none 
+	float: none
+	line-height: 64px
+	font-weight: 600
+	transition: all .2s
+	+m
+		height: 56px
+		padding-left: 16px
+		padding-right: 36px 
+		background: rgba($gray-light, .3) 
+		border-radius: 12px 
+		line-height: 56px
+	&:after
+		display: none
+	&:before
+		content: ""
+		position: absolute
+		top: 50%
+		right: 20px
+		width: 12px
+		height: 7px
+		transform: translateY(-50%)
+		background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' viewBox='0 0 12 8'%3E%3Cpath d='M10.281.305L5.988 4.598 1.695.305A1 1 0 0 0 .293.317a1 1 0 0 0-.012 1.402l5 5a1 1 0 0 0 1.414 0l5-5a1 1 0 0 0-.441-1.687 1 1 0 0 0-.973.273z' fill='%2311142d'/%3E%3C/svg%3E") no-repeat 50% 50% / auto 100%
+		transition: transform .2s
+		+m
+			right: 16px
+	.current
+		+m
+			display: block
+			+text-overflow
+	&.open
+		&:before
+			transform: translateY(-50%) rotate(180deg)
+	&:not(.select_empty).open
+		box-shadow: inset 0 0 0 2px $blue
+		background: $white  
+	.list
+		right: 0
+		margin-top: 7px
+		padding: 24px 
+		border-radius: 20px 
+		border: 1px solid $gray-light
+		box-shadow: 0 5px 25px rgba(#000, .07) 
+		+m
+			padding: 20px 16px 
+	.option
+		position: relative
+		padding-left: 28px
+		min-height: auto
+		line-height: (24/14)
+		font-weight: 600 
+		color: $gray 
+		transition: color .2s
+		+m
+			padding-left: 0
+		&:before
+			content: ""
+			position: absolute
+			top: 5px
+			left: 0
+			width: 16px
+			height: 13px
+			background: url("data:image/svg+xml,%3Csvg width='16' height='14' viewBox='0 0 16 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.6 8.60001L2.4 5.40001L0 7.80001L5.6 13.4L16 3.00001L13.6 0.600006L5.6 8.60001Z' fill='%23355DFF'/%3E%3C/svg%3E%0A") no-repeat 50% 50% / 100% auto 
+			opacity: 0
+			transition: opacity .2s 
+			+m
+				display: none
+		&:hover,
+		&.focus,
+		&.selected.focus
+			background: none
+		&:hover
+			color: $black 
+		&.selected
+			color: $blue
+			&:before
+				opacity: 1 
+		+nl
+			margin-bottom: 8px
+	&_sm
+		height: 56px  
+		line-height: 56px
+		border-radius: 8px 
+	&_empty
+		padding-left: 0
+		padding-right: 32px
+		height: 24px
+		background: none
+		border-radius: 0   
+		line-height: 24px
+		&:before
+			right: 8px
+		.list
+			left: auto
+			right: -16px
+			width: 192px
+			margin-top: 19px
+			+m
+				left: 0
+				right: 0
+				width: auto
+				margin-top: 7px
+		&.open
+			+m
+				box-shadow: inset 0 0 0 2px $blue
+				background: $white  
+	&_arrows
+		+m
+			padding-left: 20px
+		&:before
+			width: 12px
+			height: 16px
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='18' viewBox='0 0 12 18'%3E%3Cpath fill='%231b1d21' d='M11.247 11.836a1 1 0 0 1 .006 1.323l-.089.089-4.5 4a1 1 0 0 1-1.23.077l-.099-.077-4.5-4a1 1 0 0 1 1.23-1.572l.099.078L6 15.161l3.836-3.408a1 1 0 0 1 1.412.083zM6.566.675l.099.077 4.5 4a1 1 0 0 1-1.23 1.572l-.099-.078L6 2.838 2.164 6.247a1 1 0 0 1-1.323.006l-.089-.089a1 1 0 0 1-.006-1.323l.089-.089 4.5-4a1 1 0 0 1 1.23-.077z'/%3E%3C/svg%3E")
+		.list
+			margin-top: 2px
+			padding: 12px 19px
+			border-radius: 8px
+		.option
+			padding-left: 0
+			&:before
+				display: none
+
+select.select
+	opacity: 0
+
++dark
+	.select
+		+m
+			background: rgba($gray-light, .03)
+		&:not(.select_empty)
+			background: rgba($gray-light, .03) 
+		&:before
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' viewBox='0 0 12 8'%3E%3Cpath d='M10.281.305L5.988 4.598 1.695.305A1 1 0 0 0 .293.317a1 1 0 0 0-.012 1.402l5 5a1 1 0 0 0 1.414 0l5-5a1 1 0 0 0-.441-1.687 1 1 0 0 0-.973.273z' fill='%23ffffff'/%3E%3C/svg%3E")
+		.list
+			border-color: $dark-border
+			background: $dark-active
+		.option
+			&:hover
+				color: $white 
+			&.selected
+				color: $blue
+		&_arrows
+			&:before
+				background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='18' viewBox='0 0 12 18'%3E%3Cpath fill='%23ffffff' d='M11.247 11.836a1 1 0 0 1 .006 1.323l-.089.089-4.5 4a1 1 0 0 1-1.23.077l-.099-.077-4.5-4a1 1 0 0 1 1.23-1.572l.099.078L6 15.161l3.836-3.408a1 1 0 0 1 1.412.083zM6.566.675l.099.077 4.5 4a1 1 0 0 1-1.23 1.572l-.099-.078L6 2.838 2.164 6.247a1 1 0 0 1-1.323.006l-.089-.089a1 1 0 0 1-.006-1.323l.089-.089 4.5-4a1 1 0 0 1 1.23-.077z'/%3E%3C/svg%3E")
+		&.open
+			background: none 
+
+.status
+	position: relative
+	padding-left: 18px
+	line-height: 16px
+	font-weight: 700 
+	&:before
+		content: ""
+		position: absolute
+		top: 0
+		left: 0
+		width: 13px
+		height: 16px
+		background-repeat: no-repeat  
+		background-position: 50% 50%
+		background-size: 100% auto
+	&.positive
+		color: $green 
+		&:before
+			background-image: url("data:image/svg+xml,%3Csvg width='14' height='16' viewBox='0 0 14 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.300049 6.7L1.70005 8.1L6.00005 3.8V16H8.00005V3.8L12.3 8.1L13.7 6.7L7.00005 0L0.300049 6.7Z' fill='%234FBF67'/%3E%3C/svg%3E%0A")
+	&.negative
+		color: $red-light 
+		&:before
+			background-image: url("data:image/svg+xml,%3Csvg width='14' height='16' viewBox='0 0 14 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.300049 9.3L1.70005 7.9L6.00005 12.2V0H8.00005V12.2L12.3 7.9L13.7 9.3L7.00005 16L0.300049 9.3Z' fill='%23FF7A68'/%3E%3C/svg%3E%0A")
+
+.more
+	margin-top: 32px
+	text-align: center
+	+m
+		margin-top: 24px
+	&__btn
+		position: relative
+		.loader
+			position: absolute
+			top: 0
+			left: 50%
+			font-size: 3px
+			width: 1em
+			height: 1em
+			border-radius: 50%
+			position: relative
+			text-indent: -9999em
+			animation: load 1.1s infinite ease
+			transform: translateZ(0)
+  
+@keyframes load
+	0%,
+	100% 
+		box-shadow: 0em -2.6em 0em 0em #ffffff, 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 0em 2.5em 0 0em rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), -2.6em 0em 0 0em rgba(255, 255, 255, 0.5), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.7)
+	12.5% 
+		box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.7), 1.8em -1.8em 0 0em #ffffff, 2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 0em 2.5em 0 0em rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), -2.6em 0em 0 0em rgba(255, 255, 255, 0.2), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.5)
+	25%
+		box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.5), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.7), 2.5em 0em 0 0em #ffffff, 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 0em 2.5em 0 0em rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), -2.6em 0em 0 0em rgba(255, 255, 255, 0.2), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2)
+	37.5% 
+		box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.5), 2.5em 0em 0 0em rgba(255, 255, 255, 0.7), 1.75em 1.75em 0 0em #ffffff, 0em 2.5em 0 0em rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), -2.6em 0em 0 0em rgba(255, 255, 255, 0.2), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2)
+	50%
+		box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 2.5em 0em 0 0em rgba(255, 255, 255, 0.5), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.7), 0em 2.5em 0 0em #ffffff, -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), -2.6em 0em 0 0em rgba(255, 255, 255, 0.2), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2)
+	62.5% 
+		box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.5), 0em 2.5em 0 0em rgba(255, 255, 255, 0.7), -1.8em 1.8em 0 0em #ffffff, -2.6em 0em 0 0em rgba(255, 255, 255, 0.2), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2)
+	75%
+		box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 0em 2.5em 0 0em rgba(255, 255, 255, 0.5), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.7), -2.6em 0em 0 0em #ffffff, -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2)
+	87.5%
+		box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 0em 2.5em 0 0em rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.5), -2.6em 0em 0 0em rgba(255, 255, 255, 0.7), -1.8em -1.8em 0 0em #ffffff
+
+.pagination
+	display: flex
+	flex-wrap: wrap
+	margin: -8px 0 0 -8px 
+	&__item,
+	&__next
+		display: flex
+		justify-content: center
+		align-items: center
+		flex-shrink: 0
+		height: 48px
+		margin: 8px 0 0 8px 
+		border-radius: 12px
+		border: 1px solid $gray-light
+		font-size: 14px
+		font-weight: 700
+		color: $black     
+		transition: all .2s
+		&:hover
+			border-color: $blue
+	&__item
+		width: 48px
+	&__next
+		width: 105px
+		.icon
+			margin-left: 15px
+	&__item.active
+		background: $blue
+		border-color: $blue  
+		color: $white
+		
++dark
+	.pagination
+		&__item,
+		&__next
+			border-color: $dark-border 
+			color: $white
+			.icon
+				fill: $white
+			&:hover
+				border-color: $blue 
+
+.favorite
+	position: relative
+	flex-shrink: 0
+	width: 16px
+	height: 16px
+	&:before,
+	&:after
+		content: ""
+		+coverdiv
+		background-repeat: no-repeat 
+		background-position: 50% 50%
+		background-size: 100% auto
+		transition: opacity .2s 
+	&:before
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' viewBox='0 0 16 16'%3E%3Cpath d='M8 .867l2.318 4.696 5.182.753-3.75 3.655.885 5.162L8 12.696l-4.635 2.437.885-5.162L.5 6.316l5.182-.753L8 .867z' stroke='%23808191' stroke-linejoin='round'/%3E%3C/svg%3E")
+	&:after
+		z-index: 2
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='16' fill='none' viewBox='0 0 16 16'%3E%3Cpath d='M16.144 5.439l-4.317-.628L9.9.9a1.04 1.04 0 0 0-1.8 0L6.173 4.812l-4.317.627A1 1 0 0 0 1.3 7.145l3.123 3.045-.737 4.3a1 1 0 0 0 1.451 1.054L9 13.513l3.861 2.029a1 1 0 0 0 1.451-1.054l-.737-4.3L16.7 7.145a1 1 0 0 0-.554-1.705l-.002-.001z' fill='%23355dff'/%3E%3C/svg%3E")
+		opacity: 0
+	&.active
+		&:before
+			opacity: 0
+		&:after
+			opacity: 1
+
++dark
+	.apexcharts-tooltip.apexcharts-theme-light
+		color: $black
+	.apexcharts-gridlines-horizontal line
+		stroke: $dark-border
+

@@ -1,0 +1,167 @@
+.market
+	border-radius: 32px
+	border: 1px solid $gray-light
+	+m
+		border: none 
+		border-radius: 0 
+	&__tabs
+		border-bottom: 1px solid $gray-light
+		+rmin(768)
+			display: block !important
+		+m
+			border: 1px solid $gray-light 
+			background: $dark-color 
+			border-radius: 32px  
+	&__head
+		display: flex
+		align-items: center
+		padding: 24px
+		border-bottom: 1px solid $gray-light 
+		+m
+			display: block
+			padding-bottom: 16px
+	&__menu
+		display: flex
+		margin-right: auto
+		+m
+			margin: 0 -5px 16px 
+	&__menu &__link
+		padding: 0 16px
+		border-radius: 20px 
+		line-height: 40px
+		font-weight: 600
+		color: $gray
+		transition: all .2s
+		+m
+			flex: 0 0 calc(50% - 10px)
+			width: calc(50% - 10px)
+			margin: 0 5px
+			text-align: center
+		&:hover
+			color: $black
+		&.active
+			background: rgba($gray-light, .3)
+			color: $blue 
+	&__actions
+		display: flex
+		align-items: center
+	&__action
+		display: flex
+		align-items: center
+		font-weight: 600
+		color: $black
+		transition: color .2s  
+		.icon
+			font-size: 16px
+			fill: $black
+			transition: fill .2s 
+			+nl
+				margin-right: 8px
+		&:hover
+			color: $blue
+			.icon
+				fill: $blue
+		&:last-child
+			+m
+				margin-left: auto
+		+nl
+			margin-right: 32px
+	&__item
+		display: none
+		padding: 24px
+	&__legend
+		display: flex
+		flex-wrap: wrap
+		margin: -12px 0 0 -24px 
+	&__variant
+		margin: 12px 0 0 24px 
+		+caption-sm
+		color: $gray 
+	&__chart
+		height: 560px
+		+m
+			height: 350px
+		&_price
+			margin-top: 10px
+			margin-left: -12px
+			+m
+				margin-top: 0
+				margin-left: -22px
+				margin-right: -12px
+		&_deep
+			margin-top: 20px
+			margin-right: -10px
+			margin-left: -30px
+			margin-bottom: 20px
+	&__transactions
+		+rmin(768)
+			display: block !important
+		+m
+			display: none
+	&__top
+		padding: 24px
+		+m
+			margin-bottom: 16px
+			padding: 0 
+	&__top &__menu
+		margin-bottom: 24px
+	&__title
+		+m
+			margin-bottom: 16px
+	&__table
+		display: table
+		width: 100% 
+		+m
+			border: 1px solid $gray-light
+			border-radius: 20px  
+	&__row
+		display: table-row
+		&:first-child .market__cell
+			+m
+				border-top: none 
+	&__cell
+		display: table-cell
+		height: 40px
+		padding-left: 24px
+		vertical-align: middle
+		border-top: 1px solid $gray-light
+		+m
+			padding-left: 18px
+		&:last-child
+			padding-right: 24px
+			+m
+				padding-right: 18px
+	&__row_head &__cell
+		+chip
+		color: $gray 
+	&__row:not(.merket__row_head) &__cell
+		+caption-sm
+
++dark
+	.market
+		border-color: $dark-border
+		&__head
+			border-color: $dark-border
+		&__menu .market__link:hover
+			color: $white 
+		&__menu .market__link.active
+			background: $dark-active 
+			color: $blue
+		&__action
+			color: $white
+			.icon
+				fill: $white
+			&:hover
+				color: $blue
+				.icon
+					fill: $blue
+		&__tabs,
+		&__cell
+			border-color: $dark-border 
+		&__table
+			+m
+				border-color: $dark-border
+		&__chart
+			.apexcharts-xaxis line,
+			.apexcharts-grid line
+				stroke: $dark-border

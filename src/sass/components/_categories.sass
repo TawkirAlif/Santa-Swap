@@ -1,0 +1,85 @@
+.categories
+	&__title
+		margin-bottom: 48px
+	&__select
+		.select
+			+m
+				height: 64px
+				padding-left: 24px
+				padding-right: 64px
+				border-radius: 16px 
+				line-height: 64px
+				font-size: 18px
+				&:before
+					right: 24px
+	&__container
+		margin: 0 -12px
+		+m
+			display: none
+	&__item
+		display: block
+		height: 100% 
+		margin: 0 12px
+		padding: 36px 32px 32px
+		border-radius: 20px
+		background: $white
+		box-shadow: 0 15px 35px rgba(#000, .07)   
+		text-align: center
+		+title
+		color: $black 
+		transition: all .2s
+		+w
+			padding: 32px 24px 
+		&:hover
+			box-shadow: 0 0 0 4px $blue
+			color: $blue  
+	&__preview
+		display: flex
+		justify-content: center
+		align-items: center
+		width: 112px
+		height: 112px
+		margin: 0 auto 40px 
+		border-radius: 50% 
+		img
+			max-height: 32px
+	.owl-stage
+		display: flex
+	.owl-item
+		visibility: hidden
+		opacity: 0
+		transition: all .2s
+		&.active
+			visibility: visible
+			opacity: 1
+	.owl-carousel .owl-stage-outer
+		overflow: visible
+	.owl-dots
+		display: flex
+		justify-content: center
+		margin-top: 46px
+	.owl-carousel button.owl-dot
+		flex-shrink: 0 
+		width: 24px
+		height: 2px
+		border-radius: 1px
+		background: $gray-light
+		transition: all .2s 
+		&.active
+			background: $blue 
+		+nl
+			margin-right: 4px
+	+nl
+		margin-bottom: 80px
+		+m
+			margin-bottom: 42px
+
++dark
+	.categories
+		&__item
+			background: $dark-color
+			color: $white  
+		.owl-carousel button.owl-dot
+			background: rgba($white, .5)
+			&.active
+				background: $blue 

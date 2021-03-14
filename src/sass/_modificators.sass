@@ -1,0 +1,154 @@
+.title
+	+fp
+	font-size: 72px
+	line-height: (80/72) 
+	font-weight: 600
+	letter-spacing: -1px
+	&_sm
+		font-size: 64px
+		line-height: (72/64)  
+	&_big
+		font-size: 96px
+		line-height: (112/96) 
+
+.h1,
+.h2,
+.h3
+	+fp
+	font-weight: 600 
+
+.h4,
+.h5,
+.h6
+	+fp
+	font-weight: 500 
+
+.h1
+	font-size: 56px
+	line-height: (64/56)
+	letter-spacing: -1px 
+
+.h2
+	font-size: 48px
+	line-height: (56/48)
+	letter-spacing: -1px 
+
+.h3
+	font-size: 40px
+	line-height: (48/40)
+	letter-spacing: -1px
+
+.h4
+	font-size: 32px
+	line-height: (40/32)
+	letter-spacing: -.5px
+
+.h5
+	font-size: 24px
+	line-height: (32/24)
+
+.h6
+	font-size: 18px
+	line-height: (24/18) 
+
+.color
+	&-green
+		color: $green 
+	&-blue
+		color: $blue
+	&-red
+		color: $red
+	&-gray
+		color: $gray
+	&-orange
+		color: $orange 
+
+.bg
+	&-blue
+		background: $blue
+		&-light
+			background: $blue-light 
+		&-gradient
+			background: linear-gradient(146.29deg, #B7EAFF 14.84%, #57B1E4 92.53%)
+	&-green
+		background: $green
+		&-opacity
+			background: rgba($green, .15) 
+		&-gradient
+			background: linear-gradient(180deg, #86E1A0 0%, #4FBF67 100%)
+	&-orange
+		background: $orange
+		&-gradient
+			background: linear-gradient(180deg, #FFCE6A 0%, #FF9F38 100%)
+	&-purple
+		background: $purple
+		&-gradient
+			background: linear-gradient(180deg, #A596EB 0%, #6C5DD3 100%)
+	&-pink
+		background: $pink
+		&-gradient
+			background: linear-gradient(180deg, #FFC8F4 0%, #FF98E5 100%)
+	&-red
+		background: $red
+		&-opacity
+			background: rgba($red, .15)
+
+.positive
+	color: #3DBAA2
+.negative
+	color: #FF7A68
+
+.text
+	&-right
+		text-align: right
+	&-center
+		text-align: center
+	&-uppercase
+		text-transform: uppercase
+
+.m-auto
+	margin: auto
+.ml-auto
+	margin-left: auto
+.mr-auto
+	margin-right: auto
+
+.align
+	&-baseline
+		align-items: baseline
+
+.desktop
+	&-hide
+		+d
+			display: none !important
+	&-show
+		display: none !important
+		+d
+			display: block !important
+	&-text-right
+		+d
+			text-align: right !important
+
+.tablet
+	&-hide
+		+t
+			display: none !important
+	&-show
+		display: none !important
+		+t
+			display: block !important
+	&-text-right
+		+t
+			text-align: right !important
+			
+.mobile
+	&-hide
+		+m
+			display: none !important
+	&-show
+		display: none !important
+		+m
+			display: block !important
+	&-text-right
+		+m
+			text-align: right !important

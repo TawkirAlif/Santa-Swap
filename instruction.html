@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Instruction</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#fff">
+    <meta name="format-detection" content="telephone=no">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700&amp;display=swap" rel="stylesheet">
+    <style>
+      .section:not(:last-child){
+        margin-bottom: 30px; padding-bottom: 30px; border-bottom: 1px solid #e9ecef;
+      }
+      .h1,
+      .h2{
+        margin: 0 0 15px;
+        font-weight: 400;
+        color: #1f2c73;
+      }
+      .h1{
+        font-size: 24px;
+      }
+      .h2{
+        font-size: 20px;
+      }
+      .structure{
+        line-height: 1.7;
+      }
+      .structure__note{
+        padding-left: 10px;
+        font-size: 14px;
+        color: #7184ad;
+      }
+      .structure__folder:before,
+      .structure__file:before{
+        content: '';
+        position: relative;
+        bottom: -2px;
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        margin-right: 8px;
+      }
+      .structure__folder:before{
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M3.5 21h17a1.5 1.5 0 0 0 1.5-1.5v-11A1.5 1.5 0 0 0 20.5 7H10L7.44 4.44A1.5 1.5 0 0 0 6.379 4H3.5A1.5 1.5 0 0 0 2 5.5v14A1.5 1.5 0 0 0 3.5 21z' fill='%236672e8' opacity='.3' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat 50% 50% / 100% auto;
+      }
+      .structure__file:before{
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill-rule='evenodd' fill='%236672e8' viewBox='0 0 24 24'%3E%3Cpath d='M5.857 2h7.88a1.5 1.5 0 0 1 .969.355l4.764 4.03A1.5 1.5 0 0 1 20 7.529v12.554c0 1.79-.02 1.917-1.857 1.917H5.857C4.02 22 4 21.874 4 20.083V3.917C4 2.126 4.02 2 5.857 2z' fill-rule='nonzero' opacity='.3'/%3E%3Crect x='6' y='11' width='9' height='2' rx='1'/%3E%3Crect x='6' y='15' width='5' height='2' rx='1'/%3E%3C/svg%3E") no-repeat 50% 50% / 100% auto;
+      }
+      .link{
+        text-decoration: none;
+        color: #2083FE;
+        transition: color .25s;
+      }
+      .link:hover{
+        text-decoration: underline;
+        color: #015ED1;
+      }
+      code{
+        padding: 1px 15px 4px;
+        border-radius: 5px;
+        background-color: #f7e8e8;
+        font-family: 'Lato', sans-serif;
+        font-size: 14px;
+        letter-spacing: .7px;
+        color: #bd4242;
+      }
+      .note{
+        display: inline-block;
+        margin-top: 15px;
+        padding: 8px 15px;
+        font-size: 13px;
+        background: #e7f7f2;
+        color: #1F2C73;
+      }
+      .note svg{
+        margin-right: 5px;
+        margin-bottom: -8px;
+      }
+      .note a{
+        text-decoration: none;
+        color: #34bd91;
+      }
+      .note a:hover{
+        text-decoration: underline;
+      }
+      @media only screen and (max-width: 767px) {
+        body{
+          margin: 0 !important;
+        }
+        .center{
+          padding: 24px 16px 40px !important;
+        }
+        .section:not(:last-child){
+          margin-bottom: 20px;
+          padding-bottom: 20px;
+        }
+      }
+    </style>
+    <script>
+      var viewportmeta = document.querySelector('meta[name="viewport"]');
+      if (viewportmeta)
+      {
+        if (screen.width < 375)
+        {
+          var newScale = screen.width / 375;
+          viewportmeta.content = 'width=375, minimum-scale=' + newScale + ', maximum-scale=1.0, user-scalable=no, initial-scale=' + newScale + '';
+        }
+        else
+        {
+          viewportmeta.content = 'width=device-width, maximum-scale=1.0, initial-scale=1.0';
+        }
+      }
+
+    </script>
+  </head>
+  <body>
+    <div class="center" style="max-width: 1060px; margin: 0 auto; padding: 30px 30px 50px;">
+      <div class="content" style="font-family: 'Lato', sans-serif; font-size: 16px; line-height: 1.5;">
+        <section class="section">
+          <h1 class="h1">Getting started</h1>
+          <p>We hope you find this theme useful! In this page we'll cover the folder structure, setting up your development workflow, how to compile.</p>
+        </section>
+        <section class="section">
+          <h2 class="h2">— Folder structure</h2>
+          <ul class="structure">
+            <li class="structure__folder">template/<ul>
+                <li class="structure__folder">build/ <span class="structure__note">compiled theme files</span></li>
+                <li class="structure__folder">src/ <span class="structure__note">source files for development</span>
+                  <ul>
+                    <li class="structure__folder">fonts/ <span class="structure__note">connect fonts locally</span></li>
+                    <li class="structure__folder">img/ </li>
+                    <li class="structure__folder">icons/ <span class="structure__note">icons for svg-sprite</span></li>
+                    <li class="structure__folder">js/</li>
+                    <li class="structure__folder">sass/ <span class="structure__note">preprocessor CSS</span></li>
+                    <li class="structure__folder">templates/ <span class="structure__note">preprocessor HTML</span>
+                      <ul>
+                        <li class="structure__file">index.pug/</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li class="structure__folder">node_modules/ <span class="structure__note">where npm installs dependencies</span></li>
+                <li class="structure__folder">gulp/ <span class="structure__note">settings gulp</span></li>
+                <li class="structure__file">gulpfile.js/ <span class="structure__note">build tasks for developments</span></li>
+                <li class="structure__file">package.json/ <span class="structure__note">list of dependencies</span></li>
+                <li class="structure__file">package-lock.json/ <span class="structure__note">dependencies version tree</span></li>
+                <li class="structure__file">README.md</li>
+              </ul>
+            </li>
+          </ul>
+          <p style="font-weight: 600; color: #1f2c73;">You have 2 options for using the template: </p>
+          <ol style="line-height: 1.7;">
+            <li>Use files from the <strong>build</strong> folder - this will allow you not to start the project, but immediately work with CSS, JS, HTML, but you will not be able to use preprocessors, sprites, etc and you will have to manually update the tab in the browser to see the changes, what you put in the files.</li>
+            <li>Run the project, this will allow you to use all the functions of the template.</li>
+          </ol>
+          <p><strong style="color: #A52A2A;">Note:</strong> keep in mind that if you work on files in folder src and then switch to compiling with Gulp you would lose your changes as the files would be re-generated.</p>
+        </section>
+        <section class="section">
+          <h2 class="h2">— Development setup</h2>
+          <ul style="line-height: 1.7;">
+            <li style="margin-bottom: 5px;"><a class="link" href="https://nodejs.org/download/release/v10.15.3/" target="_blank">Download and install Node.js (v.10.15.3)</a> if you don't have it already installed in your computer. The template uses npm to manage the dependencies listed in package.json.</li>
+            <li style="margin-bottom: 5px;">Unzip the theme and then open your terminal, navigate to the root /template directory.</li>
+            <li style="margin-bottom: 5px;">Install the Gulp Command Line Interface to be able to use Gulp: <br><code>npm install gulp-cli -g</code></li>
+            <li style="margin-bottom: 5px;">Making sure you're at the root /template directory, install the local dependencies: <br><code>npm install</code></li>
+            <li>That's it!</li>
+          </ul>
+          <div class="note">
+            <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <rect x="0" y="0" width="24" height="24"></rect>
+                    <path d="M16.3740377,19.9389434 L22.2226499,11.1660251 C22.4524142,10.8213786 22.3592838,10.3557266 22.0146373,10.1259623 C21.8914367,10.0438285 21.7466809,10 21.5986122,10 L17,10 L17,4.47708173 C17,4.06286817 16.6642136,3.72708173 16.25,3.72708173 C15.9992351,3.72708173 15.7650616,3.85240758 15.6259623,4.06105658 L9.7773501,12.8339749 C9.54758575,13.1786214 9.64071616,13.6442734 9.98536267,13.8740377 C10.1085633,13.9561715 10.2533191,14 10.4013878,14 L15,14 L15,19.5229183 C15,19.9371318 15.3357864,20.2729183 15.75,20.2729183 C16.0007649,20.2729183 16.2349384,20.1475924 16.3740377,19.9389434 Z" fill="#34bd91"></path>
+                    <path d="M4.5,5 L9.5,5 C10.3284271,5 11,5.67157288 11,6.5 C11,7.32842712 10.3284271,8 9.5,8 L4.5,8 C3.67157288,8 3,7.32842712 3,6.5 C3,5.67157288 3.67157288,5 4.5,5 Z M4.5,17 L9.5,17 C10.3284271,17 11,17.6715729 11,18.5 C11,19.3284271 10.3284271,20 9.5,20 L4.5,20 C3.67157288,20 3,19.3284271 3,18.5 C3,17.6715729 3.67157288,17 4.5,17 Z M2.5,11 L6.5,11 C7.32842712,11 8,11.6715729 8,12.5 C8,13.3284271 7.32842712,14 6.5,14 L2.5,14 C1.67157288,14 1,13.3284271 1,12.5 C1,11.6715729 1.67157288,11 2.5,11 Z" fill="#34bd91" opacity="0.3"></path>
+                </g>
+            </svg>
+            If you're not familiar using the command line, you can <a href="https://gist.github.com/poopsplat/7195274" target="_blank">learn more here</a>.
+          </div>
+        </section>
+        <section class="section">
+          <h2 class="h2">— Compiling with Gulp</h2>
+          <p>The template uses <a href="https://gulpjs.com/" target="_blank" class="link">Gulp</a> to automate the development workflow. With your command line on the root /template directory you can use the following commands:</p>
+          <ul style="line-height: 1.7;">
+            <li style="margin-bottom: 10px;"> <code>gulp</code>
+              <ul>
+                <li>This is the default task: Compiles the src files into the build folder, opens a tab in your browser, and watches for any changes made in the src folder - SASS, JS, templates(PUG), images, etc. When updates are made it automatically re-compiles and reloads your browser. <br>To stop the server and terminate the gulp command just hit CTRL + C.</li>
+              </ul>
+            </li>
+            <li><code>gulp build</code>
+              <ul>
+                <li>Compiles the src files into the build folder.</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section class="section">
+          <h2 class="h2">— Preprocessor SASS(CSS) and PUG(HTML)</h2>
+          <p style="margin-boottom: 15px;">The template uses SASS and PUG preprocessors, they speed up and facilitate the work.</p>
+          <p><strong style="color: #A52A2A;">Note:</strong> in the sass folder, all styles are separated into components, making it easy to use React, vue and angular frameworks.</p>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,129 @@
+---
+title: Home page
+---
+extends layouts/_layout
+block content
+	.page
+		+sidebar('active')
+		.page__content
+			+header('header_border')
+			.page__row
+				.page__col
+					.slider.slider_home
+						button.slider__close
+							+i('close')
+						.slider__container
+							.slider__list.js-slider.owl-carousel
+								.slider__item
+									.slider__wrap
+										.slider__date January 2021 
+										.slider__title Asset Delistings  Update
+										.slider__info The Grin blockchain has presented significant technical challenges.
+										button.slider__btn.btn.btn_white Find out more
+									.slider__preview
+										img(src="img/figures-1.png" alt="")
+								.slider__item
+									.slider__wrap
+										.slider__date February 2020 
+										.slider__title Asset Delistings  Update
+										.slider__info The Grin blockchain has presented significant technical challenges.
+										button.slider__btn.btn.btn_white Find out more
+									.slider__preview
+										img(src="img/figures-1.png" alt="")
+								.slider__item
+									.slider__wrap
+										.slider__date March 2020 
+										.slider__title Asset Delistings  Update
+										.slider__info The Grin blockchain has presented significant technical challenges.
+										button.slider__btn.btn.btn_white Find out more
+									.slider__preview
+										img(src="img/figures-1.png" alt="")
+					.widgets
+						.widgets__sorting
+							.widgets__select.mobile-show
+								select.select
+									option Core Assets
+									option Top Gainers
+									option Top Losers
+									option New
+							.widgets__variants.mobile-hide
+								a.widgets__link.active(href="#") Core Assets
+								a.widgets__link(href="#") Top Gainers
+								a.widgets__link(href="#") Top Losers
+								a.widgets__link(href="#") New
+							.widgets__select
+								select.select.select_empty
+									option Market Cap
+									option A - Z
+									option Volumes
+									option Last 24h
+									option Price
+						.widgets__list
+							mixin widgetsItem(img, category, info, price, status, idName)
+								.widgets__item
+									.widgets__head
+										.widgets__company
+											.widgets__logo
+												img(src=img alt="")
+											.widgets__details
+												.widgets__category=category 
+												.widgets__info=info 
+										.widgets__time 24H
+									.widgets__body
+										.widgets__line
+											.widgets__price=price 
+											if status
+												.status.positive +2.73%
+											else
+												.status.negative -2.73%
+										.widgets__chart
+											div(id=idName)
+									button.widgets__btn.btn.btn_blue.btn_wide View Asset
+							+widgetsItem('img/logo/bitcoin.png', 'Bitcoin', 'BTC', '18,245.4 USD', true, 'spark-1')
+							+widgetsItem('img/logo/ethereum.png', 'Ethereum', 'ETH', '598.296 USD', true, 'spark-2')
+							+widgetsItem('img/logo/steem.png', 'Steem', 'STM', '0.24548USD', true, 'spark-3')
+							+widgetsItem('img/logo/tokenbox.png', 'Tokenbox', 'TBX', '0.00546 USD', true, 'spark-4')
+							+widgetsItem('img/logo/ripple.png', 'Ripple', 'XRP', '0.50869 USD', false, 'spark-5')
+							+widgetsItem('img/logo/ubex.png', 'Ubex', 'UBW', '0.10858 USD', true, 'spark-6')
+						.widgets__btns
+							button.widgets__btn.btn.btn_blue Discover more assets
+				.page__col
+					.card.card_widget.text-center
+						button.card__next
+							+i('arrow-up-right')
+						.card__chart.card__chart_total-balance
+							div#chart-total-balance
+						.card__inner
+							.card__title.h6 Total Balance
+							.card__currency BTC
+							.card__number.h4 0.16231428
+							.card__price.h6.color-green 3,700.96 USD
+							button.card__btn.btn.btn_blue Withdraw
+					.card
+						.card__head
+							.card__title.h6 Latest Activities
+							+dropdown('Latest Activities', 'New Activities', 'Old Activities', 'All Activities')
+						.card__list
+							mixin cardItem(src, classBg, category, price)
+								.card__item
+									.card__icon(class=classBg)
+										img(src=src alt="")
+									.card__details
+										.card__line
+											.card__category=category 
+											.card__date Nov 22, 2020
+										.card__status.color-green Complete
+										.card__price=price 
+							+cardItem('img/money-bag.svg', 'bg-green', 'Withdrew USDT', '969.06654889 USDT')
+							+cardItem('img/currency-exchange.svg', 'bg-orange', 'Exchange XRP', '2405.15865955 XRP')
+							+cardItem('img/money.svg', 'bg-purple', 'Deposit BTC', '0.206654889 BTC')
+							+cardItem('img/money-bag.svg', 'bg-green', 'Withdrew USDT', '969.06654889 USDT')
+							+cardItem('img/currency-exchange.svg', 'bg-orange', 'Exchange XRP', '2405.15865955 XRP')
+						a.card__view(href="#")
+							.card__arrow
+								+i('arrow-right')
+							| View all activity
+
+
+
+

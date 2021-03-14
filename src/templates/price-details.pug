@@ -1,0 +1,130 @@
+---
+title: Price Details
+---
+extends layouts/_layout
+block content
+	.page
+		+sidebar('', '', 'active')
+		.page__content
+			+header('header_border')
+			.page__row
+				.page__col
+					.details
+						.details__container
+							.details__top
+								.details__company
+									.details__head
+										.details__logo
+											img(src="img/logo/bitcoin.png" alt="")
+										.details__desc
+											.details__info Bitcoin
+											.details__currency BTC
+										button.details__burger
+									.details__body
+										a.details__item(href="#")
+											.details__logo
+												img(src="img/logo/bitcoin.png" alt="")
+											.details__desc
+												.details__info Bitcoin
+												.details__currency BTC
+										a.details__item(href="#")
+											.details__logo
+												img(src="img/logo/ethereum.png" alt="")
+											.details__desc
+												.details__info Ethereum
+												.details__currency ETH
+										a.details__item(href="#")
+											.details__logo
+												img(src="img/logo/ripple.png" alt="")
+											.details__desc
+												.details__info Ripple
+												.details__currency XRP
+								.details__btns
+									button.details__btn.btn.btn_border
+										+i('share')
+										span.btn__text Share
+									button.details__btn.btn.btn_border
+										+i('star-fill')
+										span.btn__text Watchlist
+							.details__flex
+								.details__money 19,761.52 USD
+								.details__status.color-green +0.92%
+							.details__chart
+								div#chart-price
+							.details__list
+								.details__box
+									.details__icon
+										img(src="img/market-blue.svg" alt="")
+									.details__inner
+										.details__category Matket cap
+											+i('info-circle')
+										.details__price 329,553,663,671 USD
+								.details__box
+									.details__icon
+										img(src="img/analytics-blue.svg" alt="")
+									.details__inner
+										.details__category Volume (24h)
+											+i('info-circle')
+										.details__price 49,097,949,995 USD
+								.details__box
+									.details__icon
+										img(src="img/coins-blue.svg" alt="")
+									.details__inner
+										.details__category Circulating Supply
+											+i('info-circle')
+										.details__price 18,554,381 BTC
+								.details__box
+									.details__icon
+										img(src="img/bitcoin-blue.svg" alt="")
+									.details__inner
+										.details__category Total Supply
+											+i('info-circle')
+										.details__price 18,554,381 BTC
+							.details__title.h6 About Bitcoin
+							.details__row
+								.details__col
+									.details__text The world’s first cryptocurrency, Bitcoin is stored and exchanged securely on the internet through a digital ledger known as a blockchain. Bitcoins are divisible into smaller units known as satoshis — each satoshi is worth 0.00000001 bitcoin.
+								.details__col
+									.details__links
+										a.details__link(href="#")
+											+i('link')
+											| Official Website
+										a.details__link(href="#")
+											+i('link')
+											| Whitepaper
+										a.details__link(href="#")
+											+i('link')
+											| Source Code
+							button.details__btn.btn.btn_blue.btn_wide.btn_big Exchange
+				.page__col
+					.card
+						.card__head.card__head_mb32
+							.card__title.h6 Related Coins
+							+dropdown('Related Coins', 'Top Gainers', 'Top Loosers', 'Stable Coins')
+						.widgets
+							.widgets__wrap
+								mixin widgetsBox(img, category, info, status, price, idName)
+									.widgets__box
+										.widgets__top
+											.widgets__company
+												.widgets__logo
+													img(src=img alt="")
+												.widgets__details
+													.widgets__category=category 
+													.widgets__info=info 
+											.widgets__group
+												if status
+													.status.positive +2.05%
+												else
+													.status.negative -2.73%
+												.widgets__price=price 
+										.widgets__chart
+											div(id=idName)
+										button.widgets__favorite
+											+i('star')
+								+widgetsBox('img/logo/ethereum.png', 'Ethereum', 'ETH', true, '18,245.4 USD', 'spark-1')
+								+widgetsBox('img/logo/ripple.png', 'Ripple', 'XRP', false, '0.56687654', 'spark-5')
+								+widgetsBox('img/logo/ubex.png', 'Ubex', 'UBW', true, '6,315.4 USD', 'spark-3')
+								+widgetsBox('img/logo/steem.png', 'Steem', 'STM', true, '18,245.4 USD', 'spark-2')
+								+widgetsBox('img/logo/tokenbox.png', 'Tokenbox', 'TBX', true, '0.56687654', 'spark-4')
+		
